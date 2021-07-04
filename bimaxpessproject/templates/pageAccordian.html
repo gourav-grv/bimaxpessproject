@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static '/dist/css/pageAccordian.css' %}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BimaXpress</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static '/plugins/fontawesome-free/css/all.min.css' %}" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="{% static 'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' %}" />
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet"
+    href="{% static '/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css' %}" />
+  <!-- iCheck -->
+  <link rel="stylesheet" href="{% static '/plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}" />
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="{% static '/plugins/jqvmap/jqvmap.min.css' %}" />
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static '/dist/css/pageAccordian.css' %}" />
+  <link rel="stylesheet" href="{% static '/dist/css/adminlte.min.css' %}" />
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="{% static '/plugins/overlayScrollbars/css/OverlayScrollbars.min.css' %}" />
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="{% static '/plugins/daterangepicker/daterangepicker.css' %}" />
+  <!-- summernote -->
+  <link rel="stylesheet" href="{% static '/plugins/summernote/summernote-bs4.min.css' %}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+
+
+</head>
+
+
+<body class="hold-transition sidebar-mini layout-fixed">
+  <div class="wrapper">
+    <!-- Preloader -->
+    <div class="preloader flex-column justify-content-center align-items-center">
+      <img class="animation__shake" src="{% static 'dist/img/AdminLTELogo.png' %}" alt="AdminLTELogo" height="60"
+        width="60" />
+    </div>
+
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="index3.html" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="#" class="nav-link">Contact</a>
+        </li>
+      </ul>
+      <input class="search__input" type="text" placeholder="Search"
+        style="width: 20em; margin-top: 8px; margin-left: 8px;" />
+
+
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
+        <!-- Navbar Search -->
+
+
+        <!-- Messages Dropdown Menu -->
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#">
+            <i class="far fa-comments"></i>
+            <span class="badge badge-danger navbar-badge">3</span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <a href="#" class="dropdown-item">
+              <!-- Message Start -->
+              <div class="media">
+                <img src="{% static 'dist/img/user1-128x128.jpg' %}" alt="User Avatar"
+                  class="img-size-50 mr-3 img-circle" />
+                <div class="media-body">
+                  <h3 class="dropdown-item-title">
+                    Brad Diesel
+                    <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                  </h3>
+                  <p class="text-sm">Call me whenever you can...</p>
+                  <p class="text-sm text-muted">
+                    <i class="far fa-clock mr-1"></i> 4 Hours Ago
+                  </p>
+                </div>
+              </div>
+              <!-- Message End -->
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <!-- Message Start -->
+              <div class="media">
+                <img src="{% static 'dist/img/user8-128x128.jpg' %}" alt="User Avatar"
+                  class="img-size-50 img-circle mr-3" />
+                <div class="media-body">
+                  <h3 class="dropdown-item-title">
+                    John Pierce
+                    <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
+                  </h3>
+                  <p class="text-sm">I got your message bro</p>
+                  <p class="text-sm text-muted">
+                    <i class="far fa-clock mr-1"></i> 4 Hours Ago
+                  </p>
+                </div>
+              </div>
+              <!-- Message End -->
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <!-- Message Start -->
+              <div class="media">
+                <img src="{% static 'dist/img/user3-128x128.jpg' %}" alt="User Avatar"
+                  class="img-size-50 img-circle mr-3" />
+                <div class="media-body">
+                  <h3 class="dropdown-item-title">
+                    Nora Silvester
+                    <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+                  </h3>
+                  <p class="text-sm">The subject goes here</p>
+                  <p class="text-sm text-muted">
+                    <i class="far fa-clock mr-1"></i> 4 Hours Ago
+                  </p>
+                </div>
+              </div>
+              <!-- Message End -->
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+          </div>
+        </li>
+        <!-- Notifications Dropdown Menu -->
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#">
+            <i class="far fa-bell"></i>
+            <span class="badge badge-warning navbar-badge">15</span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <span class="dropdown-item dropdown-header">15 Notifications</span>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-envelope mr-2"></i> 4 new messages
+              <span class="float-right text-muted text-sm">3 mins</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-users mr-2"></i> 8 friend requests
+              <span class="float-right text-muted text-sm">12 hours</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-file mr-2"></i> 3 new reports
+              <span class="float-right text-muted text-sm">2 days</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+            <i class="fas fa-expand-arrows-alt"></i>
+          </a>
+        </li>
+
+        {% comment %}
+
+        <li class="nav-item">
+          <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+            <i class="fas fa-th-large"></i>
+          </a>
+        </li>
+
+        {% endcomment %}
+      </ul>
+      <button type="button" class="btn btn-danger">Log Out</button>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4"
+      style="margin-top: 5em; max-height: 80%; background-color: #f4f6f9; color: black; border-top-right-radius: 20px;border-bottom-right-radius: 20px;">
+      <!-- Brand Logo -->
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+            <li class="nav-item menu-open" style="margin-left: -50px !important;">
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="da" class="nav-link active">
+                    <i class="fas fa-home"></i>
+                    <p>Home</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="bunny" class="nav-link active">
+                    <i class="fas fa-envelope"></i>
+                    <p>Email</p>
+                  </a>
+                </li>
+                {% if role == 'admin' %}
+                <li class="nav-item">
+                  <a href="adduser" class="nav-link active">
+                    <i class="fas fa-user-plus"></i>
+                    <p>Add Customer</p>
+                  </a>
+                </li>
+                {% endif %}
+
+                <li class="nav-item">
+                  <a class="nav-link active" style="background-color: rgb(255, 166, 0); color:black;">
+
+                    <form action="/claimpage1" method="get" id="systemform">
+                      {% csrf_token %}
+                      <i style="color:black;" class="fas fa-plus"></i>
+                      <p> <button style="color: black; border: none; background-color:transparent;" type="submit"
+                          name="system" value="{{hospital_email}}+{{backcase}}" form="systemform">New
+                          Case
+                        </button></p>
+                    </form>
+                  </a>
+                </li>
+
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      <!-- /.sidebar -->
+    </aside>
+
+
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper"
+      style="padding-left: 5em !important; padding-right: 5em !important; background-color: white !important;">
+
+      <div class="main" onmouseover="mainHover()" style="width: 100%;">
+        <!-- {{data}} -->
+        <form accept-charset="UTF-8" action="saveData/" enctype="multipart/form-data" id="msform" method="POST"
+          novalidate="">
+          {% csrf_token %}
+          <div class="accordianHeader" style="width: 100%;">
+            <div class="container-fluid" style="width: 100%;">
+              <div class="row" style="margin-top: 5em;">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                      <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                          aria-expanded="true" aria-controls="collapseOne">
+                          Details of TPA / Insurance Company
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                      aria-labelledby="headingOne">
+                      <div class="panel-body">
+                        <label for="cars">Insurance Company / TPA</label>
+                        <select class="form-control" name="insurance_company" id="cars">
+                          <option value="volvo">1</option>
+                          <option value="saab">Saab</option>
+                          <option value="mercedes">Mercedes</option>
+                          <option value="audi">Audi</option>
+                        </select>
+                        <button name="save" value="{{system}}"
+                          onclick="alert(`form saved successfully`);$(`#msform`).submit();"
+                          class="btn btn-primary btn-lg"> save </button>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                      <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                          href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          Patient Details
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                      <div class="panel-body">
+                        <div class="row">
+                          <div class="column">
+                            <label for="exampleInputEmail1">Patient Name</label>
+                            <input class="form-control" name="patient_details_name" value={{data.patient_details.Name}}
+                              type="text">
+
+
+                            <label for="cars">Gender :</label>
+                            <select class="form-control" id="cars1" name="patient_details_gender">
+                              <option value="male">Male</option>
+                              <option type="" value="female">Female</option>
+                              <option type="" value="Transgender">
+                                Transgender
+                              </option>
+                            </select>
+                            <label for="exampleInputEmail1">Age : Year</label>
+                            <input class="form-control" name="patient_details_ageYear"
+                              value="{{data.patient_details.AgeYear}}" type="number">
+
+                            <label for="exampleInputEmail1">Age : Month</label>
+                            <input class="form-control" name="patient_details_ageMonth" type="number"
+                              value="{{data.patient_details.AgeMonth}}">
+
+                            <label for="exampleInputEmail1">Date</label>
+                            <input class="form-control" name="patient_details_date" type="date"
+                              value="{{data.patient_details.AgeDate}}">
+
+                            <label for="exampleInputEmail1">Patient Contact Number</label>
+                            <input class="form-control" name="patient_details_contact_number"
+                              value={{data.patient_details.Contact_Number}} type="number">
+
+                            <label for="exampleInputEmail1">Contact Number of Attending Relative</label>
+                            <input class="form-control" name="patient_details_numberOfAttendingRelative" type="text"
+                              value={{data.patient_details.NumberOfAttendingRelative}} />
+
+                            <label for="exampleInputEmail1">Insured Member ID Card No.</label>
+                            <input class="form-control" name="patient_details_insuredMemberIdCardNo" type="text"
+                              value="{{data.patient_details.Id_card_number}}">
+                          </div>
+                          <div class="column">
+                            <label for="exampleInputEmail1">Policy Number / Corporate Name </label>
+                            <input class="form-control" name="patient_details_policyNumberorCorporateName" type="text"
+                              value="{{data.patient_details.PolicyNumberorCorporateName}}">
+
+                            <label for="exampleInputEmail1">Employee ID</label>
+                            <input class="form-control" name="patient_details_EmployeeId" type="text"
+                              value="{{data.patient_details.EmployeeId}}">
+
+                            <label for="exampleInputEmail1">Type of Admission</label>
+                            <input type="radio" name="admissiontype" value="Yes" id="admissiontypeyes">
+                            Yes
+                            <input type="radio" name="admissiontype" value="No" id="admissiontypeno"> No
+
+                            <label for="exampleInputEmail1">Curruntly Do You Have Any Health Insurance</label>
+                            <input type="radio" name="patient_details_HealthInsurance" value="Yes" id="nanana">
+                            Yes
+                            <input type="radio" name="patient_details_HealthInsurance" value="No" id="nanana2"> No
+                            <div class="onclickYes" id="onclickYes">
+                            </div>
+
+                            <label for="exampleInputEmail1">Do You Have a Family Physician</label>
+                            <input type="radio" name="patient_details_familyPhysician" value="Yes" id="physicianYes">
+                            Yes
+                            <input type="radio" name="patient_details_familyPhysician" value="No" id="physicianNo"> No
+                            <div class="onclickYes" id="onclickYesPhysician">
+                            </div>
+                            <label for="exampleInputEmail1">Current Address </label>
+                            <input class="form-control" name="patient_details_currentAddress" type="text"
+                              value="{{data.patient_details.Currentaddress}}">
+
+                            <label for="exampleInputEmail1">Occupation</label>
+                            <input class="form-control" name="patient_details_occupation"
+                              value="{{data.patient_details.patient_details_occupation}}" type="text">
+
+                            <label for="exampleInputEmail1">View Patient Document</label>
+                            <br>
+                            <button type="button" class="btn btn-success" data-toggle="modal"
+                              data-target="#exampleModal">
+                              Open
+                            </button><br><br><br><br><br><br>
+
+                            <!-- onclick="location.href = '/'" -->
+                            <!-- Modal start-->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                              aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Documents</h5>
+                                  </div>
+                                  <div class="modal-body">
+                                    <div class="row">
+                                      <div class="column">
+                                        <img src="{{data.patient_details.Aadhar_image}}" class="img-fluid"
+                                          alt="Responsive image">
+                                      </div>
+                                      <div class="column">
+                                        <img src="{{data.patient_details.Aadhar_image}}" class="img-fluid"
+                                          alt="Responsive image">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <button name="save" value="{{system}}"
+                              onclick="alert(`form saved successfully`);$(`#msform`).submit();"
+                              class="btn btn-primary btn-lg"> save </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                      <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                          href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          Doctor and Diagnosis Details
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                      aria-labelledby="headingThree">
+                      <div class="panel-body">
+                        <div class="row">
+                          <div class="column">
+                            <label for="exampleInputEmail1">Name of The Treating Doctor</label>
+                            <input class="form-control" name="doctor_nameOfTreatingDoctor" type="text"
+                              value="{{data.patient_details.NameOfTreatingDoctor}}">
+
+                            <label for="exampleInputEmail1">Contact Number</label>
+                            <input class="form-control" name="doctor_contactNumber" type="tel"
+                              value="{{data.patient_details.Doctor_ContactNumber}}">
+
+                            <label for="exampleInputEmail1">Nature of Liness / Disease With Presenting
+                              complaints</label>
+                            <input class="form-control" name="doctor_natureOfLiness" type="text"
+                              value="{{data.addition_details.Nature_Of_Illness}}">
+
+                            <label for="exampleInputEmail1">Relevant Clinic Findings</label>
+                            <input class="form-control" name="doctor_releventClinicFindings" type="text"
+                              value="{{data.addition_details.doctor_releventClinicFindings}}">
+
+                            <label for="exampleInputEmail1">Duration of Present Aliment</label>
+                            <input class="form-control" name="doctor_durationOfPresentAliment" type="text"
+                              value="{{data.addition_details.Duration_Of_Present_Ailments}}">
+
+                            <label for="exampleInputEmail1">Date Of First Consultation</label>
+                            <input class="form-control" name="doctor_dateOfFirstConsultation" type="date"
+                              value="{{data.addition_details.NatureOfLiness}}">
+
+                            <label for="exampleInputEmail1">Past History Of Present Aliment , If Any</label>
+                            <input class="form-control" name="doctor_PastHistoryOfPresentAlignment" type="text"
+                              value="{{data.addition_details.Past_History_Of_Present_Ailments}}">
+
+                            <label for="exampleInputEmail1">Provisional Diagnosis</label>
+                            <input class="form-control" name="doctor_provisionalDiagnosis" type="text"
+                              value="{{data.addition_details.Provision_Diagnosis}}">
+
+                            <label for="exampleInputEmail1">ICD Code </label>
+                            <input class="form-control" name="doctor_icdCode" type="tel"
+                              value="{{data.addition_details.ICD_Code}}">
+
+                            <label for="exampleInputEmail1">Proposed Line Of Treatment</label> <br>
+                            <input name="doctor_proposedLineOfTreatment"
+                              value="{{data.addition_details.Nature_Of_Illness}}" id="madical_managment" type="radio">
+                            Medical Managment &nbsp;&nbsp;&nbsp;
+                            <input name="doctor_proposedLineOfTreatment"
+                              value="{{data.addition_details.Nature_Of_Illness}}" id="surgical" type="radio"> Surgical
+                            Managment <br>
+                            <input name="doctor_proposedLineOfTreatment"
+                              value="{{data.addition_details.Nature_Of_Illness}}" id='intensiveCare' type="radio">
+                            Intensive Care &nbsp;&nbsp;&nbsp;
+                            <input name="doctor_proposedLineOfTreatment"
+                              value="{{data.addition_details.Nature_Of_Illness}}" id="investigation" type="radio">
+                            Investigation <br>
+                            <input name="doctor_proposedLineOfTreatment"
+                              value="{{data.addition_details.Nature_Of_Illness}}" id='nonAllopathic' type="radio"> Non
+                            Allopathic Treatment <br>
+                            <div id="forLineOfTreatment">
+                              <!-- for surgical -->
+                            </div>
+                          </div>
+                          <div class="column">
+                            <label for="exampleInputEmail1">If Other Tratment Provide Details</label>
+                            <input class="form-control" name="doctor_ifOtherTratmentProvideDetails"
+                              value="{{data.addition_details.If_Other_Treatment_Provide_Details}}" type="text">
+
+                            <label for="exampleInputEmail1">How Did Injury Occure</label>
+                            <input class="form-control" value="{{data.addition_details.How_Did_Injury_Occur}}"
+                              name="doctor_howDidInjuryOccure" type="text">
+
+                            <label for="exampleInputEmail1">In Case Of Accident ,Is It RTA</label> <br>
+                            <input type="radio" value="Yes" name="doctor_inCaseOfAccident"> Yes
+                            <input type="radio" value="No" name="doctor_inCaseOfAccident"> No <br>
+
+                            <label for="exampleInputEmail1">Date Of Injury</label>
+                            <input class="form-control" name="doctor_dateOfInjury" type="date"
+                              value="{{data.patient_details.DateofInjury}}">
+
+                            <label for="exampleInputEmail1">Reported To Police</label> <br>
+                            <input type="radio" value="Yes" name="doctor_reportedToPolice" id='policeReportYes'> Yes
+                            <input type="radio" value="No" name="doctor_reportedToPolice" id='policeReportNo'> No <br>
+                            <div id="forFirNum">
+                              <!-- for fir -->
+                            </div>
+                            <label for="exampleInputEmail1">Injury/Disease Caused Due To Substance Abuse / Alcohol
+                              Consumption</label> <br>
+                            <input type="radio" name="doctor_injuryorDiseaseCausedDueToSubstance" value="Yes"
+                              id="nanana">
+                            Yes
+                            <input type="radio" name="doctor_injuryorDiseaseCausedDueToSubstance" value="No"
+                              id="nanana2">
+                            No <br>
+
+                            <label for="exampleInputEmail1">Test Alcohol To Establish This</label> <br>
+                            <input type="radio" name="doctor_testAlcohol" value="Yes" id="nanana"
+                              onclick="testAlcohol()">
+                            Yes
+                            <input type="radio" name="doctor_testAlcohol" value="No" id="nanana2"> No <br>
+                            <div id="testAlcohol">
+
+                            </div>
+                            <label for="exampleInputEmail1">In Case Maternity</label> <br>
+                            <input type="checkbox" name="doctor_inCaseMaternity" value="G" id="nanana"> G
+                            <input type="checkbox" name="doctor_inCaseMaternity" value="P" id="nanana"> P
+                            <input type="checkbox" name="doctor_inCaseMaternity" value="L" id="nanana"> L
+                            <input type="checkbox" name="doctor_inCaseMaternity" value="A" id="nanana"> A <br>
+                            <label for="exampleInputEmail1">Expected Date Of Delivery</label>
+                            <input class="form-control" name="doctor_expectedDateOfDelivery" type="date">
+                            <button name="save" value="{{system}}"
+                              onclick="alert(`form saved successfully`);$(`#msform`).submit();"
+                              class="btn btn-primary btn-lg"> save </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                      <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                          href="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                          Admission Details
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
+                      aria-labelledby="headingThree">
+                      <div class="panel-body">
+                        <div class="row">
+                          <div class="column">
+                            <label for="exampleInputEmail1">Date Of Admission</label>
+                            <input class="form-control" name="admission_date"
+                              value="{{data.hospital_details.Date_of_Admission}}" type="date">
+                            <label for="exampleInputEmail1">Is This a Emergency Planned Hospitalization Event ?</label>
+                            <br>
+                            <input type="radio" name="admission_isThisAEmergencyPlannedHospitalization"
+                              value="Emergency" id=""> &nbsp;&nbsp;&nbsp; Emergency &nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="admission_isThisAEmergencyPlannedHospitalization" value="Planned"
+                              id=""> &nbsp;&nbsp;&nbsp;Planned <br>
+
+                            <label for="exampleInputEmail1">Expected No. Of Days Stay In Hospital </label>
+                            <input class="form-control" value="{{data.hospital_details.admission_expectedNoOfDays}}"
+                              name="admission_expectedNoOfDays" type="number">
+
+                            <label for="exampleInputEmail1">Days In ICU</label>
+                            <input class="form-control" value="{{data.hospital_details.Days_In_ICU}}"
+                              name="admission_daysInICU" type="number">
+
+                            <label for="exampleInputEmail1">Room Type</label>
+                            <input class="form-control" value="{{data.hospital_details.Room_Type}}"
+                              name="admission_roomType" type="text">
+
+                            <label for="exampleInputEmail1">Per Day Room Rent + Nursing & Services Charge + Patient
+                              Diet</label>
+                            <input class="form-control" name="admission_perDayRoomRent" type="number"
+                              value="{{data.hospital_charges.Per_Day_Room_Rent}}" placeholder="">
+
+                            <label for="exampleInputEmail1">Expected Cost For Investigation + Diagnostics</label>
+                            <input class="form-control" name="admission_expectedCostForInvestigation" type="number"
+                              value="{{data.hospital_charges.Cost_Of_Investigation}}" placeholder="">
+
+                            <label for="exampleInputEmail1">ICU Charge</label>
+                            <input class="form-control" name="admission_icuCharge" type="number"
+                              value="{{data.hospital_charges.ICU_Charges}}" placeholder="">
+
+                            <label for="exampleInputEmail1">OT Charge</label>
+                            <input class="form-control" name="admission_otCharge" type="number"
+                              value="{{data.hospital_charges.OT_Charges}}" placeholder="">
+
+                            <label for="exampleInputEmail1">Professional Fees Surgeon + Anesthetist Fees + Consultation
+                              Charge</label>
+                            <input class="form-control" name="admission_professionalFeesSurgeon" type="number"
+                              value="{{data.hospital_charges.ProfessionalFeesSurgeon}}" placeholder="">
+
+                            <label for="exampleInputEmail1">Medicine + Consumables + Cost of Implants (If Applicable
+                              Please
+                              Specify)</label>
+                            <input class="form-control" name="admission_madicineConsumablesCostOfImplats" type="number"
+                              value="{{data.hospital_charges.ConsumablesCostOfImplats}}" placeholder="">
+
+                            <label for="exampleInputEmail1">Other Hospital If Any</label>
+                            <input class="form-control" name="admission_otherHospitalIfAny" type="text"
+                              value="{{data.hospital_charges.OtherHospitalIfAny}}" placeholder="">
+
+                            <label for="exampleInputEmail1">All Include Package Charges If Any Applicable</label>
+                            <input class="form-control" name="admission_allIncludePackageCharge" type="number"
+                              value="{{data.hospital_charges.All_Including_Package}}" placeholder="">
+
+                            <label for="exampleInputEmail1">Sum Total Expected Cost Of Hospitalization</label>
+                            <input class="form-control" name="admission_sumTotalExpected" type="number"
+                              value="{{data.hospital_charges.total}}" placeholder="">
+                          </div>
+                          <div class="column">
+                            <label for="exampleInputEmail1">Mandatory Past History Of Any Chronic Illness If Yes, Since
+                              (month / year)</label>
+                            <p>i) Diabetes</p>
+                            <div style="display: flex; justify-content: space-evenly;">
+                              <input type="number" value="{{data.addition_details.MandatoryPastHistoryMonth}}"
+                                name="admission_mandatoryPastHistoryMonth" class="form-control" placeholder="Month">
+                              <input class="form-control" value="{{data.addition_details.MandatoryPastHistoryYear}}"
+                                type="number" placeholder="Year" name="admission_mandatoryPastHistoryYear">
+                            </div>
+                            <p>ii) Heart Disease</p>
+                            <div style="display: flex; justify-content: space-evenly;">
+                              <input type="number" value="{{data.addition_details.HeartDiseaseMonth}}"
+                                name="admission_heartDiseaseMonth" class="form-control" placeholder="Month">
+                              <input class="form-control" value="{{data.addition_details.HeartDiseaseYear}}"
+                                type="number" placeholder="Year" name="admission_heartDiseaseYear">
+                            </div>
+                            <p>iii) Hypertension</p>
+                            <div style="display: flex; justify-content: space-evenly;">
+                              <input type="number" value="{{data.addition_details.HypertensionMonth}}"
+                                class="form-control" name="admission_hypertensionMonth" placeholder="Month">
+                              <input class="form-control" value="{{data.addition_details.HypertensionYear}}"
+                                type="number" placeholder="Year" name="admission_hypertensionYear">
+                            </div>
+                            <p>iv) Hyperlipidemias</p>
+                            <div style="display: flex; justify-content: space-evenly;">
+                              <input type="number" value="{{data.addition_details.HyperlipidemiasMonth}}"
+                                class="form-control" name="admission_HyperlipidemiasMonth" placeholder="Month">
+                              <input class="form-control" value="{{data.addition_details.HyperlipidemiasYear}}"
+                                type="number" placeholder="Year" name="admission_HyperlipidemiasYear">
+                            </div>
+                            <p>v) Osteoarthritis</p>
+                            <div style="display: flex; justify-content: space-evenly;">
+                              <input type="number" value="{{data.addition_details.OsteoarthritisMonth}}"
+                                class="form-control" name="admission_osteoarthritisMonth" placeholder="Month">
+                              <input class="form-control" value="{{data.addition_details.OsteoarthritisYear}}"
+                                type="number" placeholder="Year" name="admission_osteoarthritisYear">
+                            </div>
+                            <p>vi) Asthma / COPD / Bronchitis</p>
+                            <div style="display: flex; justify-content: space-evenly;">
+                              <input type="number" value="{{data.addition_details.AsthmaOrCOPDOrBronchitisMonth}}"
+                                class="form-control" name="admission_asthmaOrCOPDOrBronchitisMonth" placeholder="Month">
+                              <input class="form-control" value="{{data.addition_details.AsthmaOrCOPDOrBronchitisYear}}"
+                                type="number" placeholder="Year" name="admission_asthmaOrCOPDOrBronchitisYear">
+                            </div>
+                            <p>vii) Cancer</p>
+                            <div style="display: flex; justify-content: space-evenly;">
+                              <input type="number" value="{{data.addition_details.CancerMonth}}" class="form-control"
+                                name="admission_cancerMonth" placeholder="Month">
+                              <input class="form-control" value="{{data.addition_details.CancerYear}}" type="number"
+                                placeholder="Year" name="admission_cancerYear">
+                            </div>
+                            <p>viii) Alcohol or Drug Abuse</p>
+                            <div style="display: flex; justify-content: space-evenly;">
+                              <input type="number" value="{{data.addition_details.AlcoholOrDrugAbuseMonth}}"
+                                class="form-control" name="admission_alcoholOrDrugAbuseMonth" placeholder="Month">
+                              <input class="form-control" value="{{data.addition_details.AlcoholOrDrugAbuseYear}}"
+                                type="number" placeholder="Year" name="admission_alcoholOrDrugAbuseYear">
+                            </div>
+                            <p for="exampleInputEmail1">ix) Any HIV or STD / Related Aliments</p>
+                            <div style="display: flex; justify-content: space-evenly;">
+                              <input type="number" value="{{data.addition_details.RelatedAlimentsMonth}}"
+                                class="form-control" name="admission_anyHIVOrSTDOrRelatedAlimentsMonth"
+                                placeholder="Month">
+                              <input class="form-control" value="{{data.addition_details.RelatedAlimentsYear}}"
+                                type="number" placeholder="Year" name="admission_anyHIVOrSTDOrRelatedAlimentsYear">
+                            </div>
+                            <p>Any Other Aliments Give Details</p>
+                            <input class="form-control" name="admission_anyOtherAliments" type="text"
+                              value="{{data.addition_details.OtherAliments}}" placeholder="">
+
+                            <button name="save" value="{{system}}"
+                              onclick="alert(`form saved successfully`);$(`#msform`).submit();"
+                              class="btn btn-primary btn-lg"> save </button>
+
+                            <br><br>
+                            <input class="action-button btn btn-warning" style="color: white;" name="Query"
+                              type="button" onclick="queryFunction(`{{akey}}`,`{{email}}`);" value="Query" />
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Profile</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">{{role}}</div>
+            <div class="modal-footer">
+              <form action="/logout" method="post">
+                {% csrf_token %}
+                <i class="ni ni-single-02 text-red"></i>
+                <span class="nav-link-text"><input class="ml-3" style="border: none; background: transparent"
+                    type="submit" value="Logout" /></span>
+              </form>
+              <button type="button" class="btn btn-primary">
+                Save changes
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- /.content-wrapper -->
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+  </div>
+  <!-- ./wrapper -->
+
+  <!-- jQuery -->
+
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+  <script>
+    // For Demo Purpose [Changing input group text on focus]
+    $(function () {
+      $("input, select").on("focus", function () {
+        $(this)
+          .parent()
+          .find(".input-group-text")
+          .css("border-color", "#80bdff");
+      });
+      $("input, select").on("blur", function () {
+        $(this)
+          .parent()
+          .find(".input-group-text")
+          .css("border-color", "#ced4da");
+      });
+    });
+  </script>
+
+  <script>
+    function queryFunction(key, email) {
+      console.log(key, email);
+      var txt;
+      var query = prompt("Enter a Query :");
+      if (query == null || query == "") {
+        txt = "User cancelled the prompt.";
+      } else {
+        txt = "Query raised or updated sucessfully";
+        $.get(`addQuery/${query}&${key}+${email}`);
+        alert(txt)
+        $('#msform').submit()
+      }
+      alert(txt)
+
+    }
+  </script>
+
+  <script>
+    // TODO: Replace the following with your app's Firebase project configuration
+    // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
+
+    var firebaseConfig = {
+      apiKey: "AIzaSyDlZMu8lypZDEhRpMVKlD3JcTuvItFaG2A",
+      authDomain: "bimaxpress-cashless.firebaseapp.com",
+      projectId: "bimaxpress-cashless",
+      storageBucket: "bimaxpress-cashless.appspot.com",
+      messagingSenderId: "577257002368",
+      appId: "1:577257002368:web:489252768c47b398465d65",
+      measurementId: "G-Y8B68GW5YX"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    var db = firebase.firestore();
+    function call_function(x, y) {
+
+      console.log(x);
+      console.log(y);
+
+      console.log("bjuuny");
+      var newstatus = document.getElementById("analystList").value;
+      console.log(newstatus);
+
+      db.collection("hospitals").doc(x).collection("cases").doc(y).update({
+        formstatus: newstatus,
+      })
+        .then(() => {
+          console.log("Document successfully written!");
+        })
+        .catch((error) => {
+          console.error("Error writing document: ", error);
+        });
+
+    }
+
+  </script>
+
+
+  <script src="{% static '/plugins/jquery/jquery.min.js' %}"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="{% static '/plugins/jquery-ui/jquery-ui.min.js' %}"></script>
+  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+  <script>
+    $.widget.bridge("uibutton", $.ui.button);
+  </script>
+  <!-- Bootstrap 4 -->
+  <script src="{% static '/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <!-- ChartJS -->
+  <script src="{% static '/plugins/chart.js/Chart.min.js' %}"></script>
+  <!-- Sparkline -->
+  <script src="{% static '/plugins/sparklines/sparkline.js' %}"></script>
+  <!-- JQVMap -->
+  <script src="{% static '/plugins/jqvmap/jquery.vmap.min.js' %}"></script>
+  <script src="{% static '/plugins/jqvmap/maps/jquery.vmap.usa.js' %}"></script>
+  <!-- jQuery Knob Chart -->
+  <script src="{% static '/plugins/jquery-knob/jquery.knob.min.js' %}"></script>
+  <!-- daterangepicker -->
+  <script src="{% static '/plugins/moment/moment.min.js' %}"></script>
+  <script src="{% static '/plugins/daterangepicker/daterangepicker.js' %}"></script>
+  <!-- Tempusdominus Bootstrap 4 -->
+  <script src="{% static '/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+  <!-- Summernote -->
+  <script src="{% static '/plugins/summernote/summernote-bs4.min.js' %}"></script>
+  <!-- overlayScrollbars -->
+  <script src="{% static '/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js' %}"></script>
+  <!-- AdminLTE App -->
+  <script src="{% static '/dist/js/adminlte.js' %}"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="{% static '/dist/js/demo.js' %}"></script>
+  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+  <script src="{% static '/dist/js/pages/dashboard.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+</body>
+{% load static %}
+<script src="{% static '/dist/js/pageAccordian.js' %}"></script>
+
+</html>
