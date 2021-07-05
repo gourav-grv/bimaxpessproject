@@ -755,24 +755,32 @@
                             <br><br>
                             <a href="#popup1">
                               <input type="button"
-                                style=" background-color: rgb(255, 166, 0); width: 150px; border-radius: 20px;"
+                                style=" background-color: rgb(255, 166, 0); width: 200px; border-radius: 20px;"
                                 class="btn btn-warning" href="#" value="Upload & Send Mail">
                             </a>
                             <!-- <input class="action-button btn btn-warning" style="color: white;" name="Query"
                               type="button" onclick="queryFunction(`{{akey}}`,`{{email}}`);" value="Query" /> -->
                             <div id="popup1" class="overlay">
-                              <div class="popup" style="width: 60%;">
-                                <h2>Upload New Ratelist <br> </h2>(This will replace the existing Rate List)
+                              <div class="popup" style="width: 60%; z-index: 100;">
+                                <h2>Email To Insurance Company</h2>
                                 <a class="close" href="#">&times;</a>
                                 <div class="content">
-                                  <br>
-                                  <input type="file">
-                                  <br>
-                                  <a href="#">
-                                    <button
-                                      style=" background-color: rgb(255, 166, 0); width: 120px; border-radius: 20px;"
-                                      class="btn btn-warning" href="#"> Upload</button>
-                                  </a>
+                                  <label for="exampleInputEmail1">Case Details</label>
+                                  <input class="form-control" style="width: 70%; " type="text"
+                                    placeholder="Case Details">
+
+                                  <label for="exampleInputEmail1">Upload Approved Pre Auth Form</label>
+                                  <input type="file"> <br><br>
+                                  <input type="button"
+                                    style=" background-color: rgb(255, 166, 0); width: 200px; border-radius: 20px;"
+                                    class="btn btn-warning" onclick="PreAuthFormStatusChange()" href="#" value="Send Mail">
+                                    <script>
+                                      function PreAuthFormStatusChange(){
+                                        alert('Form Status Is Changed To Unprocessed Check The Status Of Your Mail In Inbox.')
+                                        window.location = '#';
+                                      }
+                                    </script>
+
                                 </div>
                               </div>
                             </div>
