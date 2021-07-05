@@ -36,6 +36,7 @@ urlpatterns = [
     path('listData/updateFormstatus/<new>', views.updateFormstatus, name="updateFormstatus"),
     path('formData/<text>', views.formData , name='formdata'),
     path('addQuery/<que>', views.addQuery, name='addQuery'),
+
     #<-----Anis_code------>
     path('bunny',views.bunny , name="bunny"),
     path('sent',views.sentmail , name="sentmail"),
@@ -63,6 +64,9 @@ urlpatterns = [
     path('empanelledCompanies/add/randomCompany', views.randomCompany, name='randomCompany'),
     path('caseDetails', views.caseDetails, name='caseDetails'),
     path('newAction', views.newAction, name='newAction'),
+    path('loginPage', views.loginPage, name='loginPage'),
+
+    
     
     
     

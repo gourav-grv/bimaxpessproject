@@ -115,6 +115,9 @@ def caseDetails(request):
 def newAction(request):
     return render(request,'newAction.html')
 
+def loginPage(request):
+    return render(request,'loginPage.html')
+
 
 
 
