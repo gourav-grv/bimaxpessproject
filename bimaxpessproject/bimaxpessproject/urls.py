@@ -65,6 +65,8 @@ urlpatterns = [
     path('caseDetails', views.caseDetails, name='caseDetails'),
     path('newAction', views.newAction, name='newAction'),
     path('loginPage', views.loginPage, name='loginPage'),
+    path('companyDetails', views.companyDetails, name='companyDetails'),
+    
 
     
     

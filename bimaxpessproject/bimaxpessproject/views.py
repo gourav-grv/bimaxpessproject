@@ -118,6 +118,11 @@ def newAction(request):
 def loginPage(request):
     return render(request,'loginPage.html')
 
+def companyDetails(request):
+    return render(request,'companyDetails.html')
+
+    
+
 
 
 

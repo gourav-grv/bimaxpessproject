@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <title>BimaXpress</title>
+    <title>Company Details</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="{% static '/dist/css/pageAccordian.css' %}" />
     <link rel="stylesheet" href="{% static '/dist/css/adminlte.min.css' %}" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+
 
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{% static '/plugins/overlayScrollbars/css/OverlayScrollbars.min.css' %}" />
@@ -69,8 +70,107 @@
             font-size: x-small !important;
         }
 
-        .logoCard {
-            margin: 20px;
+        body {
+            font-family: Arial, sans-serif;
+            background: url(http://www.shukatsu-note.com/wp-content/uploads/2014/12/computer-564136_1280.jpg) no-repeat;
+            background-size: cover;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: Tahoma, Arial, sans-serif;
+            color: #06D85F;
+            margin: 80px 0;
+        }
+
+        .box {
+            width: 40%;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 35px;
+            border: 2px solid #fff;
+            border-radius: 20px/50px;
+            background-clip: padding-box;
+            text-align: center;
+        }
+
+        .button {
+            font-size: 1em;
+            padding: 10px;
+            color: #fff;
+            border: 2px solid #06D85F;
+            border-radius: 20px/50px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease-out;
+        }
+
+        .button:hover {
+            background: #06D85F;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            transition: opacity 500ms;
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        .overlay:target {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .popup {
+            margin: 70px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            width: 30%;
+            position: relative;
+            transition: all 5s ease-in-out;
+        }
+
+        .popup h2 {
+            margin-top: 0;
+            color: #333;
+            font-family: Tahoma, Arial, sans-serif;
+        }
+
+        .popup .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            transition: all 200ms;
+            font-size: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .popup .close:hover {
+            color: #06D85F;
+        }
+
+        .popup .content {
+            max-height: 30%;
+            overflow: auto;
+        }
+
+        @media screen and (max-width: 700px) {
+            .box {
+                width: 70%;
+            }
+
+            .popup {
+                width: 70%;
+            }
         }
     </style>
 </head>
@@ -276,77 +376,106 @@
         <div class="content-wrapper"
             style="padding-left: 5em !important; padding-right: 5em !important; background-color: white !important;">
             <div class="bigUpperCard">
-                <div style="display: flex; justify-content: space-between;">
-                    <h4 class="bigUpperCardHeading" style="font-weight: bold;">Empanelled Companies</h4>
-                    <a href="empanelledCompanies/add">
-                        <button
-                            style="float: right !important; background-color: rgb(255, 166, 0); color: white; border-radius: 20px;"
-                            class="btn btn-warning">+ Add Company</button>
-                    </a>
-                </div>
-                <div style="display: flex; margin-top: 30px; flex-wrap: wrap;">
-                    <a href="/companyDetails">
-                        <div class="logoCard" style="height: 100px !important; width: 100px !important;">
-                            <img src="../static/img/insuranceCompanyLogo/1200px-Star_Health_and_Allied_Insurance.svg.png"
-                                class="img-fluid" alt="" srcset="">
+                <h4 class="bigUpperCardHeading" style="font-weight: bold;">Company Details</h4>
+                <div id="mainDiv" style="display: flex;">
+                    <div style="width: 100px; margin-right: 20px;">
+                        <img src="https://image.flaticon.com/icons/png/512/33/33777.png" height="50px"
+                            style="border-radius: 50%;" alt="" srcset="">
+                    </div>
+                    <div>
+                        <div style="display: flex;">
+                            <div class="forNamePhone" style="width: 15em; margin-right: 10px !important;">
+                                <span style="font-size: smaller;" class="smallText">Company Name</span> <br>
+                                <p class="normalText">Grv institute</p>
+
+                                <span style="font-size: smaller;" class="smallText">Discount Details</span> <br>
+                                <textarea style="margin-left: -1px !important; width: 200px;" class="form-control"
+                                    placeholder="Discount Details"></textarea>
+
+
+                            </div>
+                            <div class="forNamePhone" style="width: 15em; margin-right: 10px !important;">
+                                <span style="font-size: smaller;" class="smallText">Contact Expiry Date</span> <br>
+                                <p class="normalText" id='expiryDate'>20-20-20</p>
+
+                                <span style="font-size: smaller;" class="smallText">Exclusion Details</span> <br>
+                                <textarea style="margin-left: -1px !important; width: 200px;" class="form-control"
+                                    placeholder="Exclusion Details"></textarea>
+
+
+                            </div>
+                            <div id="popup1" class="overlay" style="overflow-y: auto;">
+                                <div class="popup" style="width: 60%; overflow-y: auto;">
+                                    <h2>Ratelist</h2>
+                                    <a class="close" href="#">&times;</a>
+                                    <div class="content" style="overflow-y: auto;">
+                                        <iframe style="height: 800px"
+                                            src="https://drive.google.com/viewerng/viewer?embedded=true&url=http://www.orimi.com/pdf-test.pdf#toolbar=0&scrollbar=0"
+                                            frameBorder="0" scrolling="auto" height="200%" width="100%"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="forCityRohiniID" style="width: 15em;">
+
+                            </div>
+                            <div id="popup2" class="overlay">
+                                <div class="popup" style="width: 60%;">
+                                    <h2>Upload New Ratelist <br> </h2>(This will replace the existing Rate List)
+                                    <a class="close" href="#">&times;</a>
+                                    <div class="content">
+                                        <br>
+                                        <input type="file">
+                                        <br>
+                                        <a href="#">
+                                            <button
+                                                style=" background-color: rgb(255, 166, 0); width: 120px; border-radius: 20px;"
+                                                class="btn btn-warning" href="#"> Upload</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="plan" style="width: 10em;">
+                                <span style="font-size: smaller;" class="smallText"> </span> <br>
+
+                                <span style="font-size: smaller;"></span> <br>
+                                <p></p>
+                                <p></p> <br><br> <br><br><br>
+
+
+                            </div>
                         </div>
-                    </a>
-                    <a href="/companyDetails">
-                        <div class="logoCard" style="max-height: 100px !important; max-width: 100px !important;">
-                            <img src="../static/img/insuranceCompanyLogo/1200px-The_Oriental_Insurance_Company_Logo.svg.png"
-                                class="img-fluid" alt="" srcset="">
-                        </div>
-                    </a>
-                    <a href="/companyDetails">
-                        <div class="logoCard" style="max-height: 100px !important; max-width: 100px !important;">
-                            <img src="../static/img/insuranceCompanyLogo/acko-logo-knowledge-panel.png"
-                                class="img-fluid" alt="" srcset="">
-                        </div>
-                    </a>
-                    <a href="/companyDetails">
-                        <div class="logoCard" style="max-height: 100px !important; max-width: 100px !important;">
-                            <img src="../static/img/insuranceCompanyLogo/aditya birla.png" class="img-fluid" alt=""
-                                srcset="">
-                        </div>
-                    </a>
-                    <a href="/companyDetails">
-                        <div class="logoCard" style="max-height: 100px !important; max-width: 100px !important;">
-                            <img src="../static/img/insuranceCompanyLogo/Alankit_Logo.jpg" class="img-fluid" alt=""
-                                srcset="">
-                        </div>
-                    </a>
-                    <a href="/companyDetails">
-                        <div class="logoCard" style="max-height: 100px !important; max-width: 100px !important;">
-                            <img src="../static/img/insuranceCompanyLogo/Anmol medicare.png" class="img-fluid" alt=""
-                                srcset="">
-                        </div>
-                    </a>
-                    <a href="/companyDetails">
-                        <div class="logoCard" style="max-height: 100px !important; max-width: 100px !important;">
-                            <img src="../static/img/insuranceCompanyLogo/apollo-munich-health.jpg" class="img-fluid"
-                                alt="" srcset="">
-                        </div>
-                    </a>
-                    <a href="/companyDetails">
-                        <div class="logoCard" style="max-height: 100px !important; max-width: 100px !important;">
-                            <img src="../static/img/insuranceCompanyLogo/bajaj-allianz.png" class="img-fluid" alt=""
-                                srcset="">
-                        </div>
-                    </a>
-                    <a href="/companyDetails">
-                        <div class="logoCard" style="max-height: 100px !important; max-width: 100px !important;">
-                            <img src="../static/img/insuranceCompanyLogo/bharti-axa.png" class="img-fluid" alt=""
-                                srcset="">
-                        </div>
-                    </a>
-                    <a href="/companyDetails">
-                        <div class="logoCard" style="max-height: 100px !important; max-width: 100px !important;">
-                            <img src="../static/img/insuranceCompanyLogo/Care_health_insurance_logo.png"
-                                class="img-fluid" alt="" srcset="">
-                        </div>
-                    </a>
+                        <a href="#" onclick="mainDivChange()">
+                            <button
+                                style=" background-color: rgb(255, 166, 0); width: 120px; border-radius: 20px; float: right; margin-right: 2em;"
+                                class="btn btn-warning" href="#" id='editDetails'> Edit Details</button>
+                        </a>
+                        <a href="#popup1">
+                            <input type="button"
+                                style=" background-color: rgb(255, 166, 0); width: 120px; border-radius: 20px;float: right; margin-right: 2em;"
+                                class="btn btn-warning" href="#" id='viewRatelist' value="View Ratelist">
+                        </a>
+                        <script>
+                            function mainDivChange() {
+                                var expiry = document.getElementById('expiryDate').value;
+                                var editDetails = document.getElementById('editDetails').setAttribute("style", "display: none;");
+                                var viewRatelist = document.getElementById('viewRatelist').setAttribute('value',"Submit");
+
+                                document.getElementById('expiryDate').innerHTML = `
+                                <input type='date' value='${expiry}' style="margin-left: -1px !important; width: 200px;" class="form-control"
+                                    placeholder="Exclusion Details" >
+                                `;
+
+                            }
+                        </script>
+
+
+                    </div>
 
                 </div>
+
+
 
             </div>
 
