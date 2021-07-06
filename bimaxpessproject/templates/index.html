@@ -178,10 +178,9 @@
     }
 
     .cardBottom {
-      width: 17.6em;
+      width: 16em;
       max-width: 17.6em;
-      height: 20em;
-      max-height: 20em;
+      min-height: 20em;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
       transition: 0.3s;
       border-radius: 20px;
@@ -418,27 +417,29 @@
 
 
 
-      {% for i in cases_data %}
-      <a href="/caseDetails">
-        <button type="submit" name="system" value="{{hospital_email}}+{{i.casenumber}}" form="systemform"
-          style="background: transparent; border: none;">
-          <form action="/claimpage1" method="get" id="systemform">
-            {% csrf_token %}
-            <div class="cardBottom" id="cardBottom" name="cardBottom">
-              <h4>{{i.patient_name}}</h4>
-              <p>{{i.email}}</p>
-              <hr>
-              <p><b>Form Status -</b>{{i.formstatus}}</p>
-              <p><b>Admission Date -</b>{{i.Date}}</p>
-              <p><b>Claim Amount -</b>22</p>
-              <p><b>Insurance TPA -</b>{{i.company}}</p>
+      <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
+        {% for i in cases_data %}
+        <a href="/caseDetails">
+          <button type="submit" name="system" value="{{hospital_email}}+{{i.casenumber}}" form="systemform"
+            style="background: transparent; border: none;">
+            <form action="/claimpage1" method="get" id="systemform">
+              {% csrf_token %}
+              <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;" >
+                <p style="font-size: 1.5em; margin-top: 0.5em;"><b>{{i.patient_name}}</b></p>
+                <p style="margin-top: -20px;">{{i.email}}</p>
+                <hr>
+                <p style="margin-top: -18px;"><b>Form Status -</b>{{i.formstatus}}</p>
+                <p style="margin-top: -18px;"><b>Admission Date -</b>{{i.Date}}</p>
+                <p style="margin-top: -18px;"><b>Claim Amount -</b>22</p>
+                <p style="margin-top: -18px;"><b>Insurance TPA -</b>{{i.company}}</p>
 
-            </div>
-          </form>
-        </button>
-      </a>
-      {% endfor %}
+              </div>
+            </form>
+          </button>
+        </a>
+        {% endfor %}
 
+      </div>
       {{maindata}}
 
 

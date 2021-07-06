@@ -1,22 +1,25 @@
-{% load static%}
-
 <!DOCTYPE html>
-<html>
+{% load static %}
+<html lang="en">
 
 <head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <title>BimaXpress</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 
   <link rel="stylesheet" type="text/css" href="{%static '/dist/css/style.css'%}">
 
-  <script
-  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   {% if title %}
   <title> django blog - {{title}}</title>
@@ -25,321 +28,584 @@
   {%endif%}
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  
 
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static '/plugins/fontawesome-free/css/all.min.css' %}" />
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="{% static 'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' %}" />
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet"
+    href="{% static '/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css' %}" />
+  <!-- iCheck -->
+  <link rel="stylesheet" href="{% static '/plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}" />
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="{% static '/plugins/jqvmap/jqvmap.min.css' %}" />
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static '/dist/css/pageAccordian.css' %}" />
+  <link rel="stylesheet" href="{% static '/dist/css/adminlte.min.css' %}" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="{% static '/plugins/overlayScrollbars/css/OverlayScrollbars.min.css' %}" />
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="{% static '/plugins/daterangepicker/daterangepicker.css' %}" />
+  <!-- summernote -->
+  <link rel="stylesheet" href="{% static '/plugins/summernote/summernote-bs4.min.css' %}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    body {
+      text-transform: capitalize;
+      background-color: white !important;
+      background: white !important;
+      font-family: 'Poppins', sans-serif !important;
+      height: 100vh;
+      overflow-y: hidden;
+    }
+
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 10%;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      padding: 12px 16px;
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  </style>
+
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyDlZMu8lypZDEhRpMVKlD3JcTuvItFaG2A",
+      authDomain: "bimaxpress-cashless.firebaseapp.com",
+      projectId: "bimaxpress-cashless",
+      storageBucket: "bimaxpress-cashless.appspot.com",
+      messagingSenderId: "577257002368",
+      appId: "1:577257002368:web:489252768c47b398465d65",
+      measurementId: "G-Y8B68GW5YX"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
+  <style>
+    .border-md {
+      border-width: 2px;
+    }
+
+    .btn-facebook {
+      background: #405d9d;
+      border: none;
+    }
+
+    .btn-facebook:hover,
+    .btn-facebook:focus {
+      background: #314879;
+    }
+
+    .btn-twitter {
+      background: #42aeec;
+      border: none;
+    }
+
+    .btn-twitter:hover,
+    .btn-twitter:focus {
+      background: #1799e4;
+    }
+
+    body {
+      min-height: 100vh;
+    }
+
+    .form-control:not(select) {
+      padding: 1.5rem 0.5rem;
+    }
+
+    select.form-control {
+      height: 52px;
+      padding-left: 0.5rem;
+    }
+
+    .form-control::placeholder {
+      color: #ccc;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    .form-control:focus {
+      box-shadow: none;
+    }
+  </style>
 </head>
 <script src="{% static '/dist/js/script_body.js' %}"></script>
-<body>
 
-  <!-- <div class="__header"> -->
-  <div class="site-header">
-    <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-      <div class="header__left">
-        <img src="https://www.bimaxpress.com/assets/img/Asset%201.png" alt="" width="243" height="60" />
-      </div>
+<body class="hold-transition sidebar-mini layout-fixed">
+  <div class="wrapper">
+    <!-- Preloader -->
+    <div class="preloader flex-column justify-content-center align-items-center">
+      <img class="animation__shake" src="{% static 'dist/img/AdminLTELogo.png' %}" alt="AdminLTELogo" height="60"
+        width="60" />
+    </div>
 
-      <div class="wrapper">
-        <div class="container">
-          <!-- <div class="navbar-nav mr-auto"> -->
-          <div class="search_wrap s3">
-            <div class="search_box">
-              <input type="text" class="input" placeholder="search...">
-              <div class="btn btn_common" src="C:\Users\anish\Downloads\Email app assets\Email app assets\loupe.png">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="index3.html" class="nav-link">Home</a>
+        </li>
 
-              </div>
-            </div>
-          </div>
-          <!-- </div> -->
-        </div>
-      </div>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="#" class="nav-link">Contact</a>
+        </li>
+      </ul>
+      {% comment %} <input class="search__input" type="text" placeholder="Search"
+        style="width: 20em; margin-top: 8px; margin-left: 8px;" /> {% endcomment %}
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
 
+
+        <li class="nav-item">
+          <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+            <i class="fas fa-expand-arrows-alt"></i>
+          </a>
+        </li>
+
+        {% comment %}
+
+        <li class="nav-item">
+          <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+            <i class="fas fa-th-large"></i>
+          </a>
+        </li>
+
+        {% endcomment %}
+      </ul>
+
+      <form action="/logout">
+        <button type="submit" class="btn btn-danger">Log Out</button>
+      </form>
     </nav>
+    <!-- /.navbar -->
 
-  </div>
-  
-  <!-- </div> -->
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4"
+      style="margin-top: 5em; max-height: 80%; background-color: #f4f6f9; color: black; border-top-right-radius: 20px;border-bottom-right-radius: 20px;">
+      <!-- Brand Logo -->
 
-  <div class="main__body">
-    <div class="sidebar">
-      <div class="sidebar__compose" role="button" onclick="click_handler()">Compose</div>
+      <!-- Sidebar -->
+      <div class="sidebar">
 
-      <div class="active__tabs">
-        <div class="tab__1 tab__1active">
-          <div class="Inbox">
-            <div class="inbox_img"></div>
-            <a href="{%url 'bunny'%}" class="fnt"> Inbox </a>
-            
-          </div>
-        </div>
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="true">
+            <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+            <li class="nav-item menu-open" style="margin-left: -50px !important;">
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="/postsignIn" class="nav-link active">
+                    <i class="fas fa-home"></i>
+                    <p>Home</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="bunny" class="nav-link active" style="background-color: rgb(255, 166, 0); color:black;">
+                    <i class="fas fa-envelope"></i>
+                    <p>Email</p>
+                  </a>
+                </li>
+                {% if role == 'admin' %}
+                <li class="nav-item">
+                  <a href="adduser" class="nav-link active">
+                    <i class="fas fa-user-plus"></i>
+                    <p>Add Customer</p>
+                  </a>
+                </li>
+                {% endif %}
 
-        <div class="tab__1 tab__1active">
-          <div class="Inbox">
-            <div class="inbox_img"></div>
-            <span class="inbox_msg">
-              <a href="{%url 'sentmail'%}" class="fnt">Sent</a>
-            </span>
-          </div>
-        </div>
+                <li class="nav-item">
+                  <a class="nav-link active">
 
-        <div class="tab__1 tab__1active">
-          <div class="Inbox">
-            <div class="inbox_img"></div>
-            <span class="inbox_msg">
-              <a href="{%url 'trashmail'%}" class="fnt">Trash</a>
-            </span>
-          </div>
-        </div>
+                    <form action="/claimpage1" method="get" id="systemform">
+                      {% csrf_token %}
+                      <i style="color:black;" class="fas fa-plus"></i>
+                      <p><button style="color: black; border: none; background-color:transparent;" type="submit"
+                          name="system" value="{{hospital_email}}+{{backcase}}" form="systemform">New
+                          Case
+                        </button></p>
+                    </form>
+                  </a>
+                </li>
 
-        <div class="tab__1 tab__1active">
-          <div class="Inbox">
-            <div class="inbox_img"></div>
-            <span class="inbox_msg">
-              <a href="{%url 'draftmail'%}" class="fnt">Draft</a>
-            </span>
-          </div>
-        </div>
+                <button
+                  style="background-color: rgb(255, 166, 0); width: 150px; border-radius: 10px; height: 40px; border: none;"
+                  onclick="click_handler()"> <i class="fas fa-plus-circle">
+                  </i>Compose
+                </button>
+                <br>
+                <li class="nav-item ">
+                  <a href="{%url 'bunny'%}" class="nav-link active">
+                    <i class="fas fa-inbox"></i>
+                    <p>Inbox</p>
+                  </a>
+                </li>
 
-        <div class="tab__1 tab__1active">
-          <div class="Inbox">
-            <div class="inbox_img"></div>
-            <span class="inbox_msg">
-              <a href="{%url 'starredmail'%}" class="fnt">Starred</a>
-            </span>
-          </div>
-        </div>
+                <li class="nav-item ">
+                  <a href="{%url 'sentmail'%}" class="nav-link active">
+                    <i class="fas fa-share"></i>
+                    <p>Sent</p>
+                  </a>
+                </li>
 
+                <li class="nav-item ">
+                  <a href="{%url 'trashmail'%}" class="nav-link active">
+                    <i class="fas fa-trash"></i>
+                    <p>Trash</p>
+                  </a>
+                </li>
+
+                <li class="nav-item ">
+                  <a href="{%url 'draftmail'%}" class="nav-link active">
+                    <i class="fab fa-firstdraft"></i>
+                    <p>Draft</p>
+                  </a>
+                </li>
+
+                <li class="nav-item ">
+                  <a href="{%url 'starredmail'%}" class="nav-link active">
+                    <i class="fas fa-star"></i>
+                    <p>Starred</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
       </div>
-    </div>
+      <!-- /.sidebar -->
+    </aside>
 
 
-    <div class="email__body">
-      <!-- sort by started -->
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper"
+      style="padding-left: 2em !important; padding-right: 0.5em !important; background-color: white !important; height: 800vh;">
 
-      <div class="sort__boy">
-        <button onclick="myFunction()" class="dropbtn">Sort By</button>
-        <div id="myDropdown" class="dropdown-content">
-          <a href="#date">Date</a>
-          <a href="#name">Name</a>
+      <!-- </div> -->
 
+      <div class="main__body" style="width: 100% !important;">
+
+
+        <div class="email__body" style="width: 40% !important;">
+          <!-- sort by started -->
+
+          <div class="sort__boy">
+            <button onclick="myFunction()" class="dropbtn">Sort By</button>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="#date">Date</a>
+              <a href="#name">Name</a>
+            </div>
+          </div>
+
+
+          <div class="__functionalities">
+            <button onclick="replyFunction()"
+              style="background-color: rgb(255, 166, 0); width: 150px; border-radius: 10px; height: 40px; border: none; color: white !important;">
+              reply
+            </button>
+            <button onclick="fwdFunction()"
+              style="background-color: rgb(255, 166, 0); width: 150px; border-radius: 10px; height: 40px; border: none; color: white !important;">
+              forward
+            </button>
+
+          </div>
+
+          <!-- sort by ended -->
+          <hr />
+
+          <!-- email list started -->
+
+          <div id='email__list' class='__emaillist'>
+
+            {% for i in data %}
+            <div class="single__email" id="singleemail_{{i.id}}">
+              <div class="name__date">
+                <div class="__name" id="name1">
+                  {{i.name}}
+                </div>
+                <div class="__datetime">
+                  <div class="__date" id="date1">
+                    {{i.date}}
+                  </div>
+
+                  <div class="__time" id="time1">
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="__subject" id="sub1">
+                {{i.subject}}
+              </div>
+
+              <div class="__message" id="msg1">
+                {{i.message|safe}}
+              </div>
+              <div class="__sender" id="sender1" style="display: none;">{{i.from}}</div>
+            </div>
+            {%endfor%}
+          </div>
         </div>
-      </div>
 
-      <!-- sort by ended -->
-      <hr />
+        <!-- email list ended -->
 
-      <!-- email list started -->
 
-      <div id='email__list' class='__emaillist'>
-        
-        {% for i in data %}
-          <div class="single__email" id="singleemail_{{i.id}}">
-            <div class="name__date">
-              <div class="__name" id="name1">
-                {{i.name}}
-              </div>
-              <div class="__datetime">
-                <div class="__date" id="date1">
-                  {{i.date}}
+
+        <div class="email__msgbody" style="width: 60% !important;">
+          <div class="email__header" style="width: 60%;">
+            <div class="email__details">
+              <div class="sender__details">
+                <div class="sender__name" id="sname">
+                  <!-- Anish Shende -->
                 </div>
-
-                <div class="__time" id="time1">
-
+                <br>
+                <div class="sender__email" id="mname">
+                  <!-- anishshende001@gmail.com{{send}} -->
                 </div>
               </div>
+
+              <span class="reciever__details" id="rname">
+                <!-- anish@bimaxpress.com -->
+              </span>
             </div>
 
-          <div class="__subject" id="sub1">
-            {{i.subject}}
+
           </div>
 
-          <div class="__message" id="msg1">
-            {{i.message|safe}}
+          <hr />
+
+          <div class="email__subject" id="sendersubject">
+
           </div>
-          <div class="__sender" id="sender1" style="display: none;">{{i.from}}</div>
+
+          <div class="email__emailbody" id="sendermessage">
+
+          </div>
+
+          <div class="__attachments">
+
+          </div>
+
+          <!-- compose new mail box -->
+          <div class="compose__box" id="__composebox" action="/bunny" style="display:none">
+
+            <div class="compose__header">
+              <div class="__composeFunctions">
+                <span class="__composeClose" role="button" id="close__compose" onclick="compclosefunction()">x</span>
+                <!-- <span class="__composeMin" role="button" id="minimize__compose" onclick = "minfunction()">-</span> -->
+
+              </div>
+              <div class="messagetext">New Message</div>
+
+            </div>
+            <form method='POST' id="compose-post-form">
+              {% csrf_token %}
+
+              <div class="form-input to">
+                <!-- <label>To: </label> -->
+                <input type="text" id="recvname" name="recv" placeholder="send mail to" />
+              </div>
+
+              <div class="form-input bcc">
+                <!-- <label>Bcc: </label> -->
+                <input type="text" id="recvnameBcc" name="recvBcc" placeholder="bcc" />
+              </div>
+
+              <div class="form-input cc">
+                <!-- <label>Cc: </label> -->
+                <input type="text" id="recvnameCc" name="recvCc" placeholder="cc" />
+              </div>
+
+              <div class="form-input sub">
+                <!-- <label>subject: </label> -->
+                <input type="text" id="send_subject" name="ssub" placeholder="subject of mail" />
+              </div>
+
+              <div class="form-input mssg">
+                <!-- <label>message: </label> -->
+                <input type="text" id="send_msg" name="smsg" class="textarea" placeholder="mail message" />
+              </div>
+
+              <div class="sendattach">
+                <input type="file" id="myFile" name="filenameupload"
+                  accept=".xlsx,.xls,image/*,.doc,audio/*,.docx,video/*,.ppt,.pptx,.txt,.pdf" multiple>
+              </div>
+
+              <div class="footer-bar">
+                <div class="sendmailbtn">
+                  <input type="submit" value="Send Mail" />
+                </div>
+              </div>
+
+
+            </form>
+          </div>
+
+          <!-- reply new mail box -->
+          <div class="compose__box" id="__replybox" action="/replymail" style="display:none">
+
+            <div class="compose__header">
+              <div class="__composeFunctions">
+                <span class="__composeClose" role="button" id="reply__compose" onclick="repclosefunction()">x</span>
+                <!-- <span class="__composeMin" role="button" id="minimize__compose" onclick = "minfunction()">-</span> -->
+
+              </div>
+              <div class="messagetext" id="replytextheader">Reply Message</div>
+
+            </div>
+            <form method='POST' action="/replymail" id="reply-post-form">
+              {% csrf_token %}
+
+              <div class="form-input to" style="display: none;">
+                <!-- <label>To: </label> -->
+                <input type="text" id="rep_id" name="rep_id" />
+              </div>
+
+              <div class="form-input to">
+                <!-- <label>To: </label> -->
+                <input type="text" id="rep_recvname" name="rep_recv" value="user_email_address" />
+              </div>
+
+              <div class="form-input bcc">
+                <!-- <label>Bcc: </label> -->
+                <input type="text" id="rep_recvnameBcc" name="rep_recvBcc" placeholder="bcc" />
+              </div>
+
+              <div class="form-input cc">
+                <!-- <label>Cc: </label> -->
+                <input type="text" id="rep_recvnameCc" name="rep_recvCc" placeholder="cc" />
+              </div>
+
+              <div class="form-input sub">
+                <!-- <label>subject: </label> -->
+                <input type="text" id="rep_send_subject" name="rep_ssub" placeholder="subject of mail" />
+              </div>
+
+              <div class="form-input mssg">
+                <!-- <label>message: </label> -->
+                <input type="text" id="rep_send_msg" name="rep_smsg" class="textarea" placeholder="mail message" />
+              </div>
+
+              <div class="sendattach">
+                <input type="file" id="rep_myFile" name="rep_filenameupload"
+                  accept=".xlsx,.xls,image/*,.doc,audio/*,.docx,video/*,.ppt,.pptx,.txt,.pdf" multiple>
+              </div>
+
+              <div class="footer-bar">
+                <div class="sendmailbtn">
+                  <input type="hidden" name="next" value="{{ request.path }}">
+                  <input type="submit" value="Send Mail" onclick="printfunction()" />
+                </div>
+              </div>
+
+
+            </form>
+          </div>
+
         </div>
-        {%endfor%}
+
+
+
       </div>
-    </div>
 
-    <!-- email list ended -->
 
-  
 
-  <div class="email__msgbody">
-    <div class="email__header">
-      <div class="email__details">
-        <div class="sender__details">
-          <div class="sender__name" id="sname">
-            <!-- Anish Shende -->
-          </div>
 
-          <div class="sender__email" id="mname">
-                <!-- anishshende001@gmail.com{{send}} -->
-          </div>
-        </div>
-
-        <span class="reciever__details" id="rname">
-          <!-- anish@bimaxpress.com -->
-        </span>
-      </div>
-
-      <div class="espace" style="width: 100px"></div>
-      <div class="__functionalities">
-        <div class="__delete"> del</div>
-        <button class="__reply" onclick="replyFunction()"> rep</button>
-        <button class="__forward" onclick="fwdFunction()"> fwd</button>
-        <div class="__favourite">fav</div>
-        <div class="time__date">time</div>
-      </div>
-      
-    </div>
-
-    <hr />
-
-    <div class="email__subject" id="sendersubject">
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 
     </div>
 
-    <div class="email__emailbody" id="sendermessage">
-
-    </div>
-
-    <div class="__attachments">
-
-    </div>
-
-    <!-- compose new mail box -->
-    <div class="compose__box" id="__composebox" action="/bunny" style="display:none">
-      
-      <div class="compose__header">
-        <div class="__composeFunctions">
-          <span class="__composeClose" role="button" id="close__compose" onclick = "compclosefunction()">x</span>
-          <!-- <span class="__composeMin" role="button" id="minimize__compose" onclick = "minfunction()">-</span> -->
-         
-        </div>
-        <div class="messagetext">New Message</div>
-        
-      </div>
-      <form method='POST' id="compose-post-form">
-        {% csrf_token %}
-
-        <div class="form-input to">
-          <!-- <label>To: </label> -->
-          <input type="text" id="recvname" name="recv" placeholder="send mail to"/>
-        </div>
-        
-        <div class="form-input bcc">
-          <!-- <label>Bcc: </label> -->
-          <input type="text" id="recvnameBcc" name="recvBcc" placeholder="bcc"/>
-        </div>
-
-        <div class="form-input cc">
-          <!-- <label>Cc: </label> -->
-          <input type="text" id="recvnameCc" name="recvCc" placeholder="cc" />
-        </div>
-
-        <div class="form-input sub">
-          <!-- <label>subject: </label> -->
-          <input type="text" id="send_subject" name="ssub" placeholder="subject of mail"/>
-        </div>
-
-        <div class="form-input mssg">
-          <!-- <label>message: </label> -->
-          <input type="text" id="send_msg" name="smsg" class="textarea" placeholder="mail message" />
-        </div>
-
-        <div class="sendattach">
-          <input type="file" id="myFile" name="filenameupload" accept=".xlsx,.xls,image/*,.doc,audio/*,.docx,video/*,.ppt,.pptx,.txt,.pdf" multiple>
-        </div>
-
-        <div class="footer-bar">
-          <div class="sendmailbtn">
-            <input type="submit" value="Send Mail"/>
-          </div>
-        </div>
-        
-  
-      </form>
-    </div>
-    
-    <!-- reply new mail box -->
-    <div class="compose__box" id="__replybox" action="/replymail" style="display:none">
-      
-      <div class="compose__header">
-        <div class="__composeFunctions">
-          <span class="__composeClose" role="button" id="reply__compose" onclick = "repclosefunction()">x</span>
-          <!-- <span class="__composeMin" role="button" id="minimize__compose" onclick = "minfunction()">-</span> -->
-         
-        </div>
-        <div class="messagetext" id="replytextheader">Reply Message</div>
-        
-      </div>
-      <form method='POST' action = "/replymail" id="reply-post-form">
-        {% csrf_token %}
-
-        <div class="form-input to" style="display: none;">
-          <!-- <label>To: </label> -->
-          <input type="text" id="rep_id" name="rep_id"/>
-        </div>
-
-        <div class="form-input to">
-          <!-- <label>To: </label> -->
-          <input type="text" id="rep_recvname" name="rep_recv" value="user_email_address"/>
-        </div>
-        
-        <div class="form-input bcc">
-          <!-- <label>Bcc: </label> -->
-          <input type="text" id="rep_recvnameBcc" name="rep_recvBcc" placeholder="bcc"/>
-        </div>
-
-        <div class="form-input cc">
-          <!-- <label>Cc: </label> -->
-          <input type="text" id="rep_recvnameCc" name="rep_recvCc" placeholder="cc" />
-        </div>
-
-        <div class="form-input sub">
-          <!-- <label>subject: </label> -->
-          <input type="text" id="rep_send_subject" name="rep_ssub" placeholder="subject of mail"/>
-        </div>
-
-        <div class="form-input mssg">
-          <!-- <label>message: </label> -->
-          <input type="text" id="rep_send_msg" name="rep_smsg" class="textarea" placeholder="mail message" />
-        </div>
-
-        <div class="sendattach">
-          <input type="file" id="rep_myFile" name="rep_filenameupload" accept=".xlsx,.xls,image/*,.doc,audio/*,.docx,video/*,.ppt,.pptx,.txt,.pdf" multiple>
-        </div>
-
-        <div class="footer-bar">
-          <div class="sendmailbtn">
-            <input type="hidden" name="next" value="{{ request.path }}">
-            <input type="submit" value="Send Mail" onclick="printfunction()"/>
-          </div>
-        </div>
-        
-  
-      </form>
-    </div>
-
-  </div>
-
-  <!-- compose box -->
-  
 
   </div>
 
 
-  
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+
+
+
+
+
+  <script src="{% static '/plugins/jquery/jquery.min.js' %}"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="{% static '/plugins/jquery-ui/jquery-ui.min.js' %}"></script>
+  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+  <script>
+    $.widget.bridge("uibutton", $.ui.button);
+  </script>
+  <!-- Bootstrap 4 -->
+  <script src="{% static '/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <!-- ChartJS -->
+  <script src="{% static '/plugins/chart.js/Chart.min.js' %}"></script>
+  <!-- Sparkline -->
+  <script src="{% static '/plugins/sparklines/sparkline.js' %}"></script>
+  <!-- JQVMap -->
+  <script src="{% static '/plugins/jqvmap/jquery.vmap.min.js' %}"></script>
+  <script src="{% static '/plugins/jqvmap/maps/jquery.vmap.usa.js' %}"></script>
+  <!-- jQuery Knob Chart -->
+  <script src="{% static '/plugins/jquery-knob/jquery.knob.min.js' %}"></script>
+  <!-- daterangepicker -->
+  <script src="{% static '/plugins/moment/moment.min.js' %}"></script>
+  <script src="{% static '/plugins/daterangepicker/daterangepicker.js' %}"></script>
+  <!-- Tempusdominus Bootstrap 4 -->
+  <script src="{% static '/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+  <!-- Summernote -->
+  <script src="{% static '/plugins/summernote/summernote-bs4.min.js' %}"></script>
+  <!-- overlayScrollbars -->
+  <script src="{% static '/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js' %}"></script>
+  <!-- AdminLTE App -->
+  <script src="{% static '/dist/js/adminlte.js' %}"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="{% static '/dist/js/demo.js' %}"></script>
+  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+  <script src="{% static '/dist/js/pages/dashboard.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
     crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
     crossorigin="anonymous"></script>
 </body>
 
