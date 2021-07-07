@@ -64,7 +64,7 @@ firebaseConfig = {
 }
 mth = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ]
 
-insurance_company={}
+
 
 firebase = pyrebase.initialize_app(firebaseConfig)
 authe = firebase.auth()
@@ -238,6 +238,8 @@ def postsignIn(request):
             context['values'] = values
             context['hospital_email'] = request.session['hospital_email']
             context['role'] = request.session.get('role')
+            context['insurance_company'] = request.session['insurance_company']
+            
             return render(request, "index.html", context)
     
         else:
@@ -399,10 +401,15 @@ def updateunprocess(request):
                 email = email+char
             if flag == 1 and char != ' ':
                 case = case+char
-    db.collection(u'hospitals').document(request.session['hospital_email']).collection(u'cases').document(case).update({
+    try:
+        db.collection(u'hospitals').document(request.session['hospital_email']).collection(u'cases').document(case).update({
                             'formstatus': "Unprocessed",
          })
-    
+    except:
+        db.collection(u'hospitals').document(request.session['hospital_email']).collection(u'cases').document(case).add({
+                            'formstatus': "Unprocessed",
+         })
+        
     return redirect("dashboard")
 
 def getcasedetail(request):
@@ -439,13 +446,28 @@ def getcasedetail(request):
     status = db.collection(u'hospitals').document(request.session['hospital_email']).collection(
         u'cases').document(f'{casenumber}')
     
+    
     formstatus = status.get()
     if formstatus.exists:
         b = formstatus.to_dict()
         context['formstatus'] = b['formstatus']
         
     else:
-        print("no data found")
+        print("no data found o")
+    audit=[]
+    audit_trail = db.collection(u'hospitals').document(request.session['hospital_email']).collection(
+        u'cases').document(f'{casenumber}')
+    audit_value = audit_trail.get()
+    if audit_value.exists:
+        b = audit_value.to_dict()
+        values=b['audit_trail']
+        for i in values:
+            x = i.split("+")
+            audit.append(x)
+        print(audit)
+        context['audit'] = audit    
+    else:
+        print("no data found of audit traik")
         
         context['hospital_email'] = request.session['hospital_email'] #this is hospital email also accessible in caseDetails page
     
@@ -519,7 +541,7 @@ def claimpage1(request):
         context['bunny'] = bunny
         context['data'] = databunny
         context['system'] = system
-        context['insurance_company'] = insurance_company
+        context['insurance_company'] = request.session['insurance_company']
 
         print("cool dude", system)
 
@@ -635,14 +657,15 @@ def about(request):
 
 def login(request):
     context={}
+    insurance_company={}
     message = "Provide Email password to singnIn"
     docs = db.collection(u'InsuranceCompany_or_TPA').stream()
     for doc in docs:
         insurance_company[f'{doc.id}'] = f'{doc.to_dict()}'
-        
+    request.session['insurance_company'] = insurance_company
     print(insurance_company)
     context['message'] = message
-    context['insurance_company'] = insurance_company
+    context['insurance_company'] = request.session['insurance_company']
     
     return render(request, 'login.html', context)
 
@@ -650,6 +673,7 @@ def login(request):
 def dashboard(request):
     context = {}
     cases_data = []
+    counter=0
     list_status = ['draft',  'Unprocessed','query', 'Approved', 'Reject',
                        'Enhance Discharge', 'Discharge Approved', 'All Processed']
     values = {
@@ -670,6 +694,7 @@ def dashboard(request):
             if(obj.id == request.session['hospital_email']):
                 val = Cases.collection.parent(obj.key).fetch()
                 for i in val:
+                    counter=counter+1
                     if(i.status == "done"):
                         print("--------")
                         print("case Number", i.id)
@@ -726,11 +751,13 @@ def dashboard(request):
         return render("admin login")
     
     print(values)
+    context["backcase"] = "case"+str(counter+1) 
     context["cases_data"] = cases_data
     context['list_status'] = list_status
     context['values'] = values
     context['hospital_email'] = request.session['hospital_email']
     context['role'] = request.session.get('role')
+    context['insurance_company'] = request.session['insurance_company']
     
     return render(request, "index.html", context)
 
@@ -747,27 +774,29 @@ def get_name(email):
 def savestatus(request):
     if request.method == "POST":
         data = request.POST.dict()
+        
     print(data)
     
-    bunny={
-        "status_array" : {
-        "form_status":data['status'],
-        'Action_date':datetime.today().strftime('%Y-%m-%d'),
-        "summary":"yet to fetch"    }
-    
-    }
-    
+   
+    city_ref = db.collection(u'hospitals').document(request.session['hospital_email']).collection(u'cases').document(data['save'])
+
     try:
+        city_ref.update({"audit_trail": firestore.ArrayUnion([data.get('status',"None")+'+'+datetime.today().strftime('%Y-%m-%d')+'+'+data['email_title']])})
+        
         db.collection(u'hospitals').document(request.session['hospital_email']).collection(u'cases').document(data['save']).update({
                             'formstatus': data['status'],
-                            'settledate': data.get('valuedate'),
-                            'settleamount': data.get('valueamount')
+                            'settledate': data.get('valuedate',"None"),
+                            'settleamount': data.get('valueamount',"None")
          })
-        db.collection(u'hospitals').document(request.session['hospital_email']).collection(u'cases').document(data['save']).update(bunny)
-                    
+               
     except:
-        print("sjdhcbds")
-    
+        db.collection(u'hospitals').document(request.session['hospital_email']).collection(u'cases').document(data['save']).set({
+                            'formstatus': data['status'],
+                            'settledate': data.get('valuedate',"None"),
+                            'settleamount': data.get('valueamount',"None"),
+                            'status':"done"
+         })
+     
     
     return HttpResponse("Sucess")
 
@@ -812,9 +841,8 @@ def saveData(request):
             context["data"] = data
             # return render(request,"test.html",context)
             try:
-                patient_details = {
-                    
-                    "Insurance_Company": data["insurance_company"],
+                patient_details = {                   
+                    "Insurance_Company": data.get("insurance_company", ""),
                     "Name": data["patient_details_name"],
                     "Gender": data["patient_details_gender"],
                     "AgeYear": data["patient_details_ageYear"],

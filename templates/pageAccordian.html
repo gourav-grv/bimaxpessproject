@@ -346,9 +346,15 @@
                       <div class="panel-body">
                         <label for="cars">Insurance Company / TPA</label>
                         <select class="form-control" name="insurance_company" id="cars">
+                          
                           {% for i in insurance_company.keys %}
-                            <option value="{{i}}">{{i}}</option>
+                            {% if i == data.patient_details.Insurance_Company %}
+                                 <option class="options" selected value="{{data.patient_details.Insurance_Company}}">{{data.patient_details.Insurance_Company}}</option>
+                            {% else %}
+                                <option value="{{i}}">{{i}}</option>
+                            {% endif %}
                           {% endfor %}
+                          
                         </select>
                         <button name="save" value="{{system}}"
                           onclick="alert(`form saved successfully`);$(`#msform`).submit();"
