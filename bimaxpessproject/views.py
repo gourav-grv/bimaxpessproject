@@ -64,6 +64,8 @@ firebaseConfig = {
 }
 mth = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ]
 
+insurance_company={}
+
 firebase = pyrebase.initialize_app(firebaseConfig)
 authe = firebase.auth()
 
@@ -116,6 +118,7 @@ def newAction(request):
     return render(request,'newAction.html')
 
 def loginPage(request):
+
     return render(request,'loginPage.html')
 
 def companyDetails(request):
@@ -138,6 +141,7 @@ def postsignIn(request):
     "Discharge_Approved":0,
     "All_Processed":0
     }
+    
     if request.method == "POST":
 
         email = request.POST.get('email')
@@ -209,7 +213,11 @@ def postsignIn(request):
                             for j in val2:
                                 print("Hospital Name : ", j.name)
                                 print("Date of Admision:",j.Date_of_Admission)
-
+                                admissiondate = str(j.Date_of_Admission)
+                                if(len(admissiondate)>12):
+                                    admissiondate = admissiondate[:-8]
+                                    print(admissiondate)
+                                
                             val3 = patient_details.collection.parent(
                                 i.key).fetch()
                             for m in val3:
@@ -217,7 +225,7 @@ def postsignIn(request):
                                 print("Insurance Company",m.Insurance_Company)
                                 if(m.Name) != None:
                                     cases_data.append(
-                                        {'email': request.session['hospital_email'], 'casenumber': i.id, 'formstatus': i.formstatus, 'patient_name': m.Name,"company":m.Insurance_Company,"Date":j.Date_of_Admission})
+                                        {'email': request.session['hospital_email'], 'casenumber': i.id, 'formstatus': i.formstatus, 'patient_name': m.Name,"company":m.Insurance_Company,"Date":admissiondate})
                 else:
                     continue
                 
@@ -306,6 +314,11 @@ def listData(request, p):
                             for j in val2:
                                 print("Hospital Name : ", j.name)
                                 print("Date of Admision:",j.Date_of_Admission)
+                                admissiondate = str(j.Date_of_Admission)
+                                if(len(admissiondate)>12):
+                                    admissiondate = admissiondate[:-8]
+                                    print(admissiondate)
+                                
 
                             val3 = patient_details.collection.parent(
                                 i.key).fetch()
@@ -314,7 +327,7 @@ def listData(request, p):
                                 print("Insurance Company",m.Insurance_Company)
                                 if(m.Name) != None:
                                     user_data.append(
-                                        {'email': request.session['hospital_email'], 'casenumber': i.id, 'formstatus': i.formstatus, 'patient_name': m.Name,"company":m.Insurance_Company,"Date":j.Date_of_Admission})
+                                        {'email': request.session['hospital_email'], 'casenumber': i.id, 'formstatus': i.formstatus, 'patient_name': m.Name,"company":m.Insurance_Company,"Date":admissiondate})
                 else:
                     continue
 
@@ -499,12 +512,14 @@ def claimpage1(request):
                 for doc in collection.stream():
                     databunny[doc.id] = doc.to_dict()
                     bunny.append(doc.to_dict())
+        
         print(databunny)
         context['akey'] = case
         context['email'] = email
         context['bunny'] = bunny
         context['data'] = databunny
         context['system'] = system
+        context['insurance_company'] = insurance_company
 
         print("cool dude", system)
 
@@ -576,6 +591,11 @@ def claims(request):
                             for j in val2:
                                 print("Hospital Name : ", j.name)
                                 print("Date of Admision:",j.Date_of_Admission)
+                                admissiondate = str(j.Date_of_Admission)
+                                if(len(admissiondate)>12):
+                                    admissiondate = admissiondate[:-8]
+                                    print(admissiondate)
+                                
 
                             val3 = patient_details.collection.parent(
                                 i.key).fetch()
@@ -584,7 +604,7 @@ def claims(request):
                                 print("Insurance Company",m.Insurance_Company)
                                 if(m.Name) != None:
                                     cases_data.append(
-                                        {'email': request.session['hospital_email'], 'casenumber': i.id, 'formstatus': i.formstatus, 'patient_name': m.Name,"company":m.Insurance_Company,"Date":j.Date_of_Admission})
+                                        {'email': request.session['hospital_email'], 'casenumber': i.id, 'formstatus': i.formstatus, 'patient_name': m.Name,"company":m.Insurance_Company,"Date":admissiondate})
                 else:
                     continue
 
@@ -614,8 +634,17 @@ def about(request):
 
 
 def login(request):
+    context={}
     message = "Provide Email password to singnIn"
-    return render(request, 'login.html', {"message": message})
+    docs = db.collection(u'InsuranceCompany_or_TPA').stream()
+    for doc in docs:
+        insurance_company[f'{doc.id}'] = f'{doc.to_dict()}'
+        
+    print(insurance_company)
+    context['message'] = message
+    context['insurance_company'] = insurance_company
+    
+    return render(request, 'login.html', context)
 
 
 def dashboard(request):
@@ -680,7 +709,11 @@ def dashboard(request):
                         for j in val2:
                             print("Hospital Name : ", j.name)
                             print("Date of Admision:",j.Date_of_Admission)
-
+                            admissiondate = str(j.Date_of_Admission)
+                            if(len(admissiondate)>12):
+                                admissiondate = admissiondate[:-8]
+                                print(admissiondate)
+                                
                         val3 = patient_details.collection.parent(
                                 i.key).fetch()
                         for m in val3:
@@ -688,7 +721,7 @@ def dashboard(request):
                             print("Insurance Company",m.Insurance_Company)
                             if(m.Name) != None:
                                 cases_data.append(
-                                    {'email': request.session['hospital_email'], 'casenumber': i.id, 'formstatus': i.formstatus, 'patient_name': m.Name,"company":m.Insurance_Company,"Date":j.Date_of_Admission})
+                                    {'email': request.session['hospital_email'], 'casenumber': i.id, 'formstatus': i.formstatus, 'patient_name': m.Name,"company":m.Insurance_Company,"Date":admissiondate})
     else:
         return render("admin login")
     
@@ -700,10 +733,6 @@ def dashboard(request):
     context['role'] = request.session.get('role')
     
     return render(request, "index.html", context)
-
-  
-
-    
 
 def get_name(email):
     try:

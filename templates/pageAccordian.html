@@ -346,10 +346,9 @@
                       <div class="panel-body">
                         <label for="cars">Insurance Company / TPA</label>
                         <select class="form-control" name="insurance_company" id="cars">
-                          <option value="volvo">1</option>
-                          <option value="saab">Saab</option>
-                          <option value="mercedes">Mercedes</option>
-                          <option value="audi">Audi</option>
+                          {% for i in insurance_company.keys %}
+                            <option value="{{i}}">{{i}}</option>
+                          {% endfor %}
                         </select>
                         <button name="save" value="{{system}}"
                           onclick="alert(`form saved successfully`);$(`#msform`).submit();"
