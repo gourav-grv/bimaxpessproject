@@ -1,0 +1,1642 @@
+<html>
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <title>TATA AIG</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Benne&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #7a7977;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        html {
+            margin: 20px 320px 20px 340px;
+        }
+        .invoice {
+            width: 760px
+        }
+
+        .form-container {
+            background-color: white;
+            padding-left: 40px;
+            padding-right: 25px;
+            height: 1040px;
+            max-width: 760px;
+        }
+
+        #commonContainer {
+            font-family: helvatica;
+            margin: auto;
+            padding: 0px 0px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .firstHeading {
+            font-size: 17.5px;
+            font-weight: 800;
+        }
+
+        .secondHeading {
+            font-size: 12.8px;
+            font-weight: 650;
+        }
+
+        .thirdHeading {
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .fourthHeading {
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+        }
+
+        .fiveHeading {
+            font-size: 11.5px;
+            font-weight: bolder;
+            color: grey;
+        }
+
+        .sixHeading {
+            font-size: 8px;
+            font-weight: 600;
+            color: black;
+        }
+
+        .subHeading {
+            font-size: 10px;
+            letter-spacing: 0px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .subHeading1 {
+            font-size: 9px;
+            letter-spacing: 0.5px;
+        }
+
+        .customPTag {
+            font-size: 8.6px;
+            font-weight: 600;
+            display: inline-block;
+            letter-spacing: -0.2px;
+        }
+
+        .spanBox {
+            font-size: 8px;
+            text-align: center;
+            display: inline-block;
+            border: 0.1px solid #Cdc9c9;
+            vertical-align: middle;
+            line-height: 12px;
+            width: 12px;
+            height: 12px;
+            margin-top: 0px;
+            margin-left: -4.15px;
+            overflow: hidden;
+        }
+
+        .spanBox1 {
+            font-size: 8px;
+            text-align: center;
+            display: inline-block;
+            border: 1px solid #Cdc9c9;
+            vertical-align: middle;
+            line-height: 9px;
+            width: 12px;
+            height: 12px;
+            margin-top: 0;
+            margin-left: -4.35px;
+        }
+
+        .spanBox2 {
+            font-size: 8px;
+            text-align: center;
+            display: inline-block;
+            border: 1px solid #444;
+            vertical-align: middle;
+            line-height: 10px;
+            width: 6px;
+            height: 6px;
+            margin-top: 0px;
+            margin-left: -4.35px;
+        }
+
+        .spanBox4 {
+            font-size: 8px;
+            text-align: center;
+            display: inline-block;
+            border: 1px solid #444;
+            width: 20px;
+            height: 16px;
+            margin-top: -17px;
+            margin-left: -4.35px;
+        }
+
+        .spanLine {
+            font-size: 9px;
+            text-align: center;
+            display: inline-block;
+            border-bottom: 1px solid #444;
+            line-height: 9px;
+            vertical-align: middle;
+            width: 10px;
+            height: 9px;
+            margin-top: 0px;
+            margin-left: -4.35px;
+
+        }
+
+        .customTextBox {
+            display: inline-block;
+            border: 1px solid #444;
+            vertical-align: 11px;
+            line-height: 20px;
+            height: 20px;
+            width: 170px;
+            font-size: 12px;
+        }
+
+        .signatureBox {
+            display: inline-block;
+            border: 1px solid #444;
+            height: 20px;
+            width: 170px;
+        }
+
+        .customMargnBottom4 {
+            margin-bottom: -5px;
+        }
+
+        .customMargnBottom8 {
+            margin-bottom: -9px;
+        }
+
+        .customMargnBottom10 {
+            margin-bottom: -5px;
+        }
+
+        .customMargnBottom15 {
+            margin-bottom: -16px;
+        }
+
+        .nameTextHints {
+            font-size: 11px;
+            color: #909090;
+ }
+            .claimDocumentSubmittedCheckList {
+                font-size: 8px;
+                font-weight: 600;
+                vertical-align: 30px;
+                margin-left: 495px;
+                margin-top: 6px;
+                /*float: right;*/
+            }
+
+            .unique {
+                margin-top: -5px;
+            }
+
+            .heading {
+                margin-top: 0px;
+                padding-top: 0px;
+            }
+
+            .vl {
+                border-left: 12px solid green;
+                height: 300px;
+            }
+            .colorbox {
+            text-align: center;
+            background-color: #c62b27;
+            color: white;
+            padding-top: 2px;
+            padding-bottom: 10px;
+            border: 4px solid #9c9998;
+            font-size: 14px;
+            letter-spacing: 1.3px;
+            }
+
+
+
+
+
+    </style>
+    <style type="text/css">
+        .tg {
+            border-collapse: collapse;
+            border-spacing: 0;
+
+        }
+
+        .tg td {
+            border-color: black;
+            border-style: solid;
+            border-width: 0.2px;
+            font-family: Arial, sans-serif;
+            font-size: 8px;
+            overflow: hidden;
+            padding: 2px 1px;
+            word-break: normal;
+            border-collapse: collapse;
+            text-align: center;
+
+        }
+
+        .tg th {
+            border-color: black;
+            border-style: solid;
+            border-width: 0.2px;
+            font-family: Arial, sans-serif;
+            font-size: 8px;
+            font-weight: normal;
+            overflow: hidden;
+            padding: 1px 1px;
+            word-break: normal;
+            border-collapse: collapse;
+
+
+        }
+
+        .tg .tg-c3ow {
+            border-color: inherit;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .tg .tg-0pky {
+            border-color: inherit;
+            text-align: center;
+            vertical-align: top;
+        }
+
+
+.float-child {
+    width: 49.7%;
+    float: left;
+    height: 23px;
+}
+.border{
+border: 1px solid black;
+}
+
+    </style>
+    <script>
+        window.onload = function() {
+            console.log("it is executing");
+        };
+
+    </script>
+
+</head>
+
+<body>
+<button id="download"> Download Form</button>
+
+
+<div id="invoice">
+
+<div class="form-container">
+    <h1 class="firstHeading" style="padding-top: 45px">HDFC ERGO General Insurance Company Limited</h1>
+    <img src="{% static 'dist/img/hdfc.jpeg' %}"  width="90px" style="float: right;margin-top: -48px">
+    <h2 class="secondHeading" style="margin-top: 35px">REQUEST FOR CASHLESS HOSPITALISATION FOR HEALTH INSURANCE<br>
+POLICY PART - C</h2>
+    <h4 class="fourthHeading" style="margin-top: -5px">DETAILS OF THE THIRD PARTY ADMINISTRATOR/ INSURER/ HOSPITAL (All fields are mandatory and fill in CAPITALS only)</h4>
+    <p class="customPTag" style="margin-top: -8px">a) Name of the TPA/ Insurance Company: <b>HDFC ERGO General Insurance Company Limited</b></p>
+    <div>
+    <p class="customPTag" style="margin-top: -6px">b) Customer service no: 022 - 6234 6234 / 0120 - 6234 6234</p>
+    </div>
+    <div style="margin-top: -15px">
+    <p class="customPTag" style="margin-right: 5px">c) Name of Hospital:</p>
+    <span class="spanLine" style="width: 634px">{{data.hospital_details.Hospital_name}}</span>
+    </div>
+    <div style="margin-top: -15px">
+    <p class="customPTag" style="margin-right: 5px;margin-left: 10px">i. &nbsp;&nbsp;Address</p>
+    <span class="spanLine" style="width: 662px"></span>
+    </div>
+    <div style="margin-top: -15px">
+    <p class="customPTag" style="margin-right: 5px;margin-left: 10px">ii. Rohini ID</p>
+    <span class="spanLine" style="width: 660px"></span>
+    </div>
+    <div style="margin-top: -15px">
+    <p class="customPTag" style="margin-right: 5px;margin-left: 10px">iii. E-mail id</p>
+    <span class="spanLine" style="width: 660px"></span>
+    </div>
+
+    <div style="background-color: #e41b23;text-align: center;margin-top: -6px">
+    <p class="subHeading">TO BE FILLED BY INSURED/ PATIENT</p>
+    </div>
+    <div class="unique">
+    <p class="customPTag" style="margin-right: 40px">a) Name of the Patient:</p>
+        <span class="spanBox">{{data.primary_insured_name.0}}</span>
+        <span class="spanBox">{{data.primary_insured_name.1}}</span>
+        <span class="spanBox">{{data.primary_insured_name.2}}</span>
+        <span class="spanBox">{{data.primary_insured_name.3}}</span>
+        <span class="spanBox">{{data.primary_insured_name.4}}</span>
+        <span class="spanBox">{{data.primary_insured_name.5}}</span>
+        <span class="spanBox">{{data.primary_insured_name.6}}</span>
+        <span class="spanBox">{{data.primary_insured_name.7}}</span>
+        <span class="spanBox">{{data.primary_insured_name.8}}</span>
+        <span class="spanBox">{{data.primary_insured_name.9}}</span>
+        <span class="spanBox">{{data.primary_insured_name.10}}</span>
+        <span class="spanBox">{{data.primary_insured_name.11}}</span>
+        <span class="spanBox">{{data.primary_insured_name.12}}</span>
+        <span class="spanBox">{{data.primary_insured_name.13}}</span>
+        <span class="spanBox">{{data.primary_insured_name.14}}</span>
+        <span class="spanBox">{{data.primary_insured_name.15}}</span>
+        <span class="spanBox">{{data.primary_insured_name.16}}</span>
+        <span class="spanBox">{{data.primary_insured_name.17}}</span>
+        <span class="spanBox">{{data.primary_insured_name.18}}</span>
+        <span class="spanBox">{{data.primary_insured_name.19}}</span>
+        <span class="spanBox">{{data.primary_insured_name.20}}</span>
+        <span class="spanBox">{{data.primary_insured_name.21}}</span>
+        <span class="spanBox">{{data.primary_insured_name.22}}</span>
+        <span class="spanBox">{{data.primary_insured_name.23}}</span>
+        <span class="spanBox">{{data.primary_insured_name.24}}</span>
+        <span class="spanBox">{{data.primary_insured_name.25}}</span>
+        <span class="spanBox">{{data.primary_insured_name.26}}</span>
+        <span class="spanBox">{{data.primary_insured_name.27}}</span>
+        <span class="spanBox">{{data.primary_insured_name.28}}</span>
+        <span class="spanBox">{{data.primary_insured_name.29}}</span>
+        <span class="spanBox">{{data.primary_insured_name.30}}</span>
+        <span class="spanBox">{{data.primary_insured_name.31}}</span>
+        <span class="spanBox">{{data.primary_insured_name.32}}</span>
+        <span class="spanBox">{{data.primary_insured_name.33}}</span>
+        <span class="spanBox">{{data.primary_insured_name.34}}</span>
+        <span class="spanBox">{{data.primary_insured_name.35}}</span>
+        <span class="spanBox">{{data.primary_insured_name.36}}</span>
+        <span class="spanBox">{{data.primary_insured_name.37}}</span>
+        <span class="spanBox">{{data.primary_insured_name.38}}</span>
+        <span class="spanBox">{{data.primary_insured_name.39}}</span>
+        <span class="spanBox">{{data.primary_insured_name.40}}</span>
+        <span class="spanBox">{{data.primary_insured_name.41}}</span>
+        <span class="spanBox">{{data.primary_insured_name.42}}</span>
+    </div>
+    <div class="unique" style="margin-top: -18px">
+        <p class="sixHeading" style="display: inline-block;margin-left: 210px">(First Name)</p>
+        <p class="sixHeading" style="display: inline-block;margin-left: 155px">(Middle Name)</p>
+        <p class="sixHeading" style="display: inline-block;margin-left: 170px">(Surname)</p>
+    </div>
+    <div class="unique">
+    <p class="customPTag" style="margin-right: 90px"> b) Gender:</p>
+    {% if data.gender_data == 'male' %}
+                <span class="spanBox1"><img height="9px" src="\static\img\icons\common\check-mark.svg" width="9px"></span>
+                <p class="customPTag" style="margin-right: 5px">Male</p>
+                <span class="spanBox1"></span>
+                <p class="customPTag" style="margin-right: 5px">Female</p>
+                <span class="spanBox1"></span>
+                <p class="customPTag" style="margin-right: 5px">Third Gender</p>
+                {% elif data.gender_data == 'female' %}
+                <span class="spanBox1"></span>
+                <p class="customPTag" style="margin-right: 10px">Male</p>
+                <span class="spanBox1"><img height="9px" src="\static\img\icons\common\check-mark.svg" width="9px"></span>
+                <p class="customPTag" style="margin-right: 10px">Female</p>
+        <span class="spanBox1"></span>
+                <p class="customPTag" style="margin-right: 5px">Third Gender</p>
+                {% else %}
+                <span class="spanBox1"></span>
+                <p class="customPTag" style="margin-right: 2px">Male</p>
+                <span class="spanBox1"></span>
+                <p class="customPTag" style="margin-right: 10px">Female</p>
+        <span class="spanBox1"></span>
+                <p class="customPTag" style="margin-right: 5px">Third Gender</p>
+                {% endif %}
+
+
+        <p class="customPTag" style="margin-right: 2px;margin-left: 25px">c) Age: </p>
+        <p class="customPTag" style="margin-right: 10px">Years</p>
+        <span class="spanBox">{{data.age.0}}</span>
+        <span class="spanBox">{{data.age.1}}</span>
+        <p class="customPTag" style="margin-right: 10px;margin-left: 10px">Months</p>
+        <span class="spanBox">{{data.age.2}}</span>
+        <span class="spanBox">{{data.age.3}}</span>
+
+        <p class="customPTag" style="margin-right: 5px;margin-left: 32px">d) Date of birth:</p>
+        {% if data.date == '' %}
+        <span class="spanBox1" style="color: #c2c2c2">D</span>
+        <span class="spanBox1" style="color: #c2c2c2">D</span>
+        <span class="spanBox1" style="color: #c2c2c2">M</span>
+        <span class="spanBox1" style="color: #c2c2c2">M</span>
+        <span class="spanBox1" style="color: #c2c2c2">Y</span>
+        <span class="spanBox1" style="color: #c2c2c2">Y</span>
+        <span class="spanBox1" style="color: #c2c2c2">Y</span>
+        <span class="spanBox1" style="color: #c2c2c2">Y</span>
+
+        {% else %}
+        <span class="spanBox1">{{data.date.8}}</span>
+        <span class="spanBox1">{{data.date.9}}</span>
+        <span class="spanBox1">{{data.date.5}}</span>
+        <span class="spanBox1">{{data.date.6}}</span>
+        <span class="spanBox1">{{data.date.0}}</span>
+        <span class="spanBox1">{{data.date.1}}</span>
+        <span class="spanBox1">{{data.date.2}}</span>
+        <span class="spanBox1">{{data.date.3}}</span>
+
+        {% endif %}
+
+    </div>
+    <div class="unique" style="">
+    <p class="customPTag" style="margin-right: 53.5px">e) Contact Number:</p>
+        <span class="spanBox">{{data.primary_insured_contact_number.0}}</span>
+        <span class="spanBox">{{data.primary_insured_contact_number.1}}</span>
+        <span class="spanBox">{{data.primary_insured_contact_number.2}}</span>
+        <span class="spanBox">{{data.primary_insured_contact_number.3}}</span>
+        <span class="spanBox">{{data.primary_insured_contact_number.4}}</span>
+        <span class="spanBox">{{data.primary_insured_contact_number.5}}</span>
+        <span class="spanBox">{{data.primary_insured_contact_number.6}}</span>
+        <span class="spanBox">{{data.primary_insured_contact_number.7}}</span>
+        <span class="spanBox">{{data.primary_insured_contact_number.8}}</span>
+        <span class="spanBox">{{data.primary_insured_contact_number.9}}</span>
+
+
+    <p class="customPTag" style="margin-right: 20px;margin-left: 132px">f) Contact number of attending relative:</p>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+
+    </div>
+    <div class="unique">
+    <p class="customPTag" style="margin-right: 9.5px">g) Insured Member ID card No:
+</p>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+
+
+
+    <p class="customPTag" style="margin-right: 20px;margin-left: 10px">h) Policy No./Name of Corporate:
+</p>
+        <span class="spanBox">{{data.policy_no.0}}</span>
+        <span class="spanBox">{{data.policy_no.1}}</span>
+        <span class="spanBox">{{data.policy_no.2}}</span>
+        <span class="spanBox">{{data.policy_no.3}}</span>
+        <span class="spanBox">{{data.policy_no.4}}</span>
+        <span class="spanBox">{{data.policy_no.5}}</span>
+        <span class="spanBox">{{data.policy_no.6}}</span>
+        <span class="spanBox">{{data.policy_no.7}}</span>
+        <span class="spanBox">{{data.policy_no.8}}</span>
+        <span class="spanBox">{{data.policy_no.9}}</span>
+        <span class="spanBox">{{data.policy_no.10}}</span>
+        <span class="spanBox">{{data.policy_no.11}}</span>
+        <span class="spanBox">{{data.policy_no.12}}</span>
+        <span class="spanBox">{{data.policy_no.13}}</span>
+        <span class="spanBox">{{data.policy_no.14}}</span>
+        <span class="spanBox">{{data.policy_no.15}}</span>
+    </div>
+    <div class="unique">
+    <p class="customPTag" style="margin-right: 74px">I) Employee ID</p>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+
+    </div>
+    <div class="unique">
+    <p class="customPTag" style="margin-right: 14px">j) Currently do you have any Medicliam/Health Insurance:</p>
+        {% if data.other_health_insurance == 'Yes' %}
+        <span class="spanBox"><img height="10px" src="\static\img\icons\common\check-mark.svg" width="10px"></span>
+        <p class="customPTag" style="margin-right: 30px">Yes</p>
+        <span class="spanBox"></span>
+        <p class="customPTag" style="margin-right: 10px;vertical-align: 8px">No</p>
+        {% else %}
+        <span class="spanBox"></span>
+        <p class="customPTag" style="margin-right: 30px">Yes</p>
+        <span class="spanBox"><img height="10px" src="\static\img\icons\common\check-mark.svg" width="10px"></span>
+        <p class="customPTag" style="margin-right: 10px">No</p>
+        {% endif %}
+    </div>
+    <div class="unique">
+    <p class="customPTag" style="margin-right: 47.5px;margin-left: 10px">i) Company Name:</p>
+        <span class="spanBox">{{data.specify_company_name.0}}</span>
+                <span class="spanBox">{{data.specify_company_name.1}}</span>
+                <span class="spanBox">{{data.specify_company_name.2}}</span>
+                <span class="spanBox">{{data.specify_company_name.3}}</span>
+                <span class="spanBox">{{data.specify_company_name.4}}</span>
+                <span class="spanBox">{{data.specify_company_name.5}}</span>
+                <span class="spanBox">{{data.specify_company_name.6}}</span>
+                <span class="spanBox">{{data.specify_company_name.7}}</span>
+                <span class="spanBox">{{data.specify_company_name.8}}</span>
+                <span class="spanBox">{{data.specify_company_name.9}}</span>
+                <span class="spanBox">{{data.specify_company_name.10}}</span>
+                <span class="spanBox">{{data.specify_company_name.11}}</span>
+                <span class="spanBox">{{data.specify_company_name.12}}</span>
+                <span class="spanBox">{{data.specify_company_name.13}}</span>
+                <span class="spanBox">{{data.specify_company_name.14}}</span>
+                <span class="spanBox">{{data.specify_company_name.15}}</span>
+                <span class="spanBox">{{data.specify_company_name.16}}</span>
+                <span class="spanBox">{{data.specify_company_name.17}}</span>
+                <span class="spanBox">{{data.specify_company_name.18}}</span>
+                <span class="spanBox">{{data.specify_company_name.19}}</span>
+                <span class="spanBox">{{data.specify_company_name.20}}</span>
+                <span class="spanBox">{{data.specify_company_name.21}}</span>
+                <span class="spanBox">{{data.specify_company_name.22}}</span>
+                <span class="spanBox">{{data.specify_company_name.23}}</span>
+                <span class="spanBox">{{data.specify_company_name.24}}</span>
+                <span class="spanBox">{{data.specify_company_name.25}}</span>
+
+    </div>
+    <div class="unique">
+    <p class="customPTag" style="margin-right: 64px;margin-left: 10px">ii) Give details:</p>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+    </div>
+    <div class="unique">
+    <p class="customPTag" style="margin-right: 14px">k) Do you have a family physician:</p>
+        <span class="spanBox"><img height="10px" src="\static\img\icons\common\check-mark.svg" width="10px"></span>
+        <p class="customPTag" style="margin-right: 10px">Yes</p>
+        <span class="spanBox"></span>
+        <p class="customPTag" style="margin-right: 10px">No</p>
+
+
+    <p class="customPTag" style="margin-right: 13.5px;margin-left: 20px">l) Name of the family physician:</p>
+     <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+    </div>
+    <div class="unique">
+    <p class="customPTag" style="margin-right: 48px">m) Contact No, if any</p>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+    </div>
+    <div class="unique">
+    <p class="customPTag" style="margin-right: 47px;vertical-align: -6px">n) Current Address of<br> Insured Patient</p>
+        <span class="spanBox">{{data.primary_insured_address.0}}</span>
+        <span class="spanBox">{{data.primary_insured_address.1}}</span>
+        <span class="spanBox">{{data.primary_insured_address.2}}</span>
+        <span class="spanBox">{{data.primary_insured_address.3}}</span>
+        <span class="spanBox">{{data.primary_insured_address.4}}</span>
+        <span class="spanBox">{{data.primary_insured_address.5}}</span>
+        <span class="spanBox">{{data.primary_insured_address.6}}</span>
+        <span class="spanBox">{{data.primary_insured_address.7}}</span>
+        <span class="spanBox">{{data.primary_insured_address.8}}</span>
+        <span class="spanBox">{{data.primary_insured_address.9}}</span>
+        <span class="spanBox">{{data.primary_insured_address.10}}</span>
+        <span class="spanBox">{{data.primary_insured_address.11}}</span>
+        <span class="spanBox">{{data.primary_insured_address.12}}</span>
+        <span class="spanBox">{{data.primary_insured_address.13}}</span>
+        <span class="spanBox">{{data.primary_insured_address.14}}</span>
+        <span class="spanBox">{{data.primary_insured_address.15}}</span>
+        <span class="spanBox">{{data.primary_insured_address.16}}</span>
+        <span class="spanBox">{{data.primary_insured_address.17}}</span>
+        <span class="spanBox">{{data.primary_insured_address.18}}</span>
+        <span class="spanBox">{{data.primary_insured_address.19}}</span>
+        <span class="spanBox">{{data.primary_insured_address.20}}</span>
+        <span class="spanBox">{{data.primary_insured_address.21}}</span>
+        <span class="spanBox">{{data.primary_insured_address.22}}</span>
+        <span class="spanBox">{{data.primary_insured_address.23}}</span>
+        <span class="spanBox">{{data.primary_insured_address.24}}</span>
+        <span class="spanBox">{{data.primary_insured_address.25}}</span>
+        <span class="spanBox">{{data.primary_insured_address.26}}</span>
+        <span class="spanBox">{{data.primary_insured_address.27}}</span>
+        <span class="spanBox">{{data.primary_insured_address.28}}</span>
+        <span class="spanBox">{{data.primary_insured_address.29}}</span>
+        <span class="spanBox">{{data.primary_insured_address.30}}</span>
+        <span class="spanBox">{{data.primary_insured_address.31}}</span>
+        <span class="spanBox">{{data.primary_insured_address.32}}</span>
+        <span class="spanBox">{{data.primary_insured_address.33}}</span>
+        <span class="spanBox">{{data.primary_insured_address.34}}</span>
+        <span class="spanBox">{{data.primary_insured_address.35}}</span>
+        <span class="spanBox">{{data.primary_insured_address.36}}</span>
+        <span class="spanBox">{{data.primary_insured_address.37}}</span>
+        <span class="spanBox">{{data.primary_insured_address.38}}</span>
+        <span class="spanBox">{{data.primary_insured_address.39}}</span>
+        <span class="spanBox">{{data.primary_insured_address.40}}</span>
+        <span class="spanBox">{{data.primary_insured_address.41}}</span>
+        <span class="spanBox">{{data.primary_insured_address.42}}</span>
+    </div>
+    <div style="margin-left: 135px;margin-top: -17px">
+        <span class="spanBox">{{data.primary_insured_address.43}}</span>
+        <span class="spanBox">{{data.primary_insured_address.44}}</span>
+        <span class="spanBox">{{data.primary_insured_address.45}}</span>
+        <span class="spanBox">{{data.primary_insured_address.46}}</span>
+        <span class="spanBox">{{data.primary_insured_address.47}}</span>
+        <span class="spanBox">{{data.primary_insured_address.48}}</span>
+        <span class="spanBox">{{data.primary_insured_address.49}}</span>
+        <span class="spanBox">{{data.primary_insured_address.50}}</span>
+        <span class="spanBox">{{data.primary_insured_address.51}}</span>
+        <span class="spanBox">{{data.primary_insured_address.52}}</span>
+        <span class="spanBox">{{data.primary_insured_address.53}}</span>
+        <span class="spanBox">{{data.primary_insured_address.54}}</span>
+        <span class="spanBox">{{data.primary_insured_address.55}}</span>
+        <span class="spanBox">{{data.primary_insured_address.56}}</span>
+        <span class="spanBox">{{data.primary_insured_address.57}}</span>
+        <span class="spanBox">{{data.primary_insured_address.58}}</span>
+        <span class="spanBox">{{data.primary_insured_address.59}}</span>
+        <span class="spanBox">{{data.primary_insured_address.60}}</span>
+        <span class="spanBox">{{data.primary_insured_address.61}}</span>
+        <span class="spanBox">{{data.primary_insured_address.62}}</span>
+        <span class="spanBox">{{data.primary_insured_address.63}}</span>
+        <span class="spanBox">{{data.primary_insured_address.64}}</span>
+        <span class="spanBox">{{data.primary_insured_address.65}}</span>
+        <span class="spanBox">{{data.primary_insured_address.66}}</span>
+        <span class="spanBox">{{data.primary_insured_address.67}}</span>
+        <span class="spanBox">{{data.primary_insured_address.68}}</span>
+        <span class="spanBox">{{data.primary_insured_address.69}}</span>
+        <span class="spanBox">{{data.primary_insured_address.70}}</span>
+        <span class="spanBox">{{data.primary_insured_address.71}}</span>
+        <span class="spanBox">{{data.primary_insured_address.72}}</span>
+        <span class="spanBox">{{data.primary_insured_address.73}}</span>
+        <span class="spanBox">{{data.primary_insured_address.74}}</span>
+        <span class="spanBox">{{data.primary_insured_address.75}}</span>
+        <span class="spanBox">{{data.primary_insured_address.76}}</span>
+        <span class="spanBox">{{data.primary_insured_address.77}}</span>
+        <span class="spanBox">{{data.primary_insured_address.78}}</span>
+        <span class="spanBox">{{data.primary_insured_address.79}}</span>
+        <span class="spanBox">{{data.primary_insured_address.80}}</span>
+        <span class="spanBox">{{data.primary_insured_address.81}}</span>
+        <span class="spanBox">{{data.primary_insured_address.82}}</span>
+        <span class="spanBox">{{data.primary_insured_address.83}}</span>
+        <span class="spanBox">{{data.primary_insured_address.84}}</span>
+        <span class="spanBox">{{data.primary_insured_address.85}}</span>
+    </div>
+    <div class="unique" style="margin-top: -2px">
+    <p class="customPTag" style="margin-right: 5px">o)Occupation of Insured Patient</p>
+        <span class="spanBox">{{data.patient_occupation.0}}</span>
+        <span class="spanBox">{{data.patient_occupation.1}}</span>
+        <span class="spanBox">{{data.patient_occupation.2}}</span>
+        <span class="spanBox">{{data.patient_occupation.3}}</span>
+        <span class="spanBox">{{data.patient_occupation.4}}</span>
+        <span class="spanBox">{{data.patient_occupation.5}}</span>
+        <span class="spanBox">{{data.patient_occupation.6}}</span>
+        <span class="spanBox">{{data.patient_occupation.7}}</span>
+        <span class="spanBox">{{data.patient_occupation.8}}</span>
+        <span class="spanBox">{{data.patient_occupation.9}}</span>
+        <span class="spanBox">{{data.patient_occupation.10}}</span>
+        <span class="spanBox">{{data.patient_occupation.11}}</span>
+        <span class="spanBox">{{data.patient_occupation.12}}</span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+    </div>
+    <div style="background-color: #e41b23;text-align: center">
+    <p class="subHeading">TO BE FILLED BY TREATING DOCTOR/HOSPITAL</p>
+    </div>
+    <div class="unique" style="margin-top: -2px">
+    <p class="customPTag" style="margin-right: 10px">a) Name of the Treating Doctor:</p>
+        <span class="spanBox">{{data.name_treating_doctor.0}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.1}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.2}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.3}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.4}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.5}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.6}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.7}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.8}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.9}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.10}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.11}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.12}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.13}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.14}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.15}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.16}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.17}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.18}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.19}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.20}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.21}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.22}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.23}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.24}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.25}}</span>
+    <p class="customPTag" style="margin-right: 5px;margin-left: 6px">b) Contact Number:</p>
+        <span class="spanBox">{{data.doctor_phone_No.0}}</span>
+        <span class="spanBox">{{data.doctor_phone_No.1}}</span>
+        <span class="spanBox">{{data.doctor_phone_No.2}}</span>
+        <span class="spanBox">{{data.doctor_phone_No.3}}</span>
+        <span class="spanBox">{{data.doctor_phone_No.4}}</span>
+        <span class="spanBox">{{data.doctor_phone_No.5}}</span>
+        <span class="spanBox">{{data.doctor_phone_No.6}}</span>
+        <span class="spanBox">{{data.doctor_phone_No.7}}</span>
+        <span class="spanBox">{{data.doctor_phone_No.8}}</span>
+        <span class="spanBox">{{data.doctor_phone_No.9}}</span>
+    </div>
+    <div class="unique" style="margin-top: -2px">
+    <p class="customPTag" style="margin-right: 5px;vertical-align: -8px">c) Nature of illness/ Disease with<br>&nbsp;&nbsp;&nbsp; presenting complaints</p>
+     <span class="spanBox" style="width: 200px"></span>
+    <div style="position: absolute;margin-top: -15.8px;margin-left: 137px">
+    <span class="spanBox" style="width: 200px"></span>
+    </div>
+    <div style="position: absolute;margin-top: -2.8px;margin-left: 137px">
+    <span class="spanBox" style="width: 200px"></span>
+    </div>
+    <p class="customPTag" style="margin-right: 5px;margin-left: 50px">d) Relevant clinical findings</p>
+     <span class="spanBox" style="width: 215px"></span>
+    <div style="position: absolute;margin-top: -15.8px;margin-left: 505px">
+    <span class="spanBox" style="width: 215px"></span>
+    </div>
+    <div style="position: absolute;margin-top: -2.8px;margin-left: 505px">
+    <span class="spanBox" style="width: 215px"></span>
+    </div>
+    </div>
+    <div class="unique" style="margin-top: 12px">
+    <p class="customPTag" style="margin-right: 10px">e) Duration of present ailment:</p>
+        <span class="spanBox">{{data.name_treating_doctor.0}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.1}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.2}}</span>
+    <p class="customPTag" style="margin-right: 0px">Days</p>
+    <p class="customPTag" style="margin-right: 10px;margin-left: 16px">i) Date of first consultation:</p>
+        <span class="spanBox1" style="color: #c2c2c2">D</span>
+        <span class="spanBox1" style="color: #c2c2c2">D</span>
+        <span class="spanBox1" style="color: #c2c2c2;margin-left: 5px">M</span>
+        <span class="spanBox1" style="color: #c2c2c2">M</span>
+        <span class="spanBox1" style="color: #c2c2c2;margin-left: 5px">Y</span>
+        <span class="spanBox1" style="color: #c2c2c2">Y</span>
+        <span class="spanBox1" style="color: #c2c2c2">Y</span>
+        <span class="spanBox1" style="color: #c2c2c2">Y</span>
+    <p class="customPTag" style="margin-right: 10px;margin-left: 12px;vertical-align: -8px">ii) Past history of present<br>&nbsp;&nbsp; ailment, if any</p>
+        <span class="spanBox" style="width: 128px"></span>
+    <div style="position: absolute;margin-top: -16.2px;margin-left: 591px">
+    <span class="spanBox" style="width: 128px"></span>
+    </div>
+    </div>
+    <div class="unique" style="margin-top: -6px">
+    <p class="customPTag" style="margin-right: 40px">f) Provisional Diagnosis</p>
+     <span class="spanBox" style="width: 200px"></span>
+    <div style="position: absolute;margin-top: -9px;margin-left: 136px">
+    <span class="spanBox" style="width: 200px"></span>
+    </div>
+    <p class="customPTag" style="margin-right: 40px;margin-left: 76px">i) ICD Code:</p>
+    <span class="spanBox"></span>
+    <span class="spanBox"></span>
+    <span class="spanBox"></span>
+    <span class="spanBox"></span>
+    <span class="spanBox"></span>
+    <span class="spanBox"></span>
+    <span class="spanBox"></span>
+    <span class="spanBox"></span>
+    <span class="spanBox"></span>
+    <span class="spanBox"></span>
+    <span class="spanBox"></span>
+    <span class="spanBox"></span>
+    <span class="spanBox"></span>
+    <span class="spanBox"></span>
+    <span class="spanBox"></span>
+    <span class="spanBox"></span>
+
+    </div>
+    <div class="unique" style="margin-top: 6px">
+    <p class="customPTag" style="margin-right: 15.5px">g) Proposed line of treatment</p>
+    <span class="spanBox"></span>
+    <p class="customPTag" style="margin-right: 16px">i) Medical Management</p>
+    <span class="spanBox"></span>
+    <p class="customPTag" style="margin-right: 16px">ii) Surgical Management</p>
+    <span class="spanBox"></span>
+    <p class="customPTag" style="margin-right: 16px">iii) Intensive Care</p>
+    <span class="spanBox"></span>
+    <p class="customPTag" style="margin-right: 16px">iv) Investigation</p>
+    <span class="spanBox"></span>
+    <p class="customPTag" style="margin-right: 0px">v) Non allopathic treatment</p>
+    </div>
+    <div class="unique" style="margin-top: -2px">
+    <p class="customPTag" style="margin-right: 5px;vertical-align: -8px">h) If investigational &/or Medical<br>&nbsp;&nbsp;&nbsp;  Management provide details</p>
+     <span class="spanBox" style="width: 200px"></span>
+    <div style="position: absolute;margin-top: -16.5px;margin-left: 137px">
+    <span class="spanBox" style="width: 200px"></span>
+    </div>
+    <p class="customPTag" style="margin-right: 5px;margin-left: 40px">i) Route of drug administration</p>
+     <span class="spanBox" style="width: 210px"></span>
+    <div style="position: absolute;margin-top: -16.5px;margin-left: 509px">
+    <span class="spanBox" style="width: 210.5px"></span>
+    </div>
+    </div>
+    <div class="unique" style="margin-top: 0px">
+    <p class="customPTag" style="margin-right: 21px">I) If surgical name of surgery</p>
+     <span class="spanBox" style="width: 200px"></span>
+    <div style="position: absolute;margin-top: -9px;margin-left: 137px">
+    <span class="spanBox" style="width: 200px"></span>
+    </div>
+    <p class="customPTag" style="margin-right: 56px;margin-left: 41px">i) ICD 10 PCS code</p>
+    <span class="spanBox"></span>
+    <span class="spanBox"></span>
+    <span class="spanBox"></span>
+    <span class="spanBox"></span>
+    <span class="spanBox"></span>
+    <span class="spanBox"></span>
+    <span class="spanBox"></span>
+    <span class="spanBox"></span>
+    <span class="spanBox"></span>
+    <span class="spanBox"></span>
+    <span class="spanBox"></span>
+    <span class="spanBox"></span>
+    <span class="spanBox"></span>
+    <span class="spanBox"></span>
+    <span class="spanBox"></span>
+
+    </div>
+    <div class="unique" style="margin-top: 4px">
+    <p class="customPTag" style="margin-right: 22px;vertical-align: -8px">j) If other treatment provide<br>&nbsp;&nbsp;&nbsp;  details</p>
+     <span class="spanBox" style="width: 200px"></span>
+    <div style="position: absolute;margin-top: -16.5px;margin-left: 137px">
+    <span class="spanBox" style="width: 200px"></span>
+    </div>
+    <p class="customPTag" style="margin-right: 35.5px;margin-left: 40px">k) How did injury occur</p>
+     <span class="spanBox" style="width: 210px"></span>
+    <div style="position: absolute;margin-top: -16.5px;margin-left: 509px">
+    <span class="spanBox" style="width: 210.5px"></span>
+    </div>
+    </div>
+    <div class="unique" style="margin-top: 0px">
+    <p class="customPTag" style="margin-right: 15.5px">l) In case of Accident:</p>
+    <p class="customPTag" style="margin-right: 4px;margin-left: 32px">i. Is it RTA</p>
+    <span class="spanBox"></span>
+    <p class="customPTag" style="margin-right: 2px">Yes</p>
+    <span class="spanBox"></span>
+    <p class="customPTag" style="margin-right: 5px">No</p>
+    <p class="customPTag" style="margin-right: 6px">ii. Date of injury:</p>
+        <span class="spanBox1">{{data.date.8}}</span>
+        <span class="spanBox1">{{data.date.9}}</span>
+        <span class="spanBox1">{{data.date.5}}</span>
+        <span class="spanBox1">{{data.date.6}}</span>
+        <span class="spanBox1">{{data.date.0}}</span>
+        <span class="spanBox1">{{data.date.1}}</span>
+        <span class="spanBox1">{{data.date.2}}</span>
+        <span class="spanBox1">{{data.date.3}}</span>
+
+
+     <p class="customPTag" style="margin-right: 6px;margin-left: 6px">iii. Reported to police:</p>
+     <span class="spanBox"></span>
+    <p class="customPTag" style="margin-right: 2px">Yes</p>
+    <span class="spanBox"></span>
+    <p class="customPTag" style="margin-right: 0px">No</p>
+
+     <p class="customPTag" style="margin-right: 6px;margin-left: 6px">iv. FIR No:</p>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+        <span class="spanBox"></span>
+
+
+    </div>
+    <div class="unique" style="margin-top: -8px">
+    <p class="customPTag" style="margin-right: 5px">v) Injury/Disease caused due to substance abuse/alcohol consumption</p>
+    <span class="spanBox"></span>
+    <p class="customPTag" style="margin-right: 10px">Yes</p>
+    <span class="spanBox"></span>
+    <p class="customPTag" style="margin-right: 5px">No</p>
+    <p class="customPTag" style="margin-right: 6px;margin-left: 23.5px">vi) Test conducted to establish this:</p>
+     <span class="spanBox"></span>
+    <p class="customPTag" style="margin-right: 10px">Yes</p>
+    <span class="spanBox"></span>
+    <p class="customPTag" style="margin-right: 0px">No</p>
+     <p class="customPTag" style="margin-right: 6px;margin-left: 6px">(If yes, attach report)</p>
+    </div>
+    <div class="unique" style="margin-top: -8px">
+    <p class="customPTag" style="margin-right: 25px">m) In case of Maternity</p>
+    <span class="spanBox"></span>
+    <p class="customPTag" style="margin-right: 15px">G</p>
+    <span class="spanBox"></span>
+    <p class="customPTag" style="margin-right: 15px">P</p>
+    <span class="spanBox"></span>
+    <p class="customPTag" style="margin-right: 15px">L</p>
+    <span class="spanBox"></span>
+    <p class="customPTag" style="margin-right: 15px">A</p>
+    </div>
+    <div class="unique" style="margin-top: -12px">
+    <p class="customPTag" style="margin-right: 25px;margin-left: 10px">i) Expected date of Delivery</p>
+        <span class="spanBox1" style="color: #c2c2c2">D</span>
+        <span class="spanBox1" style="color: #c2c2c2">D</span>
+        <span class="spanBox1" style="color: #c2c2c2;margin-left: 5px">M</span>
+        <span class="spanBox1" style="color: #c2c2c2">M</span>
+        <span class="spanBox1" style="color: #c2c2c2;margin-left: 5px">Y</span>
+        <span class="spanBox1" style="color: #c2c2c2">Y</span>
+        <span class="spanBox1" style="color: #c2c2c2">Y</span>
+        <span class="spanBox1" style="color: #c2c2c2">Y</span>
+    </div>
+</div>
+    <!---------------------------------End of first page--------------------------->
+<div class="form-container" style="margin-top: 10px">
+    <div>
+            <p class="customPTag" style="margin-right: 25px;padding-top: 20px"><b>Details of patient admitted</b></p>
+    </div>
+    <div class="float-child" style="width: 65%">
+        <div>
+         <p class="customPTag" style="margin-right: 5px;margin-left: 0px">a) Date of admission:</p>
+        <span class="spanBox1" style="color: #c2c2c2">D</span>
+        <span class="spanBox1" style="color: #c2c2c2">D</span>
+        <span class="spanBox1" style="color: #c2c2c2;margin-left: 5px">M</span>
+        <span class="spanBox1" style="color: #c2c2c2">M</span>
+        <span class="spanBox1" style="color: #c2c2c2;margin-left: 5px">Y</span>
+        <span class="spanBox1" style="color: #c2c2c2">Y</span>
+        <span class="spanBox1" style="color: #c2c2c2">Y</span>
+        <span class="spanBox1" style="color: #c2c2c2">Y</span>
+         <p class="customPTag" style="margin-right: 5px;margin-left: 42px">b) Date of Time:</p>
+        <span class="spanBox1" style="color: #c2c2c2">H</span>
+        <span class="spanBox1" style="color: #c2c2c2">H</span>
+        <span class="spanBox1" style="color: #c2c2c2;margin-left: 5px">M</span>
+        <span class="spanBox1" style="color: #c2c2c2">M</span>
+        </div>
+        <div class="unique" style="margin-top: -12px">
+         <p class="customPTag" style="margin-right: 5px;margin-left: 0px">c) Is this a emergency/a planned hospitalisation event?:</p>
+         <p class="customPTag" style="margin-right: 10px;margin-left: 0px">Emergency</p>
+        <span class="spanBox1" style="color: #c2c2c2"></span>
+         <p class="customPTag" style="margin-right: 10px;margin-left: 10px">Planned</p>
+        <span class="spanBox1" style="color: #c2c2c2"></span>
+        </div>
+         <div class="unique" style="margin-top: -12px">
+         <p class="customPTag" style="margin-right: 5px;margin-left: 0px">e) Expected No. of days stay in hospital:</p>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+         <p class="customPTag" style="margin-right: 10px;margin-left: 0px">Days</p>
+        </div>
+         <div class="unique" style="margin-top: -12px">
+         <p class="customPTag" style="margin-right: 5px;margin-left: 0px">f) Days in ICU:</p>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+         <p class="customPTag" style="margin-right: 10px;margin-left: 0px">Days</p>
+         <p class="customPTag" style="margin-right: 10px;margin-left: 140px">g) Room Type</p>
+        <span class="spanBox1" style="width: 110px"></span>
+        </div>
+        <div class="unique" style="margin-top: -12px">
+         <p class="customPTag" style="margin-right: 5px;margin-left: 0px">h) Per Day Room Rent + Nursing & Service Charges + Patient's Diet</p>
+         <p class="customPTag" style="margin-right: 10px;margin-left: 51px">Rs.</p>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        </div>
+        <div class="unique" style="margin-top: -12px">
+         <p class="customPTag" style="margin-right: 5px;margin-left: 0px">I) Expected cost for investigation + diagnostics</p>
+         <p class="customPTag" style="margin-right: 10px;margin-left: 130px">Rs.</p>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        </div>
+        <div class="unique" style="margin-top: -12px">
+         <p class="customPTag" style="margin-right: 5px;margin-left: 0px">j) ICU Charges</p>
+         <p class="customPTag" style="margin-right: 10px;margin-left: 256.5px">Rs.</p>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        </div>
+        <div class="unique" style="margin-top: -12px">
+         <p class="customPTag" style="margin-right: 5px;margin-left: 0px">k) OT Charges</p>
+         <p class="customPTag" style="margin-right: 10px;margin-left: 256.5px">Rs.</p>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        </div>
+        <div class="unique" style="margin-top: -12px">
+         <p class="customPTag" style="margin-right: 5px;margin-left: 0px">l) Professional fees Surgeon + Anesthetist Fees + consultation Charges</p>
+         <p class="customPTag" style="margin-right: 10px;margin-left: 36px">Rs.</p>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        </div>
+        <div class="unique" style="margin-top: -12px">
+         <p class="customPTag" style="margin-right: 5px;margin-left: 0px">m) Medicines + Consumables + Cost of Implants (if applicable please specify).</p>
+         <p class="customPTag" style="margin-right: 10px;margin-left: 9px">Rs.</p>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        </div>
+        <div class="unique" style="margin-top: -12px">
+         <p class="customPTag" style="margin-right: 5px;margin-left: 0px">n) Other hospital expenses if any</p>
+         <p class="customPTag" style="margin-right: 10px;margin-left: 181.5px">Rs.</p>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        </div>
+        <div class="unique" style="margin-top: -12px">
+         <p class="customPTag" style="margin-right: 5px;margin-left: 0px">o) All inclusive package charges if any applicable</p>
+         <p class="customPTag" style="margin-right: 10px;margin-left: 122px">Rs.</p>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        </div>
+        <div class="unique" style="margin-top: -12px">
+         <p class="customPTag" style="margin-right: 5px;margin-left: 0px">p) Sum Total expected cost of hospitalization</p>
+         <p class="customPTag" style="margin-right: 10px;margin-left: 135px">Rs.</p>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        <span class="spanBox1"></span>
+        </div>
+    </div>
+    <div class="float-child" style="width: 35%">
+         <p class="customPTag" style="margin-right: 5px;margin-left: 0px">d) Mandatory Past history of any chronic illness<br>
+ If yes, since (month/year)</p>
+        <div style="margin-top: -14px">
+            <span class="spanBox" style="margin-left: 2px"></span>
+            <p class="customPTag" style="margin-right: 105px;margin-left: 0px">i) Diabetes</p>
+            <span class="spanBox">D</span>
+            <span class="spanBox">D</span>
+            <span class="spanBox" style="margin-left: 5px">M</span>
+            <span class="spanBox">M</span>
+        </div>
+        <div style="margin-top: -13px">
+            <span class="spanBox" style="margin-left: 2px"></span>
+            <p class="customPTag" style="margin-right: 83px;margin-left: 0px">ii) Heart Disease</p>
+            <span class="spanBox"></span>
+            <span class="spanBox"></span>
+            <span class="spanBox" style="margin-left: 5px"></span>
+            <span class="spanBox"></span>
+        </div>
+        <div style="margin-top: -13px">
+            <span class="spanBox" style="margin-left: 2px"></span>
+            <p class="customPTag" style="margin-right: 82px;margin-left: 0px">iii) Hypertension</p>
+            <span class="spanBox"></span>
+            <span class="spanBox"></span>
+            <span class="spanBox" style="margin-left: 5px"></span>
+            <span class="spanBox"></span>
+        </div>
+        <div style="margin-top: -13px">
+            <span class="spanBox" style="margin-left: 2px"></span>
+            <p class="customPTag" style="margin-right: 71px;margin-left: 0px">iv) Hyperlipidemias</p>
+            <span class="spanBox"></span>
+            <span class="spanBox"></span>
+            <span class="spanBox" style="margin-left: 5px"></span>
+            <span class="spanBox"></span>
+        </div>
+        <div style="margin-top: -13px">
+            <span class="spanBox" style="margin-left: 2px"></span>
+            <p class="customPTag" style="margin-right: 83px;margin-left: 0px">v) Osteoarthritis</p>
+            <span class="spanBox"></span>
+            <span class="spanBox"></span>
+            <span class="spanBox" style="margin-left: 5px"></span>
+            <span class="spanBox"></span>
+        </div>
+        <div style="margin-top: -13px">
+            <span class="spanBox" style="margin-left: 2px"></span>
+            <p class="customPTag" style="margin-right: 32px;margin-left: 0px">vi) Asthma/ COPD/ Bronchitis</p>
+            <span class="spanBox"></span>
+            <span class="spanBox"></span>
+            <span class="spanBox" style="margin-left: 5px"></span>
+            <span class="spanBox"></span>
+        </div>
+        <div style="margin-top: -13px">
+            <span class="spanBox" style="margin-left: 2px"></span>
+            <p class="customPTag" style="margin-right: 107px;margin-left: 0px">vii) Cancer</p>
+            <span class="spanBox"></span>
+            <span class="spanBox"></span>
+            <span class="spanBox" style="margin-left: 5px"></span>
+            <span class="spanBox"></span>
+        </div>
+        <div style="margin-top: -13px">
+            <span class="spanBox" style="margin-left: 2px"></span>
+            <p class="customPTag" style="margin-right: 46px;margin-left: 0px">viii) Alcohol or drug abuse</p>
+            <span class="spanBox"></span>
+            <span class="spanBox"></span>
+            <span class="spanBox" style="margin-left: 5px"></span>
+            <span class="spanBox"></span>
+        </div>
+        <div style="margin-top: -13px">
+            <span class="spanBox" style="margin-left: 2px"></span>
+            <p class="customPTag" style="margin-right: 4px;margin-left: 0px">ix) Any HIV or STD / Related ailments</p>
+            <span class="spanBox"></span>
+            <span class="spanBox"></span>
+            <span class="spanBox" style="margin-left: 5px"></span>
+            <span class="spanBox"></span>
+        </div>
+        <div style="margin-top: -13px">
+            <p class="customPTag" style="margin-right: 83px;margin-left: 20px">x) Any other Ailment give details:</p>
+        </div>
+        <div style="margin-top: -7px">
+            <span class="spanBox1" style="width: 200px;margin-left: 20px"></span>
+        </div>
+        <div style="margin-top: 0.5px">
+            <span class="spanBox1" style="width: 200px;margin-left: 20px"></span>
+        </div>
+
+    </div>
+
+    <div style="background-color: #e41b23;text-align: center;margin-top: 240px">
+    <p class="subHeading">DECLARATION (Please read carefully)</p>
+    </div>
+    <p class="customPTag" style="margin-right: 25px;margin-left: 0px">We confirm having read understood and agreed to the declarations of this form</p>
+    <div class="unique" style="margin-top: -2px">
+    <p class="customPTag" style="margin-right: 8px">a) Name of the treating doctor :</p>
+        <span class="spanBox">{{data.name_treating_doctor.0}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.1}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.2}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.3}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.4}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.5}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.6}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.7}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.8}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.9}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.10}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.11}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.12}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.13}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.14}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.15}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.16}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.17}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.18}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.19}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.20}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.21}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.22}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.23}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.24}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.25}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.26}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.27}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.28}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.29}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.30}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.31}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.32}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.33}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.34}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.35}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.36}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.37}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.38}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.39}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.40}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.41}}</span>
+        <span class="spanBox">{{data.name_treating_doctor.42}}</span>
+    </div>
+    <div class="unique" style="margin-top: -8px">
+    <p class="customPTag" style="margin-right: 68px">b) Qualification :</p>
+        <span class="spanBox">{{data.doctor_qualification.0}}</span>
+        <span class="spanBox">{{data.doctor_qualification.1}}</span>
+        <span class="spanBox">{{data.doctor_qualification.2}}</span>
+        <span class="spanBox">{{data.doctor_qualification.3}}</span>
+        <span class="spanBox">{{data.doctor_qualification.4}}</span>
+        <span class="spanBox">{{data.doctor_qualification.5}}</span>
+        <span class="spanBox">{{data.doctor_qualification.6}}</span>
+    <p class="customPTag" style="margin-right: 28px;margin-left: 45px">c) Registration No. with state code:</p>
+        <span class="spanBox">{{data.doctor_registration_number.0}}</span>
+        <span class="spanBox">{{data.doctor_registration_number.1}}</span>
+        <span class="spanBox">{{data.doctor_registration_number.2}}</span>
+        <span class="spanBox">{{data.doctor_registration_number.3}}</span>
+        <span class="spanBox">{{data.doctor_registration_number.4}}</span>
+        <span class="spanBox">{{data.doctor_registration_number.5}}</span>
+        <span class="spanBox">{{data.doctor_registration_number.6}}</span>
+        <span class="spanBox">{{data.doctor_registration_number.6}}</span>
+        <span class="spanBox">{{data.doctor_registration_number.6}}</span>
+    </div>
+    <div>
+        <span class="spanBox" style="width: 200;height: 40px"></span>
+        <span class="spanBox" style="width: 200;height: 40px;margin-left: 314px"></span>
+    </div>
+    <div>
+    <p class="customPTag" style="margin-right: 25px;margin-left: 0px">Hospital Seal (Must include Hospital ID)</p>
+        <p class="customPTag" style="width: 200;height: 40px;margin-left: 334px">Patient/ Insured Name & Signature</p>
+    </div>
+    <div style="background-color: #e41b23;text-align: center;margin-top: -25px">
+    <p class="subHeading">DECLARATION BY THE PATIENT / REPRESENTATIVE</p>
+    </div>
+    <div>
+    <p class="customPTag" style="margin-right: 18px;margin-top: -8px">a. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I agree to allow the hospital to submit all original documents pertaining to hospitalization to the Insurer/T.P.Aafter the discharge. I agree to sign on the Final Bill &<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the Discharge Summary, before my discharge.</p>
+    <p class="customPTag" style="margin-right: 18px;margin-top: -9px">b. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Payment to hospital is governed by the terms and conditions of the policy. In case the Insurer /TPAis not liable to settle the hospital bill, I undertake to settle the bill<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;as per the terms and conditions of the policy</p>
+    <p class="customPTag" style="margin-right: 18px;margin-top: -9px">c. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All non-medical expenses and expenses not relevant to current hospitalization and the amounts over & above the limit authorized by the Insurer/T.P.A not<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;governed by the terms and conditions of the policy will be paid by me</p>
+     <p class="customPTag" style="margin-right: 18px;margin-top: -9px">d. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I hereby declare to abide by the terms and conditions of the policy and if at any time the facts disclosed by me are found to be false or incorrect I forfeit my claim and<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;agree to indemnify the Insurer / T.P.A</p>
+     <p class="customPTag" style="margin-right: 18px;margin-top: -9px">e. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I agree and understand that T.P.Ais in no way warranting the service of the hospital & that the Insurer /TPAis in no way guaranteeing that the services provided by<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the hospital will be of a particular quality or standard</p>
+     <p class="customPTag" style="margin-right: 18px;margin-top: -9px">f. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I hereby warrant the truth of the forgoing particulars in every respect and I agree that if I have made or shall make any false or untrue statement, suppression or<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;concealment with respect to the claim, my right to claim reimbursement of the said expenses shall be absolutely forfeited.</p>
+     <p class="customPTag" style="margin-right: 18px;margin-top: -9px">g. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I agree to indemnify the hospital against all expenses incurred on my behalf, which are not reimbursed by the Insurer / TPA<br></p>
+     <p class="customPTag" style="margin-right: 18px;margin-top: -9px">h. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"I/We authorize Insurance Company/TPAto contact me/us through mobile/email for any update on this claim"<br></p>
+    </div>
+    <div>
+    <p class="customPTag" style="margin-right: 10px">Patient's/ Insured's Name:</p>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    </div>
+    <div>
+    <p class="customPTag" style="margin-right: 10px">Contact No:</p>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <p class="customPTag" style="margin-right: 10px;margin-left: 85px">E-mail Id (optional):</p>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    </div>
+    <div>
+    <p class="customPTag" style="margin-right: 10px">Patient's/ Insured's Signature:</p>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    </div>
+    <div>
+    <p class="customPTag" style="margin-right: 10px">Date:</p>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <p class="customPTag" style="margin-right: 10px;margin-left: 40px">Time:</p>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+    <span class="spanLine"></span>
+
+    </div>
+    <div style="background-color: #e41b23;text-align: center;margin-top: -12px">
+    <p class="subHeading">HOSPITAL DECLARATION</p>
+    </div>
+    <div>
+    <p class="customPTag" style="margin-right: 18px;margin-top: -8px">a. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We have no objection to any authorized TPA/ Insurance Company official verifying documents pertaining to hospitalization<br></p>
+    <p class="customPTag" style="margin-right: 18px;margin-top: -9px">b. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All valid original documents duly countersigned by the insured/patient as per the checklist below will be sent to TPA / Insurance Company within 7 days of the <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;patient's discharge.</p>
+    <p class="customPTag" style="margin-right: 18px;margin-top: -9px">c. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We agree that TPA/Insurance Company will not be liable to make the payment in the between the facts in this form and discharge summary or other documents<br></p>
+     <p class="customPTag" style="margin-right: 18px;margin-top: -9px">d. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The patient declaration has been signed by the patient or by his representative in our presence<br></p>
+     <p class="customPTag" style="margin-right: 18px;margin-top: -9px">e. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; We agree to provide clarifications for the queries raised regarding this hospitalization and we take the sole responsibility for any delay in offering clarifications <br></p>
+     <p class="customPTag" style="margin-right: 18px;margin-top: -9px">f. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We will abide by the terms and conditions agreed in the MOU.<br></p>
+     <p class="customPTag" style="margin-right: 18px;margin-top: -9px">g. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We confirm that no additional amount would be collected from the insured in excess of Agreed Package Rates except costs towards non-admissible amounts<br>
+     (including additional charges due to opting higher room rent than eligibility/choosing separate line of treatment which is not envisaged/considered in package).</p>
+     <p class="customPTag" style="margin-right: 18px;margin-top: -9px">h. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"I/We authorize Insurance Company/TPAto contact me/us through mobile/email for any update on this claim"<br></p>
+    </div>
+    <div>
+        <span class="spanBox" style="width: 200;height: 40px"></span>
+        <span class="spanBox" style="width: 200;height: 40px;margin-left: 314px"></span>
+    </div>
+    <div>
+    <p class="customPTag" style="margin-right: 0px;margin-left: 70px">Hospital Seal</p>
+        <p class="customPTag" style="margin-left: 460px">Doctor's Signature</p>
+    </div>
+    <div style="margin-top: -4px">
+    <p class="customPTag" style="margin-right: 10px;margin-left: 0px">Date:</p>
+        <span class="spanLine"></span>
+        <span class="spanLine"></span>
+        <span class="spanLine"></span>
+        <span class="spanLine"></span>
+        <span class="spanLine"></span>
+        <span class="spanLine"></span>
+        <span class="spanLine"></span>
+        <span class="spanLine"></span>
+        <span class="spanLine"></span>
+        <span class="spanLine"></span>
+        <span class="spanLine"></span>
+        <span class="spanLine"></span>
+        <p class="customPTag" style="margin-left: 40px;margin-right: 10px">Time: </p>
+        <span class="spanLine"></span>
+        <span class="spanLine"></span>
+        <span class="spanLine"></span>
+        <span class="spanLine"></span>
+        <span class="spanLine"></span>
+        <span class="spanLine"></span>
+        <span class="spanLine"></span>
+        <span class="spanLine"></span>
+        <span class="spanLine"></span>
+        <span class="spanLine"></span>
+        <span class="spanLine"></span>
+        <span class="spanLine"></span>
+    </div>
+
+</div>
+    <!---------------------------------End of Second Page-------------------------->
+
+    <!---------------------------------End of third PAge--------------------------->
+
+    <!---------------------------------End of forth PAge--------------------------->
+
+    <!---------------------------------End of fifth PAge--------------------------->
+
+    <!---------------------------------End of sixth Page--------------------------->
+
+    <!---------------------------------End of seventh Page------------------------->
+
+
+
+</div><!-------invoice------>
+
+<script>
+        window.onload = function() {
+            document.getElementById("download")
+                .addEventListener("click", () => {
+                    const invoice = this.document.getElementById("invoice");
+                    console.log(invoice);
+                    console.log(window);
+                    var opt = {
+                        margin: 0,
+                        filename: 'myfile.pdf',
+                        image: {
+                            type: 'jpeg',
+                            quality: 0.98
+                        },
+                        html2canvas: {
+                            scale: 4
+                        },
+                        jsPDF: {
+                            unit: 'in',
+                            format: 'letter',
+                            orientation: 'portrait'
+                        }
+                    };
+                    html2pdf().from(invoice).set(opt).save();
+                })
+        }
+
+
+
+
+</script>
+</body>
+
+</html>
