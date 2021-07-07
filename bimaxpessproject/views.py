@@ -458,16 +458,21 @@ def getcasedetail(request):
     audit_trail = db.collection(u'hospitals').document(request.session['hospital_email']).collection(
         u'cases').document(f'{casenumber}')
     audit_value = audit_trail.get()
+    
     if audit_value.exists:
         b = audit_value.to_dict()
-        values=b['audit_trail']
-        for i in values:
-            x = i.split("+")
-            audit.append(x)
-        print(audit)
-        context['audit'] = audit    
+        
+        if len(b)>3:
+            values=b['audit_trail']
+            for i in values:
+                x = i.split("+")
+                audit.append(x)
+            print(audit)
+            context['audit'] = audit
+        else:
+            print("no data found")        
     else:
-        print("no data found of audit traik")
+        print("no data found of ")
         
         context['hospital_email'] = request.session['hospital_email'] #this is hospital email also accessible in caseDetails page
     
@@ -786,7 +791,8 @@ def savestatus(request):
         db.collection(u'hospitals').document(request.session['hospital_email']).collection(u'cases').document(data['save']).update({
                             'formstatus': data['status'],
                             'settledate': data.get('valuedate',"None"),
-                            'settleamount': data.get('valueamount',"None")
+                            'settleamount': data.get('valueamount',"None"),
+                            'status':"done"
          })
                
     except:
