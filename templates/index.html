@@ -416,65 +416,66 @@
       </div>
       <!-- Modal -->
 
-          <div class="row">
 
-               {% for i in cases_data %}
-                {% if i.formstatus == "draft" %}
-                <button type="submit" name="system" value="{{hospital_email}}+{{i.casenumber}}" form="systemform"
-                    style="background: transparent; border: none;">
-                    <form action="/claimpage1" method="get" id="systemform">
-                        {% csrf_token %}
-                        <div class="cardBottom" id="cardBottom" name="cardBottom">
-                            <h4>{{i.patient_name}}</h4>
-                            <p>{{i.email}}</p>
-                            <hr>
-                          <p><b>Form Status -</b>{{i.formstatus}}</p>
-                            <p><b>Admission Date -</b>{{i.Date}}</p>
-                            <p><b>Claim Amount -</b>22</p>
-                            <p><b>Insurance TPA -</b>{{i.company}}</p>
-                            
-                        </div>
-                    </form>
-                </button>
-                 {% elif i.formstatus == "" %}
-                <button type="submit" name="system" value="{{hospital_email}}+{{i.casenumber}}" form="systemform"
-                    style="background: transparent; border: none;">
-                    <form action="/claimpage1" method="get" id="systemform">
-                        {% csrf_token %}
-                        <div class="cardBottom" id="cardBottom" name="cardBottom">
-                            <h4>{{i.patient_name}}</h4>
-                            <p>{{i.email}}</p>
-                            <hr>
-                          <p><b>Form Status -</b>{{i.formstatus}}</p>
-                            <p><b>Admission Date -</b>{{i.Date}}</p>
-                            <p><b>Claim Amount -</b>22</p>
-                            <p><b>Insurance TPA -</b>{{i.company}}</p>
-                            
-                        </div>
-                    </form>
-                </button>
-                
-                {% else %}
-                    <a href="{% url 'getcasedetail' %}?data={{i.casenumber}}">
-                    
-                     <div class="cardBottom" id="cardBottom" name="cardBottom">
-                            <h4>{{i.patient_name}}</h4>
-                            <p>{{i.email}}</p>
-                            <hr>
-                          <p><b>Form Status -</b>{{i.formstatus}}</p>
-                            <p><b>Admission Date -</b>{{i.Date}}</p>
-                            <p><b>Claim Amount -</b>22</p>
-                            <p><b>Insurance TPA -</b>{{i.company}}</p>
-                            
-                      </div>
-                    
-                    </a>
-                
-                {% endif %}
-             
-                {% endfor %}
+      <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
 
-  
+        {% for i in cases_data %}
+        {% if i.formstatus == "draft" %}
+        <button type="submit" name="system" value="{{hospital_email}}+{{i.casenumber}}" form="systemform"
+          style="background: transparent; border: none;">
+          <form action="/claimpage1" method="get" id="systemform">
+            {% csrf_token %}
+            <div class="cardBottom" id="cardBottom" name="cardBottom">
+              <h4>{{i.patient_name}}</h4>
+              <p>{{i.email}}</p>
+              <hr>
+              <p><b>Form Status -</b>{{i.formstatus}}</p>
+              <p><b>Admission Date -</b>{{i.Date}}</p>
+              <p><b>Claim Amount -</b>22</p>
+              <p><b>Insurance TPA -</b>{{i.company}}</p>
+
+            </div>
+          </form>
+        </button>
+        {% elif i.formstatus == "" %}
+        <button type="submit" name="system" value="{{hospital_email}}+{{i.casenumber}}" form="systemform"
+          style="background: transparent; border: none;">
+          <form action="/claimpage1" method="get" id="systemform">
+            {% csrf_token %}
+            <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;" >
+              <h4 style="font-size: 1.5em; margin-top: 0.5em;">{{i.patient_name}}</h4>
+              <p style="margin-top: -20px;">{{i.email}}</p>
+              <hr>
+              <p style="margin-top: -19px;"><b>Form Status -</b>{{i.formstatus}}</p>
+              <p style="margin-top: -19px;"><b>Admission Date -</b>{{i.Date}}</p>
+              <p style="margin-top: -19px;"><b>Claim Amount -</b>22</p>
+              <p style="margin-top: -19px;"><b>Insurance TPA </div>  -</b>{{i.company}}</p>
+            </div>
+          </form>
+        </button>
+
+        {% else %}
+        <a href="{% url 'getcasedetail' %}?data={{i.casenumber}}">
+
+          <div class="cardBottom" id="cardBottom" name="cardBottom">
+            <h4>{{i.patient_name}}</h4>
+            <p>{{i.email}}</p>
+            <hr>
+            <p><b>Form Status -</b>{{i.formstatus}}</p>
+            <p><b>Admission Date -</b>{{i.Date}}</p>
+            <p><b>Claim Amount -</b>22</p>
+            <p><b>Insurance TPA -</b>{{i.company}}</p>
+
+          </div>
+
+        </a>
+
+        {% endif %}
+
+        {% endfor %}
+      </div>
+
+
 
     </div>
 
