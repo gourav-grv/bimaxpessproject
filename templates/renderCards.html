@@ -36,8 +36,8 @@
     <!-- summernote -->
     <link rel="stylesheet" href="{% static '/plugins/summernote/summernote-bs4.min.css' %}" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <style>
         body {
             text-transform: capitalize;
@@ -45,11 +45,9 @@
         }
 
         .cardBottom {
-            padding-top: 10px;
-            width: 17.6em;
+            width: 16em;
             max-width: 17.6em;
-            height: 20em;
-            max-height: 20em;
+            min-height: 20em;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
             transition: 0.3s;
             border-radius: 20px;
@@ -106,9 +104,10 @@
         }
 
         .cardTopTex {
-            font-size: 1.1em;
+            font-size: 0.8em;
         }
-        h4{
+
+        h4 {
             font-size: 1.2em;
             font-weight: bold;
         }
@@ -157,124 +156,22 @@
                     <a href="#" class="nav-link">Contact</a>
                 </li>
             </ul>
-            <input class="search__input" type="text" placeholder="Search" style="width: 20em; margin-top: 8px; margin-left: 8px;" />	
+            <input class="search__input" type="text" placeholder="Search"
+                style="width: 20em; margin-top: 8px; margin-left: 8px;" />
 
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <!-- Navbar Search -->
-               
+
 
                 <!-- Messages Dropdown Menu -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#">
-                        <i class="far fa-comments"></i>
-                        <span class="badge badge-danger navbar-badge">3</span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <a href="#" class="dropdown-item">
-                            <!-- Message Start -->
-                            <div class="media">
-                                <img src="{% static 'dist/img/user1-128x128.jpg' %}" alt="User Avatar"
-                                    class="img-size-50 mr-3 img-circle" />
-                                <div class="media-body">
-                                    <h3 class="dropdown-item-title">
-                                        Brad Diesel
-                                        <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                                    </h3>
-                                    <p class="text-sm">Call me whenever you can...</p>
-                                    <p class="text-sm text-muted">
-                                        <i class="far fa-clock mr-1"></i> 4 Hours Ago
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- Message End -->
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <!-- Message Start -->
-                            <div class="media">
-                                <img src="{% static 'dist/img/user8-128x128.jpg' %}" alt="User Avatar"
-                                    class="img-size-50 img-circle mr-3" />
-                                <div class="media-body">
-                                    <h3 class="dropdown-item-title">
-                                        John Pierce
-                                        <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
-                                    </h3>
-                                    <p class="text-sm">I got your message bro</p>
-                                    <p class="text-sm text-muted">
-                                        <i class="far fa-clock mr-1"></i> 4 Hours Ago
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- Message End -->
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <!-- Message Start -->
-                            <div class="media">
-                                <img src="{% static 'dist/img/user3-128x128.jpg' %}" alt="User Avatar"
-                                    class="img-size-50 img-circle mr-3" />
-                                <div class="media-body">
-                                    <h3 class="dropdown-item-title">
-                                        Nora Silvester
-                                        <span class="float-right text-sm text-warning"><i
-                                                class="fas fa-star"></i></span>
-                                    </h3>
-                                    <p class="text-sm">The subject goes here</p>
-                                    <p class="text-sm text-muted">
-                                        <i class="far fa-clock mr-1"></i> 4 Hours Ago
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- Message End -->
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-                    </div>
-                </li>
-                <!-- Notifications Dropdown Menu -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#">
-                        <i class="far fa-bell"></i>
-                        <span class="badge badge-warning navbar-badge">15</span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <span class="dropdown-item dropdown-header">15 Notifications</span>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-envelope mr-2"></i> 4 new messages
-                            <span class="float-right text-muted text-sm">3 mins</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-users mr-2"></i> 8 friend requests
-                            <span class="float-right text-muted text-sm">12 hours</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-file mr-2"></i> 3 new reports
-                            <span class="float-right text-muted text-sm">2 days</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-                    </div>
-                </li>
+
                 <li class="nav-item">
                     <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                         <i class="fas fa-expand-arrows-alt"></i>
                     </a>
                 </li>
-
-                {% comment %}
-
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-                        <i class="fas fa-th-large"></i>
-                    </a>
-                </li>
-
-                {% endcomment %}
             </ul>
             <button type="button" class="btn btn-danger">Log Out</button>
         </nav>
@@ -282,41 +179,61 @@
 
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4"
-            style="margin-top: 5em; max-height: 80%; background-color: #f4f6f9; color: black; border-top-right-radius: 20px;border-bottom-right-radius: 20px;">
-            <!-- Brand Logo -->
-
-            <!-- Sidebar -->
-            <div class="sidebar">
-                <!-- Sidebar Menu -->
-                <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                        data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-                        <li class="nav-item menu-open" style="margin-left: -50px !important;">
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="da" class="nav-link " style="background-color: rgb(255, 166, 0); color:black;">
-                                        <i class="fas fa-home"></i>
-                                        <p >Home</p>
-                                    </a>
-                                </li>
-                                {% if role == 'admin' %}
-                                <li class="nav-item">
-                                    <a href="adduser" class="nav-link active">
-                                        <i class="fas fa-user-plus"></i>
-                                        <p>Add Customer</p>
-                                    </a>
-                                </li>
-                                {% endif %}
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-                <!-- /.sidebar-menu -->
-            </div>
-            <!-- /.sidebar -->
-        </aside>
+        style="margin-top: 5em; max-height: 80%; background-color: #f4f6f9; color: black; border-top-right-radius: 20px;border-bottom-right-radius: 20px;">
+        <!-- Brand Logo -->
+  
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <!-- Sidebar Menu -->
+          <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="true">
+              <!-- Add icons to the links using the .nav-icon class
+                 with font-awesome or any other icon font library -->
+              <li class="nav-item menu-open" style="margin-left: -50px !important;">
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="dashboard" class="nav-link" style="background-color: rgb(255, 166, 0); color:black;">
+                      <i class="fas fa-home"></i>
+                      <p>Home</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="bunny" class="nav-link active">
+                      <i class="fas fa-envelope"></i>
+                      <p>Email</p>
+                    </a>
+                  </li>
+                  {% if role == 'admin' %}
+                  <li class="nav-item">
+                    <a href="adduser" class="nav-link active">
+                      <i class="fas fa-user-plus"></i>
+                      <p>Add Customer</p>
+                    </a>
+                  </li>
+                  {% endif %}
+  
+                  <li class="nav-item">
+                    <a class="nav-link active">
+  
+                      <form action="/claimpage1" method="get" id="systemform">
+                        {% csrf_token %}
+                        <i style="color:black;" class="fas fa-plus"></i>
+                        <p><button style="color: black; border: none; background-color:transparent;" type="submit"
+                            name="system" value="{{hospital_email}}+{{backcase}}" form="systemform">New
+                            Case
+                          </button></p>
+                      </form>
+                    </a>
+                  </li>
+  
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+      </aside>
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper"
@@ -354,19 +271,22 @@
                     <div class="cardTop rgb(167, 47, 67)">
                         <a href="/listData/{{sta}}">
                             {% if sta == 'draft' %}
-                            <h1 style="color: rgb(167, 47, 67);" class="cardTopNum"><b> {{users}} {{values.draft}}</b></h1>
+                            <h1 style="color: rgb(167, 47, 67);" class="cardTopNum"><b> {{users}} {{values.draft}}</b>
+                            </h1>
                             <span style="color: rgb(167, 47, 67);" class="cardTopTex">{{sta}}</span>
                             {% endif %}
                         </a>
                         <a href="/listData/{{sta}}">
                             {% if sta == 'Unprocessed' %}
-                            <h1 style="color: skyblue;" class="cardTopNum"><b> {{users}} {{values.Unprocessed}} </b></h1>
+                            <h1 style="color: skyblue;" class="cardTopNum"><b> {{users}} {{values.Unprocessed}} </b>
+                            </h1>
                             <span style="color: skyblue;" class="cardTopTex">{{sta}}</span>
                             {% endif %}
                         </a>
                         <a href="/listData/{{sta}}">
                             {% if sta == 'Approved' %}
-                            <span style="color: lightgreen; " class="cardTopNum"><b> {{users}} {{values.Approved}} </b></span> <br>
+                            <span style="color: lightgreen; " class="cardTopNum"><b> {{users}} {{values.Approved}}
+                                </b></span> <br>
                             <span style="color: lightgreen; " class="cardTopTex">{{sta}}</span>
                             {% endif %}
                         </a>
@@ -384,19 +304,22 @@
                         </a>
                         <a href="/listData/{{sta}}">
                             {% if sta == 'Enhance Discharge' %}
-                            <h1 style="color: orange;" class="cardTopNum"><b> {{users}}  {{values.Enhance_Discharge}}</b></h1>
+                            <h1 style="color: orange;" class="cardTopNum"><b> {{users}} {{values.Enhance_Discharge}}</b>
+                            </h1>
                             <span style="color: orange;" class="cardTopTex">{{sta}}</span>
                             {% endif %}
                         </a>
                         <a href="/listData/{{sta}}">
                             {% if sta == 'Discharge Approved' %}
-                            <h1 style="color: rgb(9, 163, 9);" class="cardTopNum"><b> {{users}}   {{values.Discharge_Approved}} </b></h1>
+                            <h1 style="color: rgb(9, 163, 9);" class="cardTopNum"><b> {{users}}
+                                    {{values.Discharge_Approved}} </b></h1>
                             <span style="color: rgb(9, 163, 9);" class="cardTopTex">{{sta}}</span>
                             {% endif %}
                         </a>
                         <a href="/listData/{{sta}}">
                             {% if sta == 'All Processed' %}
-                            <h1 style="color: black;" class="cardTopNum"><b> {{users}} {{values.All_Processed}} </b></h1>
+                            <h1 style="color: black;" class="cardTopNum"><b> {{users}} {{values.All_Processed}} </b>
+                            </h1>
                             <span style="color: black;" class="cardTopTex">{{sta}}</span>
                             {% endif %}
 
@@ -410,8 +333,10 @@
 
                 <div class="homeMiddleLineForListAndGrid" id="homeMiddleLineForListAndGrid"
                     style="background-color: rgb(167, 47, 67);">
-                    <i class="glyphicon glyphicon-th-large text-white GridLIst" id="grid" onclick="Grid()"></i>
-                    <i class="glyphicon glyphicon-th-list text-white GridLIst" id="list" onclick="List()"></i>
+                    <i class="glyphicon glyphicon-th-large text-white GridLIst" style="cursor: pointer;" id="grid"
+                        onclick="Grid()"></i>
+                    <i class="glyphicon glyphicon-th-list text-white GridLIst" style="cursor: pointer;" id="list"
+                        onclick="List()"></i>
                     <span style="color: white; margin-top: 10px;"><b>&nbsp;Draft</b></span>
                     <i class="glyphicon glyphicon-user text-white floatRight"></i>
                     <!-- <span style="color: white; margin-top: 10px;" class="floatRight"><b>&nbsp;05</b></span> -->
@@ -422,8 +347,10 @@
 
                 <div class="homeMiddleLineForListAndGrid" id="homeMiddleLineForListAndGrid"
                     style="background-color: skyblue;">
-                    <i class="glyphicon glyphicon-th-large text-white GridLIst" id="grid" onclick="Grid()"></i>
-                    <i class="glyphicon glyphicon-th-list text-white GridLIst" id="list" onclick="List()"></i>
+                    <i class="glyphicon glyphicon-th-large text-white GridLIst" style="cursor: pointer;" id="grid"
+                        onclick="Grid()"></i>
+                    <i class="glyphicon glyphicon-th-list text-white GridLIst" style="cursor: pointer;" id="list"
+                        onclick="List()"></i>
                     <span style="color: white; margin-top: 10px;"><b>&nbsp;Unprocessed</b></span>
                     <i class="glyphicon glyphicon-user text-white floatRight"></i>
                     <!-- <span style="color: white; margin-top: 10px;" class="floatRight"><b>&nbsp;05</b></span> -->
@@ -434,8 +361,10 @@
 
                 <div class="homeMiddleLineForListAndGrid" id="homeMiddleLineForListAndGrid"
                     style="background-color: lightgreen;">
-                    <i class="glyphicon glyphicon-th-large text-white GridLIst" id="grid" onclick="Grid()"></i>
-                    <i class="glyphicon glyphicon-th-list text-white GridLIst" id="list" onclick="List()"></i>
+                    <i class="glyphicon glyphicon-th-large text-white GridLIst" style="cursor: pointer;" id="grid"
+                        onclick="Grid()"></i>
+                    <i class="glyphicon glyphicon-th-list text-white GridLIst" style="cursor: pointer;" id="list"
+                        onclick="List()"></i>
                     <span style="color: white; margin-top: 10px;"><b>&nbsp;Approved</b></span>
                     <i class="glyphicon glyphicon-user text-white floatRight"></i>
                     <!-- <span style="color: white; margin-top: 10px;" class="floatRight"><b>&nbsp;05</b></span> -->
@@ -446,8 +375,10 @@
 
                 <div class="homeMiddleLineForListAndGrid" id="homeMiddleLineForListAndGrid"
                     style="background-color: darkblue;">
-                    <i class="glyphicon glyphicon-th-large text-white GridLIst" id="grid" onclick="Grid()"></i>
-                    <i class="glyphicon glyphicon-th-list text-white GridLIst" id="list" onclick="List()"></i>
+                    <i class="glyphicon glyphicon-th-large text-white GridLIst" style="cursor: pointer;" id="grid"
+                        onclick="Grid()"></i>
+                    <i class="glyphicon glyphicon-th-list text-white GridLIst" style="cursor: pointer;" id="list"
+                        onclick="List()"></i>
                     <span style="color: white; margin-top: 10px;"><b>&nbsp;Query</b></span>
                     <i class="glyphicon glyphicon-user text-white floatRight"></i>
                     <!-- <span style="color: white; margin-top: 10px;" class="floatRight"><b>&nbsp;05</b></span> -->
@@ -458,8 +389,10 @@
 
                 <div class="homeMiddleLineForListAndGrid" id="homeMiddleLineForListAndGrid"
                     style="background-color: red;">
-                    <i class="glyphicon glyphicon-th-large text-white GridLIst" id="grid" onclick="Grid()"></i>
-                    <i class="glyphicon glyphicon-th-list text-white GridLIst" id="list" onclick="List()"></i>
+                    <i class="glyphicon glyphicon-th-large text-white GridLIst" style="cursor: pointer;" id="grid"
+                        onclick="Grid()"></i>
+                    <i class="glyphicon glyphicon-th-list text-white GridLIst" style="cursor: pointer;" id="list"
+                        onclick="List()"></i>
                     <span style="color: white; margin-top: 10px;"><b>&nbsp;Reject</b></span>
                     <i class="glyphicon glyphicon-user text-white floatRight"></i>
                     <!-- <span style="color: white; margin-top: 10px;" class="floatRight"><b>&nbsp;05</b></span> -->
@@ -470,8 +403,10 @@
 
                 <div class="homeMiddleLineForListAndGrid" id="homeMiddleLineForListAndGrid"
                     style="background-color: orange;">
-                    <i class="glyphicon glyphicon-th-large text-white GridLIst" id="grid" onclick="Grid()"></i>
-                    <i class="glyphicon glyphicon-th-list text-white GridLIst" id="list" onclick="List()"></i>
+                    <i class="glyphicon glyphicon-th-large text-white GridLIst" style="cursor: pointer;" id="grid"
+                        onclick="Grid()"></i>
+                    <i class="glyphicon glyphicon-th-list text-white GridLIst" style="cursor: pointer;" id="list"
+                        onclick="List()"></i>
                     <span style="color: white; margin-top: 10px;"><b>&nbsp;Enhance Discharge</b></span>
                     <i class="glyphicon glyphicon-user text-white floatRight"></i>
                     <!-- <span style="color: white; margin-top: 10px;" class="floatRight"><b>&nbsp;05</b></span> -->
@@ -482,8 +417,10 @@
 
                 <div class="homeMiddleLineForListAndGrid" id="homeMiddleLineForListAndGrid"
                     style="background-color: rgb(9, 163, 9);">
-                    <i class="glyphicon glyphicon-th-large text-white GridLIst" id="grid" onclick="Grid()"></i>
-                    <i class="glyphicon glyphicon-th-list text-white GridLIst" id="list" onclick="List()"></i>
+                    <i class="glyphicon glyphicon-th-large text-white GridLIst" style="cursor: pointer;" id="grid"
+                        onclick="Grid()"></i>
+                    <i class="glyphicon glyphicon-th-list text-white GridLIst" style="cursor: pointer;" id="list"
+                        onclick="List()"></i>
                     <span style="color: white; margin-top: 10px;"><b>&nbsp;Discharge Approved</b></span>
                     <i class="glyphicon glyphicon-user text-white floatRight"></i>
                     <!-- <span style="color: white; margin-top: 10px;" class="floatRight"><b>&nbsp;05</b></span> -->
@@ -494,8 +431,10 @@
 
                 <div class="homeMiddleLineForListAndGrid" id="homeMiddleLineForListAndGrid"
                     style="background-color: black;">
-                    <i class="glyphicon glyphicon-th-large text-white GridLIst" id="grid" onclick="Grid()"></i>
-                    <i class="glyphicon glyphicon-th-list text-white GridLIst" id="list" onclick="List()"></i>
+                    <i class="glyphicon glyphicon-th-large text-white GridLIst" style="cursor: pointer;" id="grid"
+                        onclick="Grid()"></i>
+                    <i class="glyphicon glyphicon-th-list text-white GridLIst" style="cursor: pointer;" id="list"
+                        onclick="List()"></i>
                     <span style="color: white; margin-top: 10px;"><b>&nbsp;All Processed</b></span>
                     <i class="glyphicon glyphicon-user text-white floatRight"></i>
                     <!-- <span style="color: white; margin-top: 10px;" class="floatRight"><b>&nbsp;05</b></span> -->
@@ -504,223 +443,236 @@
 
 
 
-                {% for i in content_data %}
-                {% if p == "draft" %}
-                {% if i.formstatus == "draft" %}
-                   <a href="/caseDetails">
-        
-                        <div class="cardBottom" id="cardBottom" name="cardBottom">
-                            <h4>{{i.patient_name}}</h4>
-                            <p>{{i.email}}</p>
-                            <hr>
-                          <p><b>Form Status -</b>{{i.formstatus}}</p>
-                            <p><b>Admission Date -</b>{{i.Date}}</p>
-                            <p><b>Claim Amount -</b>22</p>
-                            <p><b>Insurance TPA -</b>{{i.company}}</p>
-                            
-                        </div>
-                    
-                </a>
-                {% endif %}
-                {% endif %}
-                {% endfor %}
-                {% for i in content_data %}
-                {% if p == "query" %}
-                {% if i.formstatus == "query" %}
-                       <a href="/caseDetails">
-        
-                        <div class="cardBottom" id="cardBottom" name="cardBottom">
-                            <h4>{{i.patient_name}}</h4>
-                            <p>{{i.email}}</p>
-                            <hr>
-                          <p><b>Form Status -</b>{{i.formstatus}}</p>
-                            <p><b>Admission Date -</b>{{i.Date}}</p>
-                            <p><b>Claim Amount -</b>22</p>
-                            <p><b>Insurance TPA -</b>{{i.company}}</p>
-                            
-                        </div>
-                    
-                </a>
-                {% endif %}
-                {% endif %}
-                {% endfor %}
-                {% for i in content_data %}
-                {% if p == "Unprocessed" %}
-                {% if i.formstatus == "Unprocessed" %}
-                  <a href="/caseDetails">
-        
-                        <div class="cardBottom" id="cardBottom" name="cardBottom">
-                            <h4>{{i.patient_name}}</h4>
-                            <p>{{i.email}}</p>
-                            <hr>
-                          <p><b>Form Status -</b>{{i.formstatus}}</p>
-                            <p><b>Admission Date -</b>{{i.Date}}</p>
-                            <p><b>Claim Amount -</b>22</p>
-                            <p><b>Insurance TPA -</b>{{i.company}}</p>
-                            
-                        </div>
-                    
-                </a>
-                {% endif %}
-                {% endif %}
-                {% endfor %}
-                {% for i in content_data %}
-                {% if p == "Approved" %}
-                {% if i.formstatus == "Approved" %}
-                  <a href="/caseDetails">
-        
-                        <div class="cardBottom" id="cardBottom" name="cardBottom">
-                            <h4>{{i.patient_name}}</h4>
-                            <p>{{i.email}}</p>
-                            <hr>
-                          <p><b>Form Status -</b>{{i.formstatus}}</p>
-                            <p><b>Admission Date -</b>{{i.Date}}</p>
-                            <p><b>Claim Amount -</b>22</p>
-                            <p><b>Insurance TPA -</b>{{i.company}}</p>
-                            
-                        </div>
-                    
-                </a>
-                {% endif %}
-                {% endif %}
-                {% endfor %}
-                {% for i in content_data %}
-                {% if p == "Reject" %}
-                {% if i.formstatus == "Reject" %}
-                  <a href="/caseDetails">
-        
-                        <div class="cardBottom" id="cardBottom" name="cardBottom">
-                            <h4>{{i.patient_name}}</h4>
-                            <p>{{i.email}}</p>
-                            <hr>
-                          <p><b>Form Status -</b>{{i.formstatus}}</p>
-                            <p><b>Admission Date -</b>{{i.Date}}</p>
-                            <p><b>Claim Amount -</b>22</p>
-                            <p><b>Insurance TPA -</b>{{i.company}}</p>
-                            
-                        </div>
-                    
-                </a>
-                {% endif %}
-                {% endif %}
-                {% endfor %}
-                {% for i in content_data %}
-                {% if p == "Enhance Discharge" %}
-                {% if i.formstatus == "Enhance Discharge" %}
-               <a href="/caseDetails">
-        
-                        <div class="cardBottom" id="cardBottom" name="cardBottom">
-                            <h4>{{i.patient_name}}</h4>
-                            <p>{{i.email}}</p>
-                            <hr>
-                          <p><b>Form Status -</b>{{i.formstatus}}</p>
-                            <p><b>Admission Date -</b>{{i.Date}}</p>
-                            <p><b>Claim Amount -</b>22</p>
-                            <p><b>Insurance TPA -</b>{{i.company}}</p>
-                            
-                        </div>
-                    
-                </a>
-                {% endif %}
-                {% endif %}
-                {% endfor %}
-                {% for i in content_data %}
-                {% if p == "Discharge Approved" %}
-                {% if i.formstatus == "Discharge Approved" %}
-                <a href="/caseDetails">
-        
-                        <div class="cardBottom" id="cardBottom" name="cardBottom">
-                            <h4>{{i.patient_name}}</h4>
-                            <p>{{i.email}}</p>
-                            <hr>
-                          <p><b>Form Status -</b>{{i.formstatus}}</p>
-                            <p><b>Admission Date -</b>{{i.Date}}</p>
-                            <p><b>Claim Amount -</b>22</p>
-                            <p><b>Insurance TPA -</b>{{i.company}}</p>
-                            
-                        </div>
-                    
-                </a>
-                {% endif %}
-                {% endif %}
-                {% endfor %}
-                {% for i in content_data %}
-                {% if p == "All Processed" %}
-                {% if i.formstatus == "draft" %}
-                <button type="submit" name="system" value="{{hospital_email}}+{{i.casenumber}}" form="systemform"
-                    style="background: transparent; border: none;">
-                    <form action="/claimpage1" method="get" id="systemform">
-                        {% csrf_token %}
-                        <div class="cardBottom" id="cardBottom" name="cardBottom">
-                            <h4>{{i.patient_name}}</h4>
-                            <p>{{i.email}}</p>
-                            <hr>
-                          <p><b>Form Status -</b>{{i.formstatus}}</p>
-                            <p><b>Admission Date -</b>{{i.Date}}</p>
-                            <p><b>Claim Amount -</b>22</p>
-                            <p><b>Insurance TPA -</b>{{i.company}}</p>
-                            
-                        </div>
-                    </form>
-                </button>
-                 {% elif i.formstatus == "" %}
-                <button type="submit" name="system" value="{{hospital_email}}+{{i.casenumber}}" form="systemform"
-                    style="background: transparent; border: none;">
-                    <form action="/claimpage1" method="get" id="systemform">
-                        {% csrf_token %}
-                        <div class="cardBottom" id="cardBottom" name="cardBottom">
-                            <h4>{{i.patient_name}}</h4>
-                            <p>{{i.email}}</p>
-                            <hr>
-                          <p><b>Form Status -</b>{{i.formstatus}}</p>
-                            <p><b>Admission Date -</b>{{i.Date}}</p>
-                            <p><b>Claim Amount -</b>22</p>
-                            <p><b>Insurance TPA -</b>{{i.company}}</p>
-                            
-                        </div>
-                    </form>
-                </button>
-                
-                {% else %}
-                    <a href="/caseDetails">
-                    
-                     <div class="cardBottom" id="cardBottom" name="cardBottom">
-                            <h4>{{i.patient_name}}</h4>
-                            <p>{{i.email}}</p>
-                            <hr>
-                          <p><b>Form Status -</b>{{i.formstatus}}</p>
-                            <p><b>Admission Date -</b>{{i.Date}}</p>
-                            <p><b>Claim Amount -</b>22</p>
-                            <p><b>Insurance TPA -</b>{{i.company}}</p>
-                            
-                        </div>
-                    
-                    </a>
-                
-                {% endif %}
-                {% endif %}
-                {% endfor %}
-                {% for i in content_data %}
-                {% if p == "Unprocessed" %}
-                <button type="submit" name="system" value="{{hospital_email}}+{{i.casenumber}}" form="systemform"
-                    style="background: transparent; border: none;">
-                    <form action="/claimpage1" method="get" id="systemform">
-                        {% csrf_token %}
-                        <div class="cardBottom" id="cardBottom" name="cardBottom">
-                            <h4>{{i.patient_name}}</h4>
-                            <p>{{i.email}}</p>
-                            <hr>
-                           <p><b>Form Status -</b>{{i.formstatus}}</p>
-                            <p><b>Admission Date -</b>{{i.Date}}</p>
-                            <p><b>Claim Amount -</b>22</p>
-                            <p><b>Insurance TPA -</b>{{i.company}}</p>
-                                            
-                        </div>
-                    </form>
-                </button>
-                {% endif %}
-                {% endfor %}
+                <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;"
+                    id="gridCards">
 
+                    
+
+                    {% for i in content_data %}
+                    {% if p == "draft" %}
+                    {% if i.formstatus == "draft" %}
+                    <a href="/caseDetails" style="color: black; text-decoration: none;">
+
+                        <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;">
+                            <p style="font-size: 1.5em; margin-top: 0.5em;text-align: center;"><b>{{i.patient_name}}</b>
+                            </p>
+                            <p style="margin-top: -20px; text-align: center;">{{i.email}}</p>
+                            <hr>
+                            <p style="margin-top: -18px;"><b>Form Status -</b>{{i.formstatus}}</p>
+                            <p style="margin-top: -18px;"><b>Admission Date -</b>{{i.Date}}</p>
+                            <p style="margin-top: -18px;"><b>Claim Amount -</b>22</p>
+                            <p style="margin-top: -18px;"><b>Insurance TPA -</b>{{i.company}}</p>
+
+                        </div>
+
+                    </a>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+
+                    {% for i in content_data %}
+                    {% if p == "query" %}
+                    {% if i.formstatus == "query" %}
+                    <a href="/caseDetails" style="color: black; text-decoration: none;">
+
+                        <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;">
+                            <p style="font-size: 1.5em; margin-top: 0.5em;text-align: center;"><b>{{i.patient_name}}</b>
+                            </p>
+                            <p style="margin-top: -20px; text-align: center;">{{i.email}}</p>
+                            <hr>
+                            <p style="margin-top: -18px;"><b>Form Status -</b>{{i.formstatus}}</p>
+                            <p style="margin-top: -18px;"><b>Admission Date -</b>{{i.Date}}</p>
+                            <p style="margin-top: -18px;"><b>Claim Amount -</b>22</p>
+                            <p style="margin-top: -18px;"><b>Insurance TPA -</b>{{i.company}}</p>
+
+                        </div>
+
+                    </a>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                    {% for i in content_data %}
+                    {% if p == "Unprocessed" %}
+                    {% if i.formstatus == "Unprocessed" %}
+                    <a href="/caseDetails" style="color: black; text-decoration: none;">
+
+                        <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;">
+                            <p style="font-size: 1.5em; margin-top: 0.5em;text-align: center;"><b>{{i.patient_name}}</b>
+                            </p>
+                            <p style="margin-top: -20px; text-align: center;">{{i.email}}</p>
+                            <hr>
+                            <p style="margin-top: -18px;"><b>Form Status -</b>{{i.formstatus}}</p>
+                            <p style="margin-top: -18px;"><b>Admission Date -</b>{{i.Date}}</p>
+                            <p style="margin-top: -18px;"><b>Claim Amount -</b>22</p>
+                            <p style="margin-top: -18px;"><b>Insurance TPA -</b>{{i.company}}</p>
+                        </div>
+
+                    </a>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                    {% for i in content_data %}
+                    {% if p == "Approved" %}
+                    {% if i.formstatus == "Approved" %}
+                    <a href="/caseDetails" style="color: black; text-decoration: none;">
+
+                        <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;">
+                            <p style="font-size: 1.5em; margin-top: 0.5em;text-align: center;"><b>{{i.patient_name}}</b>
+                            </p>
+                            <p style="margin-top: -20px; text-align: center;">{{i.email}}</p>
+                            <hr>
+                            <p style="margin-top: -18px;"><b>Form Status -</b>{{i.formstatus}}</p>
+                            <p style="margin-top: -18px;"><b>Admission Date -</b>{{i.Date}}</p>
+                            <p style="margin-top: -18px;"><b>Claim Amount -</b>22</p>
+                            <p style="margin-top: -18px;"><b>Insurance TPA -</b>{{i.company}}</p>
+
+                        </div>
+
+                    </a>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                    {% for i in content_data %}
+                    {% if p == "Reject" %}
+                    {% if i.formstatus == "Reject" %}
+                    <a href="/caseDetails" style="color: black; text-decoration: none;">
+
+                        <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;">
+                            <p style="font-size: 1.5em; margin-top: 0.5em;text-align: center;"><b>{{i.patient_name}}</b>
+                            </p>
+                            <p style="margin-top: -20px; text-align: center;">{{i.email}}</p>
+                            <hr>
+                            <p style="margin-top: -18px;"><b>Form Status -</b>{{i.formstatus}}</p>
+                            <p style="margin-top: -18px;"><b>Admission Date -</b>{{i.Date}}</p>
+                            <p style="margin-top: -18px;"><b>Claim Amount -</b>22</p>
+                            <p style="margin-top: -18px;"><b>Insurance TPA -</b>{{i.company}}</p>
+                        </div>
+
+                    </a>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                    {% for i in content_data %}
+                    {% if p == "Enhance Discharge" %}
+                    {% if i.formstatus == "Enhance Discharge" %}
+                    <a href="/caseDetails" style="color: black; text-decoration: none;">
+
+                        <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;">
+                            <p style="font-size: 1.5em; margin-top: 0.5em;text-align: center;"><b>{{i.patient_name}}</b>
+                            </p>
+                            <p style="margin-top: -20px; text-align: center;">{{i.email}}</p>
+                            <hr>
+                            <p style="margin-top: -18px;"><b>Form Status -</b>{{i.formstatus}}</p>
+                            <p style="margin-top: -18px;"><b>Admission Date -</b>{{i.Date}}</p>
+                            <p style="margin-top: -18px;"><b>Claim Amount -</b>22</p>
+                            <p style="margin-top: -18px;"><b>Insurance TPA -</b>{{i.company}}</p>
+                        </div>
+
+                    </a>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                    {% for i in content_data %}
+                    {% if p == "Discharge Approved" %}
+                    {% if i.formstatus == "Discharge Approved" %}
+                    <a href="/caseDetails" style="color: black; text-decoration: none;">
+
+                        <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;">
+                            <p style="font-size: 1.5em; margin-top: 0.5em;text-align: center;"><b>{{i.patient_name}}</b>
+                            </p>
+                            <p style="margin-top: -20px; text-align: center;">{{i.email}}</p>
+                            <hr>
+                            <p style="margin-top: -18px;"><b>Form Status -</b>{{i.formstatus}}</p>
+                            <p style="margin-top: -18px;"><b>Admission Date -</b>{{i.Date}}</p>
+                            <p style="margin-top: -18px;"><b>Claim Amount -</b>22</p>
+                            <p style="margin-top: -18px;"><b>Insurance TPA -</b>{{i.company}}</p>
+                        </div>
+
+                    </a>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                    {% for i in content_data %}
+                    {% if p == "All Processed" %}
+                    {% if i.formstatus == "draft" %}
+                    <button type="submit" name="system" value="{{hospital_email}}+{{i.casenumber}}" form="systemform"
+                        style="background: transparent; border: none;">
+                        <form action="/claimpage1" method="get" id="systemform">
+                            {% csrf_token %}
+                            <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;">
+                                <p style="font-size: 1.5em; margin-top: 0.5em;text-align: center;">
+                                    <b>{{i.patient_name}}</b>
+                                </p>
+                                <p style="margin-top: -20px; text-align: center;">{{i.email}}</p>
+                                <hr>
+                                <p style="margin-top: -18px;"><b>Form Status -</b>{{i.formstatus}}</p>
+                                <p style="margin-top: -18px;"><b>Admission Date -</b>{{i.Date}}</p>
+                                <p style="margin-top: -18px;"><b>Claim Amount -</b>22</p>
+                                <p style="margin-top: -18px;"><b>Insurance TPA -</b>{{i.company}}</p>
+                            </div>
+                        </form>
+                    </button>
+                    {% elif i.formstatus == "" %}
+                    <button type="submit" name="system" value="{{hospital_email}}+{{i.casenumber}}" form="systemform"
+                        style="background: transparent; border: none;">
+                        <form action="/claimpage1" method="get" id="systemform">
+                            {% csrf_token %}
+                            <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;">
+                                <p style="font-size: 1.5em; margin-top: 0.5em;text-align: center;">
+                                    <b>{{i.patient_name}}</b>
+                                </p>
+                                <p style="margin-top: -20px; text-align: center;">{{i.email}}</p>
+                                <hr>
+                                <p style="margin-top: -18px;"><b>Form Status -</b>{{i.formstatus}}</p>
+                                <p style="margin-top: -18px;"><b>Admission Date -</b>{{i.Date}}</p>
+                                <p style="margin-top: -18px;"><b>Claim Amount -</b>22</p>
+                                <p style="margin-top: -18px;"><b>Insurance TPA -</b>{{i.company}}</p>
+                            </div>
+                        </form>
+                    </button>
+
+                    {% else %}
+                    <a href="/caseDetails" style="color: black; text-decoration: none;">
+
+                        <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;">
+                            <p style="font-size: 1.5em; margin-top: 0.5em;text-align: center;"><b>{{i.patient_name}}</b>
+                            </p>
+                            <p style="margin-top: -20px; text-align: center;">{{i.email}}</p>
+                            <hr>
+                            <p style="margin-top: -18px;"><b>Form Status -</b>{{i.formstatus}}</p>
+                            <p style="margin-top: -18px;"><b>Admission Date -</b>{{i.Date}}</p>
+                            <p style="margin-top: -18px;"><b>Claim Amount -</b>22</p>
+                            <p style="margin-top: -18px;"><b>Insurance TPA -</b>{{i.company}}</p>
+                        </div>
+
+                    </a>
+
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                    {% for i in content_data %}
+                    {% if p == "Unprocessed" %}
+                    <button type="submit" name="system" value="{{hospital_email}}+{{i.casenumber}}" form="systemform"
+                        style="background: transparent; border: none;">
+                        <form action="/claimpage1" method="get" id="systemform">
+                            {% csrf_token %}
+                            <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;">
+                                <p style="font-size: 1.5em; margin-top: 0.5em;text-align: center;">
+                                    <b>{{i.patient_name}}</b>
+                                </p>
+                                <p style="margin-top: -20px; text-align: center;">{{i.email}}</p>
+                                <hr>
+                                <p style="margin-top: -18px;"><b>Form Status -</b>{{i.formstatus}}</p>
+                                <p style="margin-top: -18px;"><b>Admission Date -</b>{{i.Date}}</p>
+                                <p style="margin-top: -18px;"><b>Claim Amount -</b>22</p>
+                                <p style="margin-top: -18px;"><b>Insurance TPA -</b>{{i.company}}</p>
+                            </div>
+                        </form>
+                    </button>
+                    {% endif %}
+                    {% endfor %}
+
+                </div>
                 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
                     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -751,11 +703,6 @@
 
             <!-- /.content-wrapper -->
 
-            <!-- Control Sidebar -->
-            <aside class="control-sidebar control-sidebar-dark">
-                <!-- Control sidebar content goes here -->
-            </aside>
-            <!-- /.control-sidebar -->
         </div>
         <!-- ./wrapper -->
 
@@ -825,7 +772,408 @@
                     });
 
             }
+            function List() {
+                document.getElementById('gridCards').innerHTML = `
+                <div style="height: 400px; overflow-y: auto;">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Patient Name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Form Status</th>
+                                    <th scope="col">Admission Date</th>
+                                    <th scope="col">Claim Amount</th>
+                                    <th scope="col">Insurance TPA</th>
 
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                {% for i in content_data %}
+                                {% if p == "draft" %}
+                                {% if i.formstatus == "draft" %}
+                                <tr>
+                                    <td>{{i.patient_name}}</td>
+                                    <td>{{i.email}}</td>
+                                    <td>{{i.formstatus}}</td>
+                                    <td>{{i.Date}}</td>
+                                    <td>5</td>
+                                    <td>{{i.company}}</td>
+                                </tr>
+                                {% endif %}
+                                {% endif %}
+                                {% endfor %}
+
+                                {% for i in content_data %}
+                                {% if p == "query" %}
+                                {% if i.formstatus == "query" %}
+                                <tr>
+                                    <td>{{i.patient_name}}</td>
+                                    <td>{{i.email}}</td>
+                                    <td>{{i.formstatus}}</td>
+                                    <td>{{i.Date}}</td>
+                                    <td>5</td>
+                                    <td>{{i.company}}</td>
+                                </tr>
+                                {% endif %}
+                                {% endif %}
+                                {% endfor %}
+
+
+                                {% for i in content_data %}
+                                {% if p == "Unprocessed" %}
+                                {% if i.formstatus == "Unprocessed" %}
+                                <tr>
+                                    <td>{{i.patient_name}}</td>
+                                    <td>{{i.email}}</td>
+                                    <td>{{i.formstatus}}</td>
+                                    <td>{{i.Date}}</td>
+                                    <td>5</td>
+                                    <td>{{i.company}}</td>
+                                </tr>
+                                {% endif %}
+                                {% endif %}
+                                {% endfor %}
+
+                                {% for i in content_data %}
+                                {% if p == "Approved" %}
+                                {% if i.formstatus == "Approved" %}
+                                <tr>
+                                    <td>{{i.patient_name}}</td>
+                                    <td>{{i.email}}</td>
+                                    <td>{{i.formstatus}}</td>
+                                    <td>{{i.Date}}</td>
+                                    <td>5</td>
+                                    <td>{{i.company}}</td>
+                                </tr>
+                                {% endif %}
+                                {% endif %}
+                                {% endfor %}
+
+                                {% for i in content_data %}
+                                {% if p == "Reject" %}
+                                {% if i.formstatus == "Reject" %}
+                                <tr>
+                                    <td>{{i.patient_name}}</td>
+                                    <td>{{i.email}}</td>
+                                    <td>{{i.formstatus}}</td>
+                                    <td>{{i.Date}}</td>
+                                    <td>5</td>
+                                    <td>{{i.company}}</td>
+                                </tr>
+                                {% endif %}
+                                {% endif %}
+                                {% endfor %}
+
+                                {% for i in content_data %}
+                                {% if p == "Enhance Discharge" %}
+                                {% if i.formstatus == "Enhance Discharge" %}
+                                <tr>
+                                    <td>{{i.patient_name}}</td>
+                                    <td>{{i.email}}</td>
+                                    <td>{{i.formstatus}}</td>
+                                    <td>{{i.Date}}</td>
+                                    <td>5</td>
+                                    <td>{{i.company}}</td>
+                                </tr>
+                                {% endif %}
+                                {% endif %}
+                                {% endfor %}
+
+                                {% for i in content_data %}
+                                {% if p == "Discharge Approved" %}
+                                {% if i.formstatus == "Discharge Approved" %}
+                                <tr>
+                                    <td>{{i.patient_name}}</td>
+                                    <td>{{i.email}}</td>
+                                    <td>{{i.formstatus}}</td>
+                                    <td>{{i.Date}}</td>
+                                    <td>5</td>
+                                    <td>{{i.company}}</td>
+                                </tr>
+                                {% endif %}
+                                {% endif %}
+                                {% endfor %}
+
+                                {% for i in content_data %}
+                                {% if p == "All Processed" %}
+                                {% if i.formstatus == "draft" %}
+                                <tr>
+                                    <td>{{i.patient_name}}</td>
+                                    <td>{{i.email}}</td>
+                                    <td>{{i.formstatus}}</td>
+                                    <td>{{i.Date}}</td>
+                                    <td>5</td>
+                                    <td>{{i.company}}</td>
+                                </tr>
+                                {% elif i.formstatus == "" %}
+                                <tr>
+                                    <td>{{i.patient_name}}</td>
+                                    <td>{{i.email}}</td>
+                                    <td>{{i.formstatus}}</td>
+                                    <td>{{i.Date}}</td>
+                                    <td>5</td>
+                                    <td>{{i.company}}</td>
+                                </tr>
+
+                                {% else %}
+                                <tr>
+                                    <td>{{i.patient_name}}</td>
+                                    <td>{{i.email}}</td>
+                                    <td>{{i.formstatus}}</td>
+                                    <td>{{i.Date}}</td>
+                                    <td>5</td>
+                                    <td>{{i.company}}</td>
+                                </tr>
+
+                                {% endif %}
+                                {% endif %}
+                                {% endfor %}
+
+                                {% for i in content_data %}
+                                {% if p == "Unprocessed" %}
+                                <tr>
+                                    <td>{{i.patient_name}}</td>
+                                    <td>{{i.email}}</td>
+                                    <td>{{i.formstatus}}</td>
+                                    <td>{{i.Date}}</td>
+                                    <td>5</td>
+                                    <td>{{i.company}}</td>
+                                </tr>
+                                {% endif %}
+                                {% endfor %}
+
+                            </tbody>
+                        </table>
+                    </div>
+            `;
+            }
+            function Grid() {
+                document.getElementById('gridCards').innerHTML = `
+                {% for i in content_data %}
+                    {% if p == "draft" %}
+                    {% if i.formstatus == "draft" %}
+                    <a href="/caseDetails" style="color: black; text-decoration: none;">
+
+                        <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;">
+                            <p style="font-size: 1.5em; margin-top: 0.5em;text-align: center;"><b>{{i.patient_name}}</b>
+                            </p>
+                            <p style="margin-top: -20px; text-align: center;">{{i.email}}</p>
+                            <hr>
+                            <p style="margin-top: -18px;"><b>Form Status -</b>{{i.formstatus}}</p>
+                            <p style="margin-top: -18px;"><b>Admission Date -</b>{{i.Date}}</p>
+                            <p style="margin-top: -18px;"><b>Claim Amount -</b>22</p>
+                            <p style="margin-top: -18px;"><b>Insurance TPA -</b>{{i.company}}</p>
+
+                        </div>
+
+                    </a>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                    {% for i in content_data %}
+                    {% if p == "query" %}
+                    {% if i.formstatus == "query" %}
+                    <a href="/caseDetails" style="color: black; text-decoration: none;">
+
+                        <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;">
+                            <p style="font-size: 1.5em; margin-top: 0.5em;text-align: center;"><b>{{i.patient_name}}</b>
+                            </p>
+                            <p style="margin-top: -20px; text-align: center;">{{i.email}}</p>
+                            <hr>
+                            <p style="margin-top: -18px;"><b>Form Status -</b>{{i.formstatus}}</p>
+                            <p style="margin-top: -18px;"><b>Admission Date -</b>{{i.Date}}</p>
+                            <p style="margin-top: -18px;"><b>Claim Amount -</b>22</p>
+                            <p style="margin-top: -18px;"><b>Insurance TPA -</b>{{i.company}}</p>
+
+                        </div>
+
+                    </a>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                    {% for i in content_data %}
+                    {% if p == "Unprocessed" %}
+                    {% if i.formstatus == "Unprocessed" %}
+                    <a href="/caseDetails" style="color: black; text-decoration: none;">
+
+                        <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;">
+                            <p style="font-size: 1.5em; margin-top: 0.5em;text-align: center;"><b>{{i.patient_name}}</b>
+                            </p>
+                            <p style="margin-top: -20px; text-align: center;">{{i.email}}</p>
+                            <hr>
+                            <p style="margin-top: -18px;"><b>Form Status -</b>{{i.formstatus}}</p>
+                            <p style="margin-top: -18px;"><b>Admission Date -</b>{{i.Date}}</p>
+                            <p style="margin-top: -18px;"><b>Claim Amount -</b>22</p>
+                            <p style="margin-top: -18px;"><b>Insurance TPA -</b>{{i.company}}</p>
+                        </div>
+
+                    </a>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                    {% for i in content_data %}
+                    {% if p == "Approved" %}
+                    {% if i.formstatus == "Approved" %}
+                    <a href="/caseDetails" style="color: black; text-decoration: none;">
+
+                        <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;">
+                            <p style="font-size: 1.5em; margin-top: 0.5em;text-align: center;"><b>{{i.patient_name}}</b>
+                            </p>
+                            <p style="margin-top: -20px; text-align: center;">{{i.email}}</p>
+                            <hr>
+                            <p style="margin-top: -18px;"><b>Form Status -</b>{{i.formstatus}}</p>
+                            <p style="margin-top: -18px;"><b>Admission Date -</b>{{i.Date}}</p>
+                            <p style="margin-top: -18px;"><b>Claim Amount -</b>22</p>
+                            <p style="margin-top: -18px;"><b>Insurance TPA -</b>{{i.company}}</p>
+
+                        </div>
+
+                    </a>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                    {% for i in content_data %}
+                    {% if p == "Reject" %}
+                    {% if i.formstatus == "Reject" %}
+                    <a href="/caseDetails" style="color: black; text-decoration: none;">
+
+                        <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;">
+                            <p style="font-size: 1.5em; margin-top: 0.5em;text-align: center;"><b>{{i.patient_name}}</b>
+                            </p>
+                            <p style="margin-top: -20px; text-align: center;">{{i.email}}</p>
+                            <hr>
+                            <p style="margin-top: -18px;"><b>Form Status -</b>{{i.formstatus}}</p>
+                            <p style="margin-top: -18px;"><b>Admission Date -</b>{{i.Date}}</p>
+                            <p style="margin-top: -18px;"><b>Claim Amount -</b>22</p>
+                            <p style="margin-top: -18px;"><b>Insurance TPA -</b>{{i.company}}</p>
+                        </div>
+
+                    </a>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                    {% for i in content_data %}
+                    {% if p == "Enhance Discharge" %}
+                    {% if i.formstatus == "Enhance Discharge" %}
+                    <a href="/caseDetails" style="color: black; text-decoration: none;">
+
+                        <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;">
+                            <p style="font-size: 1.5em; margin-top: 0.5em;text-align: center;"><b>{{i.patient_name}}</b>
+                            </p>
+                            <p style="margin-top: -20px; text-align: center;">{{i.email}}</p>
+                            <hr>
+                            <p style="margin-top: -18px;"><b>Form Status -</b>{{i.formstatus}}</p>
+                            <p style="margin-top: -18px;"><b>Admission Date -</b>{{i.Date}}</p>
+                            <p style="margin-top: -18px;"><b>Claim Amount -</b>22</p>
+                            <p style="margin-top: -18px;"><b>Insurance TPA -</b>{{i.company}}</p>
+                        </div>
+
+                    </a>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                    {% for i in content_data %}
+                    {% if p == "Discharge Approved" %}
+                    {% if i.formstatus == "Discharge Approved" %}
+                    <a href="/caseDetails" style="color: black; text-decoration: none;">
+
+                        <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;">
+                            <p style="font-size: 1.5em; margin-top: 0.5em;text-align: center;"><b>{{i.patient_name}}</b>
+                            </p>
+                            <p style="margin-top: -20px; text-align: center;">{{i.email}}</p>
+                            <hr>
+                            <p style="margin-top: -18px;"><b>Form Status -</b>{{i.formstatus}}</p>
+                            <p style="margin-top: -18px;"><b>Admission Date -</b>{{i.Date}}</p>
+                            <p style="margin-top: -18px;"><b>Claim Amount -</b>22</p>
+                            <p style="margin-top: -18px;"><b>Insurance TPA -</b>{{i.company}}</p>
+                        </div>
+
+                    </a>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                    {% for i in content_data %}
+                    {% if p == "All Processed" %}
+                    {% if i.formstatus == "draft" %}
+                    <button type="submit" name="system" value="{{hospital_email}}+{{i.casenumber}}" form="systemform"
+                        style="background: transparent; border: none;">
+                        <form action="/claimpage1" method="get" id="systemform">
+                            {% csrf_token %}
+                            <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;">
+                                <p style="font-size: 1.5em; margin-top: 0.5em;text-align: center;">
+                                    <b>{{i.patient_name}}</b>
+                                </p>
+                                <p style="margin-top: -20px; text-align: center;">{{i.email}}</p>
+                                <hr>
+                                <p style="margin-top: -18px;"><b>Form Status -</b>{{i.formstatus}}</p>
+                                <p style="margin-top: -18px;"><b>Admission Date -</b>{{i.Date}}</p>
+                                <p style="margin-top: -18px;"><b>Claim Amount -</b>22</p>
+                                <p style="margin-top: -18px;"><b>Insurance TPA -</b>{{i.company}}</p>
+                            </div>
+                        </form>
+                    </button>
+                    {% elif i.formstatus == "" %}
+                    <button type="submit" name="system" value="{{hospital_email}}+{{i.casenumber}}" form="systemform"
+                        style="background: transparent; border: none;">
+                        <form action="/claimpage1" method="get" id="systemform">
+                            {% csrf_token %}
+                            <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;">
+                                <p style="font-size: 1.5em; margin-top: 0.5em;text-align: center;">
+                                    <b>{{i.patient_name}}</b>
+                                </p>
+                                <p style="margin-top: -20px; text-align: center;">{{i.email}}</p>
+                                <hr>
+                                <p style="margin-top: -18px;"><b>Form Status -</b>{{i.formstatus}}</p>
+                                <p style="margin-top: -18px;"><b>Admission Date -</b>{{i.Date}}</p>
+                                <p style="margin-top: -18px;"><b>Claim Amount -</b>22</p>
+                                <p style="margin-top: -18px;"><b>Insurance TPA -</b>{{i.company}}</p>
+                            </div>
+                        </form>
+                    </button>
+
+                    {% else %}
+                    <a href="/caseDetails" style="color: black; text-decoration: none;">
+
+                        <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;">
+                            <p style="font-size: 1.5em; margin-top: 0.5em;text-align: center;"><b>{{i.patient_name}}</b>
+                            </p>
+                            <p style="margin-top: -20px; text-align: center;">{{i.email}}</p>
+                            <hr>
+                            <p style="margin-top: -18px;"><b>Form Status -</b>{{i.formstatus}}</p>
+                            <p style="margin-top: -18px;"><b>Admission Date -</b>{{i.Date}}</p>
+                            <p style="margin-top: -18px;"><b>Claim Amount -</b>22</p>
+                            <p style="margin-top: -18px;"><b>Insurance TPA -</b>{{i.company}}</p>
+                        </div>
+
+                    </a>
+
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                    {% for i in content_data %}
+                    {% if p == "Unprocessed" %}
+                    <button type="submit" name="system" value="{{hospital_email}}+{{i.casenumber}}" form="systemform"
+                        style="background: transparent; border: none;">
+                        <form action="/claimpage1" method="get" id="systemform">
+                            {% csrf_token %}
+                            <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;">
+                                <p style="font-size: 1.5em; margin-top: 0.5em;text-align: center;">
+                                    <b>{{i.patient_name}}</b>
+                                </p>
+                                <p style="margin-top: -20px; text-align: center;">{{i.email}}</p>
+                                <hr>
+                                <p style="margin-top: -18px;"><b>Form Status -</b>{{i.formstatus}}</p>
+                                <p style="margin-top: -18px;"><b>Admission Date -</b>{{i.Date}}</p>
+                                <p style="margin-top: -18px;"><b>Claim Amount -</b>22</p>
+                                <p style="margin-top: -18px;"><b>Insurance TPA -</b>{{i.company}}</p>
+                            </div>
+                        </form>
+                    </button>
+                    {% endif %}
+                    {% endfor %}
+            `
+            }
         </script>
 
 

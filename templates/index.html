@@ -2,6 +2,7 @@
 {% load static %}
 <html lang="en">
 
+
 <head>
   <meta charset="utf-8" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
@@ -178,10 +179,9 @@
     }
 
     .cardBottom {
-      width: 17.6em;
+      width: 16em;
       max-width: 17.6em;
-      height: 20em;
-      max-height: 20em;
+      min-height: 20em;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
       transition: 0.3s;
       border-radius: 20px;
@@ -286,7 +286,7 @@
             <li class="nav-item menu-open" style="margin-left: -50px !important;">
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="da" class="nav-link" style="background-color: rgb(255, 166, 0); color:black;">
+                  <a href="dashboard" class="nav-link" style="background-color: rgb(255, 166, 0); color:black;">
                     <i class="fas fa-home"></i>
                     <p>Home</p>
                   </a>
@@ -408,8 +408,10 @@
       </div>
 
       <div class="homeMiddleLineForListAndGrid" id="homeMiddleLineForListAndGrid">
-        <i class="glyphicon glyphicon-th-large text-white GridLIst" id="grid" onclick="Grid()"></i>
-        <i class="glyphicon glyphicon-th-list text-white GridLIst" id="list" onclick="List()"></i>
+        <i class="glyphicon glyphicon-th-large text-white GridLIst" style="cursor: pointer;" id="grid"
+          onclick="Grid()"></i>
+        <i class="glyphicon glyphicon-th-list text-white GridLIst" style="cursor: pointer;" id="list"
+          onclick="List()"></i>
         <span style="color: white; margin-top: 10px;"><b>&nbsp;All Processed</b></span>
         <i class="glyphicon glyphicon-user text-white floatRight"></i>
         <!-- <span style="color: white; margin-top: 10px;" class="floatRight"><b>&nbsp;05</b></span> -->
@@ -417,75 +419,76 @@
       <!-- Modal -->
 
 
-      <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
+      <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;" id="gridCards">
+
 
         {% for i in cases_data %}
         {% if i.formstatus == "draft" %}
-        <button type="submit" name="system" value="{{hospital_email}}+{{i.casenumber}}" form="systemform"
-          style="background: transparent; border: none;">
+        <button type="submit" class="text-left" name="system" value="{{hospital_email}}+{{i.casenumber}}"
+          form="systemform" style="background: transparent; border: none;">
           <form action="/claimpage1" method="get" id="systemform">
             {% csrf_token %}
-            <div class="cardBottom" id="cardBottom" name="cardBottom">
-              <h4>{{i.patient_name}}</h4>
-              <p>{{i.email}}</p>
+            <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;">
+              <p style="font-size: 1.5em; margin-top: 0.5em; text-align: center;"><b>{{i.patient_name}}</b></p>
+              <p style="margin-top: -20px; text-align: center;">{{i.email}}</p>
               <hr>
-              <p><b>Form Status -</b>{{i.formstatus}}</p>
-              <p><b>Admission Date -</b>{{i.Date}}</p>
-              <p><b>Claim Amount -</b>22</p>
-              <p><b>Insurance TPA -</b>{{i.company}}</p>
+              <p style="margin-top: -18px;"><b>Form Status -</b>{{i.formstatus}}</p>
+              <p style="margin-top: -18px;"><b>Admission Date -</b>{{i.Date}}</p>
+              <p style="margin-top: -18px;"><b>Claim Amount -</b>22</p>
+              <p style="margin-top: -18px;"><b>Insurance TPA -</b>{{i.company}}</p>
 
             </div>
           </form>
         </button>
         {% elif i.formstatus == "" %}
-        <button type="submit" name="system" value="{{hospital_email}}+{{i.casenumber}}" form="systemform"
-          style="background: transparent; border: none;">
+        <button type="submit" class="text-left" name="system" value="{{hospital_email}}+{{i.casenumber}}"
+          form="systemform" style="background: transparent; border: none;">
           <form action="/claimpage1" method="get" id="systemform">
             {% csrf_token %}
-            <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;" >
-              <h4 style="font-size: 1.5em; margin-top: 0.5em;">{{i.patient_name}}</h4>
-              <p style="margin-top: -20px;">{{i.email}}</p>
+            <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;">
+              <p style="font-size: 1.5em; margin-top: 0.5em; text-align: center;"><b>{{i.patient_name}}</b></p>
+              <p style="margin-top: -20px; text-align: center;">{{i.email}}</p>
               <hr>
-              <p style="margin-top: -19px;"><b>Form Status -</b>{{i.formstatus}}</p>
-              <p style="margin-top: -19px;"><b>Admission Date -</b>{{i.Date}}</p>
-              <p style="margin-top: -19px;"><b>Claim Amount -</b>22</p>
-              <p style="margin-top: -19px;"><b>Insurance TPA </div>  -</b>{{i.company}}</p>
+              <p style="margin-top: -18px;"><b>Form Status -</b>{{i.formstatus}}</p>
+              <p style="margin-top: -18px;"><b>Admission Date -</b>{{i.Date}}</p>
+              <p style="margin-top: -18px;"><b>Claim Amount -</b>22</p>
+              <p style="margin-top: -18px;"><b>Insurance TPA -</b>{{i.company}}</p>
             </div>
-          </form>
-        </button>
-
-        {% else %}
-        <a href="{% url 'getcasedetail' %}?data={{i.casenumber}}">
-
-          <div class="cardBottom" id="cardBottom" name="cardBottom">
-            <h4>{{i.patient_name}}</h4>
-            <p>{{i.email}}</p>
-            <hr>
-            <p><b>Form Status -</b>{{i.formstatus}}</p>
-            <p><b>Admission Date -</b>{{i.Date}}</p>
-            <p><b>Claim Amount -</b>22</p>
-            <p><b>Insurance TPA -</b>{{i.company}}</p>
-
-          </div>
-
-        </a>
-
-        {% endif %}
-
-        {% endfor %}
       </div>
 
+      </form>
+      </button>
 
+      {% else %}
+      <a href="{% url 'getcasedetail' %}?data={{i.casenumber}}" style="color: black; text-decoration: none;">
 
+        <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;">
+          <p style="font-size: 1.5em; margin-top: 0.5em;text-align: center;"><b>{{i.patient_name}}</b></p>
+          <p style="margin-top: -20px; text-align: center;">{{i.email}}</p>
+          <hr>
+          <p style="margin-top: -18px;"><b>Form Status -</b>{{i.formstatus}}</p>
+          <p style="margin-top: -18px;"><b>Admission Date -</b>{{i.Date}}</p>
+          <p style="margin-top: -18px;"><b>Claim Amount -</b>22</p>
+          <p style="margin-top: -18px;"><b>Insurance TPA -</b>{{i.company}}</p>
+        </div>
+
+      </a>
+
+      {% endif %}
+      {% endfor %}
     </div>
 
-    <!-- /.content-wrapper -->
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-      <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
+
+  </div>
+
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
   </div>
   <!-- ./wrapper -->
   <script>
@@ -547,6 +550,144 @@
 
     }
 
+    function List() {
+      document.getElementById('gridCards').innerHTML = `
+      <div style="height: 400px; overflow-y: auto;">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">No.</th>
+                <th scope="col">Patient Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Form Status</th>
+                <th scope="col">Admission Date</th>
+                <th scope="col">Claim Amount</th>
+                <th scope="col">Insurance TPA</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              {% for i in cases_data %}
+              {% if i.formstatus == "draft" %}
+
+
+              <form action="/claimpage1" method="get" id="systemform">
+                {% csrf_token %}
+                <button type="submit" class="text-left" name="system" value="{{hospital_email}}+{{i.casenumber}}"
+                  form="systemform" style="background: transparent; border: none;">
+                  <tr>
+                    <th scope="row">{{forloop.counter}}</th>
+                    <td>{{i.patient_name}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.formstatus}}</td>
+                    <td>{{i.Date}}</td>
+                    <td>20</td>
+                    <td>{{i.company}}</td>
+                  </tr>
+                </button>
+              </form>
+              <button type="submit" class="text-left" name="system" value="{{hospital_email}}+{{i.casenumber}}"
+                form="systemform" style="background: transparent; border: none;">
+
+                {% elif i.formstatus == "" %}
+
+                <button style="cursor: pointer;" value="{{hospital_email}}+{{i.casenumber}}">
+                  <form action="/claimpage1" method="get" id="systemform">
+                    <tr>
+                      <th scope="row">{{forloop.counter}}</th>
+                      <td>{{i.patient_name}}</td>
+                      <td>{{i.email}}</td>
+                      <td>{{i.formstatus}}</td>
+                      <td>{{i.Date}}</td>
+                      <td>20</td>
+                      <td>{{i.company}}</td>
+                    </tr>
+                  </form>
+                </button>
+
+                {% else %}
+
+                <button style="cursor: pointer;" value="{{hospital_email}}+{{i.casenumber}}">
+                  <form action="/claimpage1" method="get" id="systemform">
+
+                    <tr>
+                      <th scope="row">{{forloop.counter}}</th>
+                      <td>{{i.patient_name}}</td>
+                      <td>{{i.email}}</td>
+                      <td>{{i.formstatus}}</td>
+                      <td>{{i.Date}}</td>
+                      <td>20</td>
+                      <td>{{i.company}}</td>
+                    </tr>
+                  </form>
+                </button>
+
+                {% endif %}
+                {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      `;
+    }
+    function Grid() {
+      document.getElementById('gridCards').innerHTML = `
+      {% for i in cases_data %}
+        {% if i.formstatus == "draft" %}
+        <button type="submit" class="text-left" name="system" value="{{hospital_email}}+{{i.casenumber}}" form="systemform"
+          style="background: transparent; border: none;">
+          <form action="/claimpage1" method="get" id="systemform">
+            {% csrf_token %}
+            <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;" >
+              <p style="font-size: 1.5em; margin-top: 0.5em; text-align: center;"><b>{{i.patient_name}}</b></p>
+              <p style="margin-top: -20px; text-align: center;">{{i.email}}</p>
+              <hr>
+              <p style="margin-top: -18px;"><b>Form Status -</b>{{i.formstatus}}</p>
+              <p style="margin-top: -18px;"><b>Admission Date -</b>{{i.Date}}</p>
+              <p style="margin-top: -18px;"><b>Claim Amount -</b>22</p>
+              <p style="margin-top: -18px;"><b>Insurance TPA -</b>{{i.company}}</p>
+
+            </div>
+          </form>
+        </button>
+        {% elif i.formstatus == "" %}
+        <button type="submit" class="text-left" name="system" value="{{hospital_email}}+{{i.casenumber}}" form="systemform"
+          style="background: transparent; border: none;">
+          <form action="/claimpage1" method="get" id="systemform">
+            {% csrf_token %}
+            <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;">
+              <p style="font-size: 1.5em; margin-top: 0.5em; text-align: center;"><b>{{i.patient_name}}</b></p>
+              <p style="margin-top: -20px; text-align: center;">{{i.email}}</p>
+              <hr>
+              <p style="margin-top: -18px;"><b>Form Status -</b>{{i.formstatus}}</p>
+              <p style="margin-top: -18px;"><b>Admission Date -</b>{{i.Date}}</p>
+              <p style="margin-top: -18px;"><b>Claim Amount -</b>22</p>
+              <p style="margin-top: -18px;"><b>Insurance TPA -</b>{{i.company}}</p>
+            </div>
+      </div>
+
+      </form>
+      </button>
+
+      {% else %}
+      <a href="{% url 'getcasedetail' %}?data={{i.casenumber}}" style="color: black; text-decoration: none;">
+
+        <div class="cardBottom" id="cardBottom" name="cardBottom" style="padding: 1em;" >
+          <p style="font-size: 1.5em; margin-top: 0.5em;text-align: center;"><b>{{i.patient_name}}</b></p>
+          <p style="margin-top: -20px; text-align: center;">{{i.email}}</p>
+          <hr>
+          <p style="margin-top: -18px;"><b>Form Status -</b>{{i.formstatus}}</p>
+          <p style="margin-top: -18px;"><b>Admission Date -</b>{{i.Date}}</p>
+          <p style="margin-top: -18px;"><b>Claim Amount -</b>22</p>
+          <p style="margin-top: -18px;"><b>Insurance TPA -</b>{{i.company}}</p>
+        </div>
+
+      </a>
+
+      {% endif %}
+
+      {% endfor %}
+      `;
+    }
   </script>
 
 
